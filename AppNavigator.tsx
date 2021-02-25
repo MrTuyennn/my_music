@@ -1,4 +1,4 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createBottomTabNavigator, BottomTabBar } from '@react-navigation/bottom-tabs';
 import {
   CardStyleInterpolators, createStackNavigator
 } from '@react-navigation/stack';
@@ -14,7 +14,8 @@ import ProfileUserScreen from './src/screens/ProfileUserScreen';
 import RegisterScreen from './src/screens/RegisterScreen';
 import SplashScreen from './src/screens/SplashScreen';
 import { ROUTE_KEY } from './src/utils/contains';
-import { FS, ptColor } from './src/utils/styles';
+import { FS, ptColor, style } from './src/utils/styles';
+import MiniPlayer from './src/components/MiniPlayer'
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator()
 
@@ -52,6 +53,12 @@ function MainNavigator() {
 function TabNavigator() {
   return (
     <Tab.Navigator initialRouteName={ROUTE_KEY.HomeScreen}
+      tabBar={(tabsProps) => (
+        <>
+          <MiniPlayer />
+          <BottomTabBar {...tabsProps} />
+        </>
+      )}
       screenOptions={({ route }) => ({
         tabBarLabel: '',
         tabBarIcon: ({ focused, color, }) => {
@@ -82,9 +89,10 @@ function TabNavigator() {
             type = 'feather'
             sub = focused ? true : false
           }
-          return <Icon style={{ 
+          return <Icon style={{
             // borderTopWidth: sub === true ? 3 : 0, borderColor: sub === true ? ptColor.white : '',
-           padding: FS(20) }} type={type} name={iconName} size={Iconsize} color={color} />;
+            padding: FS(20)
+          }} type={type} name={iconName} size={Iconsize} color={color} />;
         },
 
       })}
@@ -130,7 +138,7 @@ const AppNavigator = () => {
     <Stack.Navigator initialRouteName={ROUTE_KEY.SplashScreen}
       screenOptions={{
         headerShown: false,
-         gestureEnabled: false,
+        gestureEnabled: false,
         cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
       }}>
       <Stack.Screen name={ROUTE_KEY.SplashScreen} component={SplashScreen} />
