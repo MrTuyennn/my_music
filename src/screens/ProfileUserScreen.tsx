@@ -7,20 +7,13 @@ import { logOut } from '../states/ducks/user/action';
 import { imagePath } from '../utils/imagePath';
 import { FS, HEIGHT_SCALE_RATIO, ptColor, style, WIDTH_SCALE_RATIO } from '../utils/styles';
 import LinearGradient from 'react-native-linear-gradient';
-
+import { myAlert } from '../components/MyAlert';
+import {Data,DataItem} from '../services/data'
 interface Props {
 
 }
 
-const Data = [
-    { icon: imagePath.ic_His, title: 'Danh sách\n ưa thích', type: 1 },
-    { icon: imagePath.ic_Fovo, title: 'Lịch sử\n thanh toán', type: 2 },
-    { icon: imagePath.ic_Uti, title: 'Danh sách\n tiện ích', type: 3 },]
-const DataItem = [
-    { icon: imagePath.ic_conversation, title: 'Điều khoản', type: 1 },
-    { icon: imagePath.ic_conversation, title: 'Giới thiệu', type: 2 },
-    { icon: imagePath.ic_logout, title: 'Đăng xuất', type: 3 },
-]
+
 const ProfileUser = (props: Props) => {
     const disPatch = useDispatch()
     const [user, setuser] = useState('')
@@ -166,8 +159,16 @@ const ProfileUser = (props: Props) => {
                                         console.log('Giới thiệu')
                                         break;
                                     case 3:
-                                        console.log('disPatch(logOut())', disPatch(logOut()))
-                                        disPatch(logOut())
+                                        // console.log('disPatch(logOut())', disPatch(logOut()))
+                                        // 
+                                        myAlert(
+                                            'Thông báo',
+                                            'Bạn có muốn đăng xuất không',
+                                            'Trở về',
+                                            () => {},
+                                            'Đồng ý',
+                                            () => disPatch(logOut())
+                                        )
                                         break;
                                     default:
                                         break;

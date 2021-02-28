@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { View, Text, Image, ScrollView } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { Input, Icon } from 'react-native-elements';
@@ -7,74 +7,27 @@ import { imagePath } from '../utils/imagePath';
 import Swiper from 'react-native-swiper'
 import PFlatList from '../components/PFlatList';
 import MyTouchableOpacity from '../components/MyTouchableOpacity';
+import TrackPlayer from 'react-native-track-player';
+import { dataListMusic, dataSwipper, funcData } from '../services/data'
 interface Props {
 
 }
 
-const dataSwipper = [
-    {
-        imageSwipper: imagePath.imgMusic01
-    },
-    {
-        imageSwipper: imagePath.imgMusic02
 
-    },
-    {
-        imageSwipper: imagePath.imgMusic03
-    },
-    {
-        imageSwipper: imagePath.imgMusic04
-    },
-]
-
-
-const funcData = [
-    {
-        image: imagePath.musiccate,
-        title: 'Nhạc mới'
-    },
-    {
-        image: imagePath.category,
-        title: 'Thể loại'
-    },
-    {
-        image: imagePath.popularity,
-        title: 'Top 100'
-    },
-    {
-        image: imagePath.video,
-        title: 'MV thịnh\n hành'
-    },
-]
-
-const dataListMusic = [
-    {
-        title: 'Những bản Hits quốc quân',
-        image: imagePath.mtp01
-    },
-    {
-        title: 'Những bản Ballad gây nghiện',
-        image: imagePath.mtp02
-    },
-    {
-        title: 'Những bản nhạc EDM ',
-        image: imagePath.mtp03
-    },
-    {
-        title: 'Những bản Hits trữ tình',
-        image: imagePath.mtp04
-    },
-    {
-        title: 'Những bản Hits của Sơn Tùng MTP',
-        image: imagePath.mtp05
-    },
-    {
-        title: 'Những bản Hits quốc quân',
-        image: imagePath.mtp09
-    },
-]
 
 const HomeScreen = (props: Props) => {
+    useEffect(() => {
+        TrackPlayer.add({
+            id: 'trackId',
+            url: imagePath.QuenEmDi,
+            title: 'Quên Em Đi',
+            artist: 'Sơn Tùng M-TP',
+            artwork: imagePath.mtp01
+        });
+
+        // Start playing it
+        TrackPlayer.play();
+    })
 
     const renderItemData = ({ item }) => {
         return <View style={{

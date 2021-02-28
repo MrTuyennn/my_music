@@ -28,7 +28,21 @@ const mtp04 = require('../assets/image/mtp/mtp04.jpg')
 const mtp05 = require('../assets/image/mtp/mtp05.jpg')
 const mtp09 = require('../assets/image/mtp/mtp09.jpg')
 const man = require('../assets/image/man.png')
+const QuenEmDi = require('../assets/music/QuenEmDi.mp3')
+const GiveUp = require('../assets/music/GiveUp-CuBa-6846117.mp3')
+const NhacCuaTui = require('../assets/music/nhaccuatui.mp3')
+const TaLaiGanBenNhau = require('../assets/music/TaLaiGanBenNhau-CuBa-6846153.mp3')
+const ThoiKhongSaiLech = require('../assets/music/ThoiKhongSaiLech-NgaiThan-6919123.mp3')
+const TrenTinhBanDuoiTinhYeu = require('../assets/music/TrenTinhBanDuoiTinhYeu-MIN16Typh-6938265.mp3')
+const VietChoNhungDieu = require('../assets/music/VietChoNhungDieuDaCu-CuBa-6846166.mp3')
 export const imagePath = {
+    GiveUp,
+    NhacCuaTui,
+    TaLaiGanBenNhau,
+    ThoiKhongSaiLech,
+    TrenTinhBanDuoiTinhYeu,
+    VietChoNhungDieu,
+    QuenEmDi,
     man,
     mtp01,
     mtp02,

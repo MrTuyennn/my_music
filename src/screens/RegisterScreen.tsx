@@ -8,7 +8,7 @@ import { imagePath } from '../utils/imagePath';
 import { HEIGHT, HEIGHT_SCALE_RATIO, ptColor, style, WIDTH_SCALE_RATIO } from '../utils/styles';
 import Myspinner from '../components/MySpinner';
 import { showMessage } from 'react-native-flash-message';
-import { registerUser, resetregisterUser } from '../states/ducks/user/action'
+import { registerUser, resetregisterUser ,logOut} from '../states/ducks/user/action'
 
 export interface RegisterScreenProps {
     navigation?: any
@@ -95,6 +95,7 @@ class RegisterScreen extends React.Component<RegisterScreenProps, any> {
                 duration: 4000,
                 type: 'danger',
             });
+            this.props.logOut()
         } else if (nextProps.userData?.userInfo?.err) {
             Myspinner.hide()
             showMessage({
@@ -326,7 +327,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         registerUser: (payload) => dispatch(registerUser(payload)),
-        resetregisterUser: () => dispatch(resetregisterUser())
+        resetregisterUser: () => dispatch(resetregisterUser()),
+        logOut : () => dispatch(logOut())
     };
 }
 

@@ -11,6 +11,7 @@ const { store, persistor } = configureStore();
 import { navigationRef } from './RootNavigation';
 import TrackPlayer from 'react-native-track-player';
 import trackPlayerServices from './src/services/trackPlayerServices';
+import ModalAlert from './src/components/ModalAlert';
 const theme = {
   Button: {
     buttonStyle: {
@@ -18,13 +19,13 @@ const theme = {
     },
   },
 };
-
+console.disableYellowBox = true;
 const App = () => {
   useEffect(() => {
-     TrackPlayer.setupPlayer().then(() => {
-        console.log('setup Tracker')
-        TrackPlayer.registerPlaybackService(() => trackPlayerServices)
-      });  
+    TrackPlayer.setupPlayer().then(() => {
+      console.log('setup Tracker')
+      TrackPlayer.registerPlaybackService(() => trackPlayerServices)
+    });
   }, [])
   return (
     <Provider store={store}>
@@ -33,6 +34,7 @@ const App = () => {
           <NavigationContainer ref={navigationRef}>
             <AppNavigator />
             <MySpinner />
+            <ModalAlert />
             <FlashMessage position="top" floating={true} />
           </NavigationContainer>
         </ThemeProvider>

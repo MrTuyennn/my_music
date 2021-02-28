@@ -67,7 +67,7 @@ function TabNavigator() {
           let type;
           let sub;
           if (route.name === ROUTE_KEY.HomeScreen) {
-            iconName = 'home'
+            iconName = 'headphones'
             Iconsize = focused ? FS(27) : FS(20)
             type = 'feather'
             sub = focused ? true : false
@@ -78,7 +78,7 @@ function TabNavigator() {
             sub = focused ? true : false
           }
           else if (route.name === ROUTE_KEY.HistoryScreen) {
-            iconName = 'list'
+            iconName = 'music'
             Iconsize = focused ? FS(27) : FS(20)
             type = 'feather'
             sub = focused ? true : false
