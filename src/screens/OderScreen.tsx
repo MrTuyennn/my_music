@@ -7,12 +7,22 @@ import { Input, Icon } from 'react-native-elements';
 import { ListMusic } from '../services/data'
 import PFlatList from '../components/PFlatList';
 import PRow from '../components/PRow';
+import { usePlayerContext } from '../contexts/PlayerContext'
+import TrackPlayer from 'react-native-track-player';
+
 interface Props {
 
 }
 
 const OderScreen = (props: Props) => {
     const [DataArtist, setDataArtist] = useState(Array)
+    const playerContext = usePlayerContext()
+    const track = playerContext.currentTrack;
+
+    // if (!track) {
+    //     return null;
+    // }
+
 
     useEffect(() => {
         const data = ListMusic.map(result => { return result?.artist })
@@ -34,13 +44,36 @@ const OderScreen = (props: Props) => {
         )
     }
 
+    const playMusic = (item) => {
+        console.log(JSON.stringify(item, null, 2))
+        TrackPlayer.add({
+            title: item?.title,
+            artwork: item?.artwork,
+            id: item?.id,
+            url: item?.url,
+            artist: item?.artist,
+        });
+
+        // Start playing it
+        TrackPlayer.play();
+        // playerContext.play({
+        //     id: '111111',
+        //     title: item.title,
+        //     artist: item?.artist,
+        //     url: item.url,
+        //     artwork: item.artwork
+        // })
+    }
+
     const renderItemMusic = ({ item }) => {
         return (
-            <PRow style={{
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                marginVertical: 10 * HEIGHT_SCALE_RATIO
-            }}>
+            <PRow
+                onPress={() => playMusic(item)}
+                style={{
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    marginVertical: 10 * HEIGHT_SCALE_RATIO,
+                }}>
                 <PRow>
                     <Text style={{ color: ptColor.white, marginRight: 5 * WIDTH_SCALE_RATIO }}>{item?.id}</Text>
                     <Image style={{

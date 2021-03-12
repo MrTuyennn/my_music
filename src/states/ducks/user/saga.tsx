@@ -14,15 +14,16 @@ function* watchRequestUser() {
 
 function* loginUser({ payload }) {
     console.log(payload)
-  try {
-      const {data} = yield call(api.loginUser,{
-        password: payload.passWord,
-        numberPhone: payload.numberPhone
-      })
-      console.log('data login',data)
-  } catch (error) {
-      console.log('err login',error)
-  }
+    try {
+        const { data } = yield call(api.loginUser, {
+            password: payload.passWord,
+            numberPhone: payload.numberPhone
+        })
+        console.log('data login', data)
+        yield put({ type: types.LOGIN_USER_SUCESS, payload: data })
+    } catch (error) {
+        console.log('err login', error)
+    }
 }
 
 function* registerUser({ payload }) {

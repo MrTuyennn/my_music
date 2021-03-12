@@ -5,12 +5,17 @@ import { Icon } from 'react-native-elements'
 import MyTouchableOpacity from './MyTouchableOpacity';
 import { imagePath } from '../utils/imagePath';
 import LinearGradient from 'react-native-linear-gradient';
-
+import { usePlayerContext } from '../contexts/PlayerContext'
 interface Props {
 
 }
 
 const MiniPlayer = (props: Props) => {
+    const playerContext = usePlayerContext();
+
+    if (playerContext.isEmpty || !playerContext.currentTrack) {
+        return null;
+    }
     return (
         <LinearGradient
             colors={['#006633', '#009999', '#00FFCC']} style={{

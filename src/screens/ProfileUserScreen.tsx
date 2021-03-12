@@ -8,7 +8,7 @@ import { imagePath } from '../utils/imagePath';
 import { FS, HEIGHT_SCALE_RATIO, ptColor, style, WIDTH_SCALE_RATIO } from '../utils/styles';
 import LinearGradient from 'react-native-linear-gradient';
 import { myAlert } from '../components/MyAlert';
-import {Data,DataItem} from '../services/data'
+import { Data, DataItem } from '../services/data'
 interface Props {
 
 }
@@ -40,15 +40,15 @@ const ProfileUser = (props: Props) => {
                         break;
                 }
             }}>
-            <View style={[style.border, { height: 120 * HEIGHT_SCALE_RATIO, width: 120 * WIDTH_SCALE_RATIO, borderColor: ptColor.bgRed, justifyContent: 'center', alignItems: 'center' }]}>
-                <Image style={{ height: 50, width: 50 }} source={item.icon}></Image>
+            <View style={[style.border, { height: 120 * HEIGHT_SCALE_RATIO, width: 120 * WIDTH_SCALE_RATIO, borderColor: ptColor.white, justifyContent: 'center', alignItems: 'center' }]}>
+                <Image style={{ height: 50, width: 50, tintColor: ptColor.white }} source={item.icon}></Image>
                 <Text
                     style={[
                         style.textCaption,
                         {
                             marginTop: 8,
                             fontWeight: 'bold',
-                            color: ptColor.textColor,
+                            color: ptColor.white,
                             textAlign: 'center',
                         },
                     ]}
@@ -105,7 +105,7 @@ const ProfileUser = (props: Props) => {
                         justifyContent: 'center'
                     }}>
                         <Text style={[style.textAdvance, { color: ptColor.white }]}>Hello,</Text>
-                        <Text style={[style.textAdvance, { color: ptColor.white }]}>{user?.data?.username}</Text>
+                        <Text style={[style.textAdvance, { color: ptColor.white }]}>{user?.data?.username || user?.data?.numberPhone}</Text>
                     </View>
                     {/* <View style={{
                         height: '80%',
@@ -165,7 +165,7 @@ const ProfileUser = (props: Props) => {
                                             'Thông báo',
                                             'Bạn có muốn đăng xuất không',
                                             'Trở về',
-                                            () => {},
+                                            () => { },
                                             'Đồng ý',
                                             () => disPatch(logOut())
                                         )
@@ -188,14 +188,17 @@ const ProfileUser = (props: Props) => {
                                     alignItems: 'center'
                                 }}>
                                     <Image style={{
-                                        height: 50 * HEIGHT_SCALE_RATIO, width: 50 * WIDTH_SCALE_RATIO, margin: 10 * HEIGHT_SCALE_RATIO
+                                        height: 50 * HEIGHT_SCALE_RATIO,
+                                        width: 50 * WIDTH_SCALE_RATIO,
+                                        margin: 10 * HEIGHT_SCALE_RATIO,
+                                        tintColor:ptColor.white
                                     }} source={result?.icon}></Image>
                                     <Text style={[
-                                        style.textCaption,
+                                        style.textSubTitle,
                                         {
                                             margin: 10 * WIDTH_SCALE_RATIO,
                                             fontWeight: 'bold',
-                                            color: ptColor.textColor,
+                                            color: ptColor.white,
                                             textAlign: 'center',
                                         },
                                     ]}>{result?.title}</Text></View>

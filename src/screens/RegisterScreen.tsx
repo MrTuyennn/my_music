@@ -258,7 +258,7 @@ class RegisterScreen extends React.Component<RegisterScreenProps, any> {
                                     }}
                                     underlineColorAndroid="transparent"
                                     placeholder='Nhập mật khẩu'
-                                    secureTextEntry={this.state.isShowPassword}
+                                    secureTextEntry={!this.state.isShowPassword}
                                     rightIcon={
                                         <Icon
                                             name={this.state.isShowPassword ? 'eye-off' : 'eye'}
@@ -292,7 +292,7 @@ class RegisterScreen extends React.Component<RegisterScreenProps, any> {
                                     }}
                                     underlineColorAndroid="transparent"
                                     placeholder='Nhập lại mật khẩu'
-                                    secureTextEntry={this.state.isShowPassword}
+                                    secureTextEntry={!this.state.isShowPassword}
                                     rightIcon={
                                         <Icon
                                             name={this.state.isShowPassword ? 'eye-off' : 'eye'}

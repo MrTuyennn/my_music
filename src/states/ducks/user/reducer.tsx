@@ -36,7 +36,8 @@ export default (state = initialState, action) => {
         case types.LOGIN_USER_FAIL:
             return {
                 ...state,
-                err: action.payload
+                err: action.payload,
+                isAuth : false
             }
         case types.LOGIN_USER_RESET:
             return {

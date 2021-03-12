@@ -12,6 +12,7 @@ import { navigationRef } from './RootNavigation';
 import TrackPlayer from 'react-native-track-player';
 import trackPlayerServices from './src/services/trackPlayerServices';
 import ModalAlert from './src/components/ModalAlert';
+import { PlayerContextProvider } from './src/contexts/PlayerContext'
 const theme = {
   Button: {
     buttonStyle: {
@@ -22,22 +23,43 @@ const theme = {
 console.disableYellowBox = true;
 const App = () => {
   useEffect(() => {
+    // TrackPlayer.setupPlayer().then(() => {
+    //   console.log('setup Tracker')
+    //   TrackPlayer.registerPlaybackService(() => trackPlayerServices)
+    // });
     TrackPlayer.setupPlayer().then(() => {
-      console.log('setup Tracker')
-      TrackPlayer.registerPlaybackService(() => trackPlayerServices)
+      console.log('player is setup');
+      TrackPlayer.updateOptions({
+        capabilities: [
+          TrackPlayer.CAPABILITY_PLAY,
+          TrackPlayer.CAPABILITY_PAUSE,
+          TrackPlayer.CAPABILITY_STOP,
+          TrackPlayer.CAPABILITY_JUMP_FORWARD,
+          TrackPlayer.CAPABILITY_JUMP_BACKWARD,
+        ],
+        jumpInterval: 30,
+      });
+
+      // setIsReady(true);
     });
-  }, [])
+  }, []);
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
+
         <ThemeProvider theme={theme}>
-          <NavigationContainer ref={navigationRef}>
-            <AppNavigator />
-            <MySpinner />
-            <ModalAlert />
-            <FlashMessage position="top" floating={true} />
-          </NavigationContainer>
+          <PlayerContextProvider>
+            <NavigationContainer ref={navigationRef}>
+
+              <AppNavigator />
+              <MySpinner />
+              <ModalAlert />
+              <FlashMessage position="top" floating={true} />
+
+            </NavigationContainer>
+          </PlayerContextProvider>
         </ThemeProvider>
+
       </PersistGate>
     </Provider>
   );

@@ -16,18 +16,18 @@ interface Props {
 
 
 const HomeScreen = (props: Props) => {
-    useEffect(() => {
-        TrackPlayer.add({
-            id: 'trackId',
-            url: imagePath.QuenEmDi,
-            title: 'Quên Em Đi',
-            artist: 'Sơn Tùng M-TP',
-            artwork: imagePath.mtp01
-        });
+    // useEffect(() => {
+    //     TrackPlayer.add({
+    //         id: 'trackId',
+    //         url: imagePath.QuenEmDi,
+    //         title: 'Quên Em Đi',
+    //         artist: 'Sơn Tùng M-TP',
+    //         artwork: imagePath.mtp01
+    //     });
 
-        // Start playing it
-        TrackPlayer.play();
-    })
+    //     // Start playing it
+    //     TrackPlayer.play();
+    // })
 
     const renderItemData = ({ item }) => {
         return <View style={{
