@@ -1,38 +1,36 @@
-import React, { useEffect, useState } from 'react'
-import { View, Text, Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import React, { useEffect, useState } from 'react';
+import { Image, Text, View } from 'react-native';
+import { Icon, Input } from 'react-native-elements';
 import LinearGradient from 'react-native-linear-gradient';
-import { WIDTH_SCALE_RATIO, HEIGHT_SCALE_RATIO, ptColor, style, FS, WIDTH } from '../utils/styles';
-import { imagePath } from '../utils/imagePath';
-import { Input, Icon } from 'react-native-elements';
-import { ListMusic } from '../services/data'
+import ModalPlayMusic from '../components/ModalPlayMusic';
 import PFlatList from '../components/PFlatList';
 import PRow from '../components/PRow';
-import { usePlayerContext } from '../contexts/PlayerContext'
-import TrackPlayer from 'react-native-track-player';
-
+import { usePlayerContext } from '../contexts/PlayerContext';
+import { ListMusic } from '../services/data';
+import { imagePath } from '../utils/imagePath';
+import { FS, HEIGHT_SCALE_RATIO, ptColor, style, WIDTH_SCALE_RATIO } from '../utils/styles';
 interface Props {
-
+    isModal?: any
 }
 
 const OderScreen = (props: Props) => {
     const [DataArtist, setDataArtist] = useState(Array)
     const playerContext = usePlayerContext()
     const track = playerContext.currentTrack;
+    const navigation = useNavigation()
+    const isModal = React.createRef()
 
-    // if (!track) {
-    //     return null;
-    // }
+
 
 
     useEffect(() => {
         const data = ListMusic.map(result => { return result?.artist })
         const arr = [...new Set(data)]
-        console.log('arr', arr)
         setDataArtist(arr)
     }, [])
 
     const renderItemMusicCate = ({ item }) => {
-        console.log('item', item)
         return (
             <Text style={{
                 color: ptColor.black,
@@ -44,25 +42,11 @@ const OderScreen = (props: Props) => {
         )
     }
 
-    const playMusic = (item) => {
-        console.log(JSON.stringify(item, null, 2))
-        TrackPlayer.add({
-            title: item?.title,
-            artwork: item?.artwork,
-            id: item?.id,
-            url: item?.url,
-            artist: item?.artist,
-        });
+    const playMusic = async (item) => {
+        playerContext.play(item)
+        // navigation.push(ROUTE_KEY.PlayMusic)
+        isModal.current?.show()
 
-        // Start playing it
-        TrackPlayer.play();
-        // playerContext.play({
-        //     id: '111111',
-        //     title: item.title,
-        //     artist: item?.artist,
-        //     url: item.url,
-        //     artwork: item.artwork
-        // })
     }
 
     const renderItemMusic = ({ item }) => {
@@ -182,6 +166,7 @@ const OderScreen = (props: Props) => {
             <PFlatList
                 data={ListMusic}
                 renderItem={renderItemMusic}></PFlatList>
+            <ModalPlayMusic ref={isModal}></ModalPlayMusic>
         </LinearGradient>
     )
 }

@@ -1,18 +1,18 @@
 import { NavigationContainer } from '@react-navigation/native';
 import React, { useEffect } from 'react';
+import { ThemeProvider } from 'react-native-elements';
 import FlashMessage from 'react-native-flash-message';
+import TrackPlayer from 'react-native-track-player';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import AppNavigator from './AppNavigator';
-import { ThemeProvider } from 'react-native-elements';
-import configureStore from './src/states';
-import MySpinner from './src/components/MySpinner'
-const { store, persistor } = configureStore();
 import { navigationRef } from './RootNavigation';
-import TrackPlayer from 'react-native-track-player';
-import trackPlayerServices from './src/services/trackPlayerServices';
 import ModalAlert from './src/components/ModalAlert';
-import { PlayerContextProvider } from './src/contexts/PlayerContext'
+import MySpinner from './src/components/MySpinner';
+import { PlayerContextProvider } from './src/contexts/PlayerContext';
+import ModalPlayMusic from './src/components/ModalPlayMusic'
+import configureStore from './src/states';
+const { store, persistor } = configureStore();
 const theme = {
   Button: {
     buttonStyle: {
@@ -54,6 +54,7 @@ const App = () => {
               <AppNavigator />
               <MySpinner />
               <ModalAlert />
+              <ModalPlayMusic />
               <FlashMessage position="top" floating={true} />
 
             </NavigationContainer>

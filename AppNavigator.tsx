@@ -16,6 +16,7 @@ import SplashScreen from './src/screens/SplashScreen';
 import { ROUTE_KEY } from './src/utils/contains';
 import { FS, ptColor, style } from './src/utils/styles';
 import MiniPlayer from './src/components/MiniPlayer'
+import PlayMusic from './src/screens/PlayMusic'
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator()
 
@@ -50,6 +51,18 @@ function MainNavigator() {
   )
 }
 
+function StackMusic() {
+  return (
+    <Stack.Navigator initialRouteName={ROUTE_KEY.OderScreen} screenOptions={{
+      headerShown: false, gestureEnabled: false,
+      cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+    }}>
+      <Stack.Screen name={ROUTE_KEY.OderScreen} component={OderScreen} />
+      <Stack.Screen name={ROUTE_KEY.PlayMusic} component={PlayMusic} />
+    </Stack.Navigator>
+  )
+}
+
 function TabNavigator() {
   return (
     <Tab.Navigator initialRouteName={ROUTE_KEY.HomeScreen}
@@ -71,7 +84,7 @@ function TabNavigator() {
             Iconsize = focused ? FS(27) : FS(20)
             type = 'feather'
             sub = focused ? true : false
-          } else if (route.name === ROUTE_KEY.OderScreen) {
+          } else if (route.name === ROUTE_KEY.StackMusic) {
             iconName = 'heart'
             Iconsize = focused ? FS(27) : FS(20)
             type = 'feather'
@@ -109,7 +122,7 @@ function TabNavigator() {
       }}
     >
       <Tab.Screen name={ROUTE_KEY.HomeScreen} component={HomeScreen} />
-      <Tab.Screen name={ROUTE_KEY.OderScreen} component={OderScreen} />
+      <Tab.Screen name={ROUTE_KEY.StackMusic} component={StackMusic} />
       <Tab.Screen name={ROUTE_KEY.HistoryScreen} component={HistoryScreen} />
       <Tab.Screen name={ROUTE_KEY.ProfileUserScreen} component={ProfileUserScreen} />
     </Tab.Navigator>
