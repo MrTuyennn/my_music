@@ -57,7 +57,7 @@ export const ptColor = {
   textSubColor: '#828282',
   borderColor: '#B9C0C260',
   borderColor2: '#aaaaaa',
-  black: '#222222',
+  black: '#000000',
   white: '#ffffff',
   noWhite: '#f5f5f5',
   transparent: 'transparent',
@@ -259,6 +259,10 @@ export const style = {
     ...ptText.H4,
     color: ptColor.textColor,
     fontFamily: ptFont.BOLD,
+  },
+  textTitle3: {
+    ...ptText.H3,
+    color: ptColor.textColor,
   },
   textSubTitle: {
     ...ptText.BODY1,

@@ -12,6 +12,8 @@ import MySpinner from './src/components/MySpinner';
 import { PlayerContextProvider } from './src/contexts/PlayerContext';
 import ModalPlayMusic from './src/components/ModalPlayMusic'
 import configureStore from './src/states';
+import { Platform } from 'react-native';
+import { imagePath } from './src/utils/imagePath';
 const { store, persistor } = configureStore();
 const theme = {
   Button: {
@@ -30,15 +32,29 @@ const App = () => {
     TrackPlayer.setupPlayer().then(() => {
       console.log('player is setup');
       TrackPlayer.updateOptions({
+        stopWithApp: true,
         capabilities: [
           TrackPlayer.CAPABILITY_PLAY,
           TrackPlayer.CAPABILITY_PAUSE,
           TrackPlayer.CAPABILITY_STOP,
-          TrackPlayer.CAPABILITY_JUMP_FORWARD,
-          TrackPlayer.CAPABILITY_JUMP_BACKWARD,
+          TrackPlayer.CAPABILITY_SKIP_TO_NEXT,
+          TrackPlayer.CAPABILITY_SKIP_TO_PREVIOUS,
         ],
         jumpInterval: 30,
+        compactCapabilities: [
+          TrackPlayer.CAPABILITY_PLAY,
+          TrackPlayer.CAPABILITY_PAUSE
+        ],
+
+        // Icons for the notification on Android (if you don't like the default ones)
+        // pauseIcon: require('./pause-icon.png'),
+        // stopIcon: require('./stop-icon.png'),
+        // previousIcon: require('./previous-icon.png'),
+        // nextIcon: require('./next-icon.png'),
+        icon: imagePath.music
+
       });
+
 
       // setIsReady(true);
     });

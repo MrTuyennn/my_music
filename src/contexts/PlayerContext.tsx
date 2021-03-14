@@ -56,40 +56,6 @@ export const PlayerContextProvider: React.FC = (props) => {
     await RNTrackPlayer.reset()
     await RNTrackPlayer.add(track)
     await RNTrackPlayer.play();
-    // const position = await RNTrackPlayer.getPosition();
-    // var minutes = Math.floor(position / 60)
-    // const duration = await RNTrackPlayer.getDuration();
-    // var minutesw = Math.floor(duration / 60)
-    // console.log(`${minutes + " " + minutesw} seconds left.`);
-    // const trackId = await RNTrackPlayer.getCurrentTrack();
-    // const trackObject = await RNTrackPlayer.getTrack(trackId);
-    // console.log('trackObject', JSON.stringify(trackObject, null, 2))
-    // we want to make sure we stop the current one to play the next one
-    // await pause();
-    // if (!track) {
-    //   if (currentTrack) {
-    //     console.log('currentTrack',currentTrack)
-    //     await RNTrackPlayer.play();
-    //   }
-    //   return;
-    // }
-
-    // if (currentTrack && track.id === currentTrack.id) {
-    //   console.log('currentTrack.id',currentTrack.id)
-    //   await RNTrackPlayer.play();
-    //   return;
-    // }
-
-    // try {
-    //   // check if the track exist in the queue
-    //   await RNTrackPlayer.getTrack(track.id);
-    // } catch (error) {
-    //   await RNTrackPlayer.add([track]);
-    // } finally {
-    //   setCurrentTrack(track);
-    //   await RNTrackPlayer.skip(track.id);
-    //   await RNTrackPlayer.play();
-    // }
   };
 
   const pause = async () => {
