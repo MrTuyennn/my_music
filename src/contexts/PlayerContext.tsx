@@ -52,10 +52,11 @@ export const PlayerContextProvider: React.FC = (props) => {
   }, []);
 
   const play = async (track?: Track) => {
-    console.log('có add', track)
+    console.log('có add', JSON.stringify(track, null, 2))
     await RNTrackPlayer.reset()
     await RNTrackPlayer.add(track)
     await RNTrackPlayer.play();
+    setCurrentTrack(track)
   };
 
   const pause = async () => {

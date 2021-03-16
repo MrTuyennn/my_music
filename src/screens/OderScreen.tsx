@@ -43,6 +43,7 @@ const OderScreen = (props: Props) => {
     }
 
     const playMusic = async (item) => {
+        console.log(item)
         playerContext.play(item)
         // navigation.push(ROUTE_KEY.PlayMusic)
         isModal.current?.show()

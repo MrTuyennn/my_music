@@ -3,7 +3,7 @@ import { ActivityIndicator, Animated, Easing, Text, View, ViewStyle } from 'reac
 import { Icon } from 'react-native-elements';
 import LinearGradient from 'react-native-linear-gradient';
 import Modal from 'react-native-modal';
-import RNTrackPlayer from 'react-native-track-player';
+import RNTrackPlayer, { STATE_PLAYING, STATE_PAUSED } from 'react-native-track-player';
 import { usePlayerContext } from '../contexts/PlayerContext';
 import {
     FS,
@@ -45,19 +45,17 @@ export default class ModalPlayMusic extends React.PureComponent<ModalPlayMusicPr
     };
 
     async show() {
-        console.log('có nhận nha')
         this.setState({ visible: true });
         const position = await RNTrackPlayer.getPosition();
         var minutes = Math.floor(position / 60)
         const duration = await RNTrackPlayer.getDuration();
         var minutesw = Math.floor(duration / 60)
-        console.log(`${minutes + " " + minutesw} seconds left.`);
         const trackId = await RNTrackPlayer.getCurrentTrack();
         const trackObject = await RNTrackPlayer.getTrack(trackId);
-        console.log('trackObject', JSON.stringify(trackObject?.artwork?.uri, null, 2))
         this.setState({
             trackObject: trackObject
         })
+
     }
     hide(onDone = () => { }) {
         this.setState({ visible: false }, () => {
@@ -86,6 +84,7 @@ export default class ModalPlayMusic extends React.PureComponent<ModalPlayMusicPr
         this.setState({
             playMusic: false
         })
+
     }
 
     playMusic() {
@@ -93,6 +92,7 @@ export default class ModalPlayMusic extends React.PureComponent<ModalPlayMusicPr
         this.setState({
             playMusic: true
         })
+
     }
 
     render() {
