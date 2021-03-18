@@ -17,6 +17,7 @@ import { ROUTE_KEY } from './src/utils/contains';
 import { FS, ptColor, style } from './src/utils/styles';
 import MiniPlayer from './src/components/MiniPlayer'
 import PlayMusic from './src/screens/PlayMusic'
+import CategoryMusic from './src/screens/CategoryMusic'
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator()
 
@@ -45,7 +46,7 @@ function MainNavigator() {
           ?
           <Stack.Screen name={ROUTE_KEY.StackAuth} component={StackAuth} />
           :
-          <Stack.Screen name={ROUTE_KEY.TabNavigator} component={TabNavigator} />
+          <Stack.Screen name={ROUTE_KEY.StackMusic} component={StackMusic} />
       }
     </Stack.Navigator>
   )
@@ -53,12 +54,13 @@ function MainNavigator() {
 
 function StackMusic() {
   return (
-    <Stack.Navigator initialRouteName={ROUTE_KEY.OderScreen} screenOptions={{
+    <Stack.Navigator initialRouteName={ROUTE_KEY.TabNavigator} screenOptions={{
       headerShown: false, gestureEnabled: false,
       cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
     }}>
-      <Stack.Screen name={ROUTE_KEY.OderScreen} component={OderScreen} />
       <Stack.Screen name={ROUTE_KEY.PlayMusic} component={PlayMusic} />
+      <Stack.Screen name={ROUTE_KEY.CategoryMusic} component={CategoryMusic} />
+      <Stack.Screen name={ROUTE_KEY.TabNavigator} component={TabNavigator} />
     </Stack.Navigator>
   )
 }
@@ -84,7 +86,7 @@ function TabNavigator() {
             Iconsize = focused ? FS(27) : FS(20)
             type = 'feather'
             sub = focused ? true : false
-          } else if (route.name === ROUTE_KEY.StackMusic) {
+          } else if (route.name === ROUTE_KEY.OderScreen) {
             iconName = 'heart'
             Iconsize = focused ? FS(27) : FS(20)
             type = 'feather'
@@ -122,7 +124,7 @@ function TabNavigator() {
       }}
     >
       <Tab.Screen name={ROUTE_KEY.HomeScreen} component={HomeScreen} />
-      <Tab.Screen name={ROUTE_KEY.StackMusic} component={StackMusic} />
+      <Tab.Screen name={ROUTE_KEY.OderScreen} component={OderScreen} />
       <Tab.Screen name={ROUTE_KEY.HistoryScreen} component={HistoryScreen} />
       <Tab.Screen name={ROUTE_KEY.ProfileUserScreen} component={ProfileUserScreen} />
     </Tab.Navigator>

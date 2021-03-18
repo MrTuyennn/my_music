@@ -3,7 +3,9 @@ import React, { useEffect, useState } from 'react';
 import { Image, Text, View } from 'react-native';
 import { Icon, Input } from 'react-native-elements';
 import LinearGradient from 'react-native-linear-gradient';
+import { ROUTE_KEY } from '../utils/contains';
 import ModalPlayMusic from '../components/ModalPlayMusic';
+import MyTouchableOpacity from '../components/MyTouchableOpacity';
 import PFlatList from '../components/PFlatList';
 import PRow from '../components/PRow';
 import { usePlayerContext } from '../contexts/PlayerContext';
@@ -89,21 +91,23 @@ const OderScreen = (props: Props) => {
             <View style={{
                 flexDirection: 'row',
             }}>
-                <View style={{
-                    flex: 0.5,
-                    height: 40 * HEIGHT_SCALE_RATIO,
-                    width: 60 * WIDTH_SCALE_RATIO,
-                    marginTop: 15 * HEIGHT_SCALE_RATIO,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                }}>
+                <MyTouchableOpacity
+                    onPress={() => navigation.navigate(ROUTE_KEY.ProfileUserScreen)}
+                    style={{
+                        flex: 0.5,
+                        height: 40 * HEIGHT_SCALE_RATIO,
+                        width: 60 * WIDTH_SCALE_RATIO,
+                        marginTop: 15 * HEIGHT_SCALE_RATIO,
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                    }}>
                     <Image
                         style={{
                             tintColor: ptColor.white,
                             height: '60%',
                             width: '130%',
                         }} source={imagePath.profile_user} />
-                </View>
+                </MyTouchableOpacity>
                 <View style={{
                     marginTop: 15 * HEIGHT_SCALE_RATIO,
                     flex: 9

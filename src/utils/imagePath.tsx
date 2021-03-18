@@ -35,7 +35,13 @@ const TaLaiGanBenNhau = require('../assets/music/TaLaiGanBenNhau-CuBa-6846153.mp
 const ThoiKhongSaiLech = require('../assets/music/ThoiKhongSaiLech-NgaiThan-6919123.mp3')
 const TrenTinhBanDuoiTinhYeu = require('../assets/music/TrenTinhBanDuoiTinhYeu-MIN16Typh-6938265.mp3')
 const VietChoNhungDieu = require('../assets/music/VietChoNhungDieuDaCu-CuBa-6846166.mp3')
+const like = require('../assets/image/like.png')
+const headphone = require('../assets/image/headphones.png')
+const sun = require('../assets/image/sun.png')
 export const imagePath = {
+    headphone,
+    sun,
+    like,
     GiveUp,
     NhacCuaTui,
     TaLaiGanBenNhau,

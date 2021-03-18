@@ -9,25 +9,35 @@ import PFlatList from '../components/PFlatList';
 import MyTouchableOpacity from '../components/MyTouchableOpacity';
 import TrackPlayer from 'react-native-track-player';
 import { dataListMusic, dataSwipper, funcData } from '../services/data'
+import { ROUTE_KEY } from '../utils/contains';
+import { useNavigation } from '@react-navigation/native';
 interface Props {
 
 }
 
 
 
-const HomeScreen = (props: Props) => {
-    // useEffect(() => {
-    //     TrackPlayer.add({
-    //         id: 'trackId',
-    //         url: imagePath.QuenEmDi,
-    //         title: 'Quên Em Đi',
-    //         artist: 'Sơn Tùng M-TP',
-    //         artwork: imagePath.mtp01
-    //     });
+const HomeScreen = (props: Props,) => {
+    const navigation = useNavigation();
 
-    //     // Start playing it
-    //     TrackPlayer.play();
-    // })
+    const funC = (item) => {
+        switch (item.type) {
+            case 0:
+                console.log('item', item)
+                break;
+            case 1:
+                navigation.navigate(ROUTE_KEY.CategoryMusic)
+                break;
+            case 2:
+                console.log('item', item)
+                break;
+            case 3:
+                console.log('item', item)
+                break;
+            default:
+                break;
+        }
+    }
 
     const renderItemData = ({ item }) => {
         return <View style={{
@@ -35,7 +45,7 @@ const HomeScreen = (props: Props) => {
             marginHorizontal: 24 * WIDTH_SCALE_RATIO
         }}>
             <MyTouchableOpacity
-                onPress={() => console.log('abc')}
+                onPress={() => funC(item)}
                 style={{
                     height: 50 * HEIGHT_SCALE_RATIO,
                     width: 50 * WIDTH_SCALE_RATIO,
@@ -103,21 +113,23 @@ const HomeScreen = (props: Props) => {
                 <View style={{
                     flexDirection: 'row',
                 }}>
-                    <View style={{
-                        flex: 0.5,
-                        height: 40 * HEIGHT_SCALE_RATIO,
-                        width: 60 * WIDTH_SCALE_RATIO,
-                        marginTop: 15 * HEIGHT_SCALE_RATIO,
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                    }}>
+                    <MyTouchableOpacity
+                        onPress={() => navigation.navigate(ROUTE_KEY.ProfileUserScreen)}
+                        style={{
+                            flex: 0.5,
+                            height: 40 * HEIGHT_SCALE_RATIO,
+                            width: 60 * WIDTH_SCALE_RATIO,
+                            marginTop: 15 * HEIGHT_SCALE_RATIO,
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                        }}>
                         <Image
                             style={{
                                 tintColor: ptColor.white,
                                 height: '60%',
                                 width: '130%',
                             }} source={imagePath.profile_user} />
-                    </View>
+                    </MyTouchableOpacity>
                     <View style={{
                         marginTop: 15 * HEIGHT_SCALE_RATIO,
                         flex: 9

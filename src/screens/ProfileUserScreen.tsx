@@ -47,7 +47,6 @@ const ProfileUser = (props: Props) => {
                         style.textCaption,
                         {
                             marginTop: 8,
-                            fontWeight: 'bold',
                             color: ptColor.white,
                             textAlign: 'center',
                         },
@@ -80,7 +79,7 @@ const ProfileUser = (props: Props) => {
                     flex: 3,
                     paddingHorizontal: 10 * WIDTH_SCALE_RATIO,
                 }}>
-                <Text style={[style.textAdvance, {
+                <Text style={[style.textCaption, {
                     color: ptColor.white,
                     margin: 15 * HEIGHT_SCALE_RATIO,
                     fontSize: FS(25)
@@ -107,21 +106,6 @@ const ProfileUser = (props: Props) => {
                         <Text style={[style.textAdvance, { color: ptColor.white }]}>Hello,</Text>
                         <Text style={[style.textAdvance, { color: ptColor.white }]}>{user?.data?.username || user?.data?.numberPhone}</Text>
                     </View>
-                    {/* <View style={{
-                        height: '80%',
-                        width: '20%',
-                        justifyContent: 'center',
-                        marginLeft: 20 * WIDTH_SCALE_RATIO,
-                    }}>
-                        <Icon
-                            size={15}
-                            name="hammer-outline"
-                            type='ionicon'
-                            color={ptColor.blue3}
-                            raised
-                            onPress={() => console.log('hello')}
-                        />
-                    </View> */}
                 </View>
             </View>
 
@@ -188,16 +172,15 @@ const ProfileUser = (props: Props) => {
                                     alignItems: 'center'
                                 }}>
                                     <Image style={{
-                                        height: 50 * HEIGHT_SCALE_RATIO,
-                                        width: 50 * WIDTH_SCALE_RATIO,
+                                        height: 31 * HEIGHT_SCALE_RATIO,
+                                        width: 33 * WIDTH_SCALE_RATIO,
                                         margin: 10 * HEIGHT_SCALE_RATIO,
                                         tintColor:ptColor.white
                                     }} source={result?.icon}></Image>
                                     <Text style={[
-                                        style.textSubTitle,
+                                        style.textCaption,
                                         {
                                             margin: 10 * WIDTH_SCALE_RATIO,
-                                            fontWeight: 'bold',
                                             color: ptColor.white,
                                             textAlign: 'center',
                                         },

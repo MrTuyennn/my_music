@@ -1,9 +1,9 @@
 import { imagePath } from '../utils/imagePath';
 
 export const Data = [
-    { icon: imagePath.ic_His, title: 'Danh sách\n ưa thích', type: 1 },
-    { icon: imagePath.ic_Fovo, title: 'Lịch sử\n thanh toán', type: 2 },
-    { icon: imagePath.ic_Uti, title: 'Danh sách\n tiện ích', type: 3 },]
+    { icon: imagePath.like, title: 'Danh sách\n ưa thích', type: 1 },
+    { icon: imagePath.headphone, title: 'Nghe gì\n hôm nay', type: 2 },
+    { icon: imagePath.sun, title: 'Có thể\n bạn biết', type: 3 },]
 export const DataItem = [
     { icon: imagePath.ic_conversation, title: 'Điều khoản', type: 1 },
     { icon: imagePath.ic_conversation, title: 'Giới thiệu', type: 2 },
@@ -28,18 +28,22 @@ export const dataSwipper = [
 
 export const funcData = [
     {
+        type: 0,
         image: imagePath.musiccate,
         title: 'Nhạc mới'
     },
     {
+        type: 1,
         image: imagePath.category,
         title: 'Thể loại'
     },
     {
+        type: 2,
         image: imagePath.popularity,
         title: 'Top 100'
     },
     {
+        type: 3,
         image: imagePath.video,
         title: 'MV thịnh\n hành'
     },
