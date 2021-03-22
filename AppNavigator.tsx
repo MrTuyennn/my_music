@@ -3,7 +3,7 @@ import {
   CardStyleInterpolators, createStackNavigator
 } from '@react-navigation/stack';
 import React, { useEffect } from 'react';
-import { Alert, BackHandler } from 'react-native';
+import { Alert, BackHandler, Image } from 'react-native';
 import { Icon } from 'react-native-elements';
 import { useSelector } from 'react-redux';
 import HistoryScreen from './src/screens/HistoryScreen';
@@ -14,10 +14,11 @@ import ProfileUserScreen from './src/screens/ProfileUserScreen';
 import RegisterScreen from './src/screens/RegisterScreen';
 import SplashScreen from './src/screens/SplashScreen';
 import { ROUTE_KEY } from './src/utils/contains';
-import { FS, ptColor, style } from './src/utils/styles';
+import { FS, HEIGHT_SCALE_RATIO, ptColor, style, WIDTH_SCALE_RATIO } from './src/utils/styles';
 import MiniPlayer from './src/components/MiniPlayer'
 import PlayMusic from './src/screens/PlayMusic'
 import CategoryMusic from './src/screens/CategoryMusic'
+import { imagePath } from './src/utils/imagePath';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator()
 
@@ -76,7 +77,7 @@ function TabNavigator() {
       )}
       screenOptions={({ route }) => ({
         tabBarLabel: '',
-        tabBarIcon: ({ focused, color, }) => {
+        tabBarIcon: ({ focused, color, tintColor }) => {
           let iconName;
           let Iconsize;
           let type;
@@ -99,10 +100,18 @@ function TabNavigator() {
             sub = focused ? true : false
           }
           else if (route.name === ROUTE_KEY.ProfileUserScreen) {
-            iconName = 'user'
-            Iconsize = focused ? FS(27) : FS(20)
-            type = 'feather'
-            sub = focused ? true : false
+            // iconName = 'user'
+            // Iconsize = focused ? FS(27) : FS(20)
+            // type = 'feather'
+            // sub = focused ? true : false
+            return (<Image
+              source={imagePath.Logo}
+              style={{
+                tintColor: tintColor,
+                height: focused ? 20 * HEIGHT_SCALE_RATIO : 17 * HEIGHT_SCALE_RATIO,
+                width: focused ? 22 * HEIGHT_SCALE_RATIO : 20 * HEIGHT_SCALE_RATIO
+              }}
+            />)
           }
           return <Icon style={{
             // borderTopWidth: sub === true ? 3 : 0, borderColor: sub === true ? ptColor.white : '',

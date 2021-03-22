@@ -7,11 +7,14 @@ import { connect } from 'react-redux';
 import MyTouchableOpacity from '../components/MyTouchableOpacity';
 import { ROUTE_KEY } from '../utils/contains';
 import { imagePath } from '../utils/imagePath';
-import { FS, HEIGHT, HEIGHT_SCALE_RATIO, ptColor, WIDTH_SCALE_RATIO } from '../utils/styles';
+import { FS, HEIGHT, HEIGHT_SCALE_RATIO, ptColor, WIDTH, WIDTH_SCALE_RATIO } from '../utils/styles';
 import { LoginUser, resetLoginUser, logOut } from '../states/ducks/user/action'
 import MySpinner from '../components/MySpinner';
 export interface LoginScreenProps {
-    navigation?: any
+    navigation?: any,
+    resetLoginUser?: any,
+    LoginUser?: any,
+    logOut?: any
 }
 
 class LoginScreen extends React.Component<LoginScreenProps, any> {
@@ -77,7 +80,7 @@ class LoginScreen extends React.Component<LoginScreenProps, any> {
                 duration: 4000,
                 type: 'danger',
             });
-            this.props.logOut()
+            // this.props.logOut()
         }
     }
     componentDidMount() {
@@ -86,171 +89,167 @@ class LoginScreen extends React.Component<LoginScreenProps, any> {
     render() {
         const { isShowPassword } = this.state
         return (
-
-            <ImageBackground
-                resizeMode='cover'
+            <KeyboardAvoidingView
                 style={{
-                    height: HEIGHT,
-                    bottom: 0
-                }}
-                source={imagePath.bg_music}
-            >
-                <View
-                    style={{
-                        height: '100%',
-                        width: '100%',
-                        backgroundColor: ptColor.black,
-                        opacity: 0.7,
+                    flex: 1,
+                    flexDirection: 'column',
+                    backgroundColor: ptColor.black,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                }}>
+                <View style={{
+                    flex: 1,
+                    height: '100%',
+                    width: '90%',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                }}>
 
+                    <View style={{
+                        height: 80 * HEIGHT_SCALE_RATIO,
+                        width: 250 * WIDTH_SCALE_RATIO,
+                        marginVertical: 50 * HEIGHT_SCALE_RATIO
                     }}>
-                    <KeyboardAvoidingView
-                        style={{
-                            flex: 1,
-                            height: '100%',
-                            width: '100%',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                        }}
-                    >
-                        <View style={{
-                            flex: 1,
-                            height: '100%',
-                            width: '80%',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                        }}>
-                            <Image source={imagePath.music}
-                                style={{
-                                    height: 100 * HEIGHT_SCALE_RATIO,
-                                    width: 100 * WIDTH_SCALE_RATIO,
-                                    borderRadius: 20,
-                                    tintColor: ptColor.greenSuccess
-                                }} />
-                            <View style={{
-                                height: 0.07 * HEIGHT,
+                        <Image
+                            resizeMode='stretch'
+                            source={imagePath.LogoOther}
+                            style={{
+                                height: '100%',
                                 width: '100%',
-                                borderRadius: 10,
-                                backgroundColor: ptColor.white,
-                                marginVertical: 10,
-                                opacity: 0.8
-                            }}>
-                                <Input
-                                    style={{
-                                        width: '100%',
-                                        margin: 10,
-                                    }}
-                                    onChangeText={(text) => this.setState({
-                                        numberPhone: text
-                                    })}
-                                    inputContainerStyle={{
-                                        borderBottomWidth: 0,
-                                    }}
-                                    underlineColorAndroid="transparent"
-                                    placeholder='Nhập số điện thoại'
-                                    keyboardType="phone-pad"
-                                    rightIcon={
-                                        <Icon
-                                            name='phone'
-                                            size={24}
-                                            color={ptColor.greenSuccess}
-                                            type='feather'
-                                        />
-                                    }
-                                ></Input>
-                            </View>
-                            <View style={{
-                                height: 0.07 * HEIGHT,
-                                width: '100%',
-                                borderRadius: 10,
-                                backgroundColor: ptColor.white,
-                                marginVertical: 10,
-                                opacity: 0.8,
-                                marginBottom: 20
-                            }}>
-                                <Input
-                                    style={{
-                                        width: '100%',
-                                        margin: 10
-                                    }}
-                                    onChangeText={(text) => this.setState({
-                                        passWord: text
-                                    })}
-                                    inputContainerStyle={{
-                                        borderBottomWidth: 0,
-                                    }}
-                                    underlineColorAndroid="transparent"
-                                    placeholder='Nhập mật khẩu'
-                                    secureTextEntry={!isShowPassword}
-                                    rightIcon={
-                                        <Icon
-                                            name={isShowPassword ? 'eye-off' : 'eye'}
-                                            size={24}
-                                            color={ptColor.greenSuccess}
-                                            type='feather'
-                                            onPress={() => this.showPass()}
-                                        />
-                                    }
-                                ></Input>
-                            </View>
-                            <PButton title='ĐĂNG NHẬP'
-                                buttonStyle={{
-                                    backgroundColor: ptColor.greenSuccess,
-                                }}
-                                containerStyle={{
-                                    width: '100%'
-                                }}
-                                onPress={() => this.loginUser()}></PButton>
-                            <Text style={{
-                                color: ptColor.white,
-                                textAlign: 'center',
-                                marginTop: 10,
-                                fontSize: FS(12)
-                            }}>Nếu bạn chưa có tài khoản? <Text onPress={() => this.props.navigation.push(ROUTE_KEY.RegisterScreen)} style={{
-                                color: ptColor.greenSuccess,
-                                fontSize: FS(12)
-                            }}>Đăng kí</Text></Text>
-                            <Text style={{
-                                textAlign: 'center',
-                                color: ptColor.white,
-                                paddingVertical: 10,
 
-                            }}>Hoặc</Text>
-                            <View style={{
+                            }} />
+                    </View>
+                    <View style={{
+                        height: 0.06 * HEIGHT,
+                        width: '100%',
+                        borderRadius: 10,
+                        backgroundColor: ptColor.gray5,
+                        marginVertical: 10 * HEIGHT_SCALE_RATIO
+                    }}>
+                        <Input
+                            containerStyle={{
+                                height: '100%',
                                 width: '100%',
-                                flexDirection: 'row',
+                            }}
+                            onChangeText={(text) => this.setState({
+                                numberPhone: text
+                            })}
+                            inputContainerStyle={{
+                                borderBottomWidth: 0,
+                            }}
+                            inputStyle={{
                                 justifyContent: 'center',
-                                marginTop: 20
-                            }}>
-                                <MyTouchableOpacity
-                                    onPress={() => console.log('oke')}
-                                    style={{
-                                        zIndex: 5
-                                    }}
-                                >
-                                    <Image source={imagePath.ic_facebook}
-                                        style={{
-                                            marginHorizontal: 20 * WIDTH_SCALE_RATIO,
-                                            height: 50,
-                                            width: 50
-                                        }}></Image>
-                                </MyTouchableOpacity>
-                                <Image source={imagePath.ic_google}
-                                    style={{
-                                        marginHorizontal: 20 * WIDTH_SCALE_RATIO,
-                                        height: 50,
-                                        width: 50
-                                    }}></Image>
-                                <Image source={imagePath.ic_zalo}
-                                    style={{
-                                        marginHorizontal: 20 * WIDTH_SCALE_RATIO,
-                                        height: 50,
-                                        width: 50
-                                    }}></Image>
-                            </View>
-                        </View>
-                    </KeyboardAvoidingView>
+                                color:ptColor.white
+                            }}
+                            underlineColorAndroid="transparent"
+                            placeholder='Nhập số điện thoại'
+                            placeholderTextColor={ptColor.white}
+                            keyboardType="phone-pad"
+                            rightIcon={
+                                <Icon
+                                    name='phone'
+                                    size={24}
+                                    color={ptColor.greenSuccess}
+                                    type='feather'
+                                />
+                            }
+                        ></Input>
+                    </View>
+                    <View style={{
+                        height: 0.06 * HEIGHT,
+                        width: '100%',
+                        borderRadius: 10,
+                        backgroundColor: ptColor.gray5,
+                        marginVertical: 10 * HEIGHT_SCALE_RATIO
+                    }}>
+                        <Input
+                            containerStyle={{
+                                height: '100%',
+                                width: '100%',
+                            }}
+                            onChangeText={(text) => this.setState({
+                                passWord: text
+                            })}
+                            inputContainerStyle={{
+                                borderBottomWidth: 0,
+                            }}
+                            inputStyle={{
+                                justifyContent: 'center',
+                                color: ptColor.white
+                            }}
+                            underlineColorAndroid="transparent"
+                            placeholder='Nhập mật khẩu'
+                            secureTextEntry={!isShowPassword}
+                            placeholderTextColor={ptColor.white}
+                            rightIcon={
+                                <Icon
+                                    name={isShowPassword ? 'eye-off' : 'eye'}
+                                    size={24}
+                                    color={ptColor.greenSuccess}
+                                    type='feather'
+                                    onPress={() => this.showPass()}
+                                />
+                            }
+                        ></Input>
+                    </View>
+                    <PButton title='ĐĂNG NHẬP'
+                        buttonStyle={{
+                            backgroundColor: ptColor.greenSuccess,
+                        }}
+                        containerStyle={{
+                            width: '100%',
+                            marginTop: 20 * HEIGHT_SCALE_RATIO
+                        }}
+                        onPress={() => this.loginUser()}></PButton>
+                    <Text style={{
+                        color: ptColor.white,
+                        textAlign: 'center',
+                        marginVertical: 20 * HEIGHT_SCALE_RATIO,
+                        fontSize: FS(12)
+                    }}>Nếu bạn chưa có tài khoản? <Text onPress={() => this.props.navigation.push(ROUTE_KEY.RegisterScreen)} style={{
+                        color: ptColor.greenSuccess,
+                        fontSize: FS(12)
+                    }}>Đăng kí</Text></Text>
+                    <Text style={{
+                        textAlign: 'center',
+                        color: ptColor.white,
+                        paddingVertical: 10,
+
+                    }}>Hoặc</Text>
+                    <View style={{
+                        width: '100%',
+                        flexDirection: 'row',
+                        justifyContent: 'center',
+                        marginTop: 20 * HEIGHT_SCALE_RATIO
+                    }}>
+                        <MyTouchableOpacity
+                            onPress={() => console.log('oke')}
+                            style={{
+                                zIndex: 5
+                            }}
+                        >
+                            <Image source={imagePath.ic_facebook}
+                                style={{
+                                    marginHorizontal: 20 * WIDTH_SCALE_RATIO,
+                                    height: 50,
+                                    width: 50
+                                }}></Image>
+                        </MyTouchableOpacity>
+                        <Image source={imagePath.ic_google}
+                            style={{
+                                marginHorizontal: 20 * WIDTH_SCALE_RATIO,
+                                height: 50,
+                                width: 50
+                            }}></Image>
+                        <Image source={imagePath.ic_zalo}
+                            style={{
+                                marginHorizontal: 20 * WIDTH_SCALE_RATIO,
+                                height: 50,
+                                width: 50
+                            }}></Image>
+                    </View>
                 </View>
-            </ImageBackground>
+            </KeyboardAvoidingView>
         );
     }
 }

@@ -38,7 +38,23 @@ const VietChoNhungDieu = require('../assets/music/VietChoNhungDieuDaCu-CuBa-6846
 const like = require('../assets/image/like.png')
 const headphone = require('../assets/image/headphones.png')
 const sun = require('../assets/image/sun.png')
+const App_icon = require('../assets/image/messica/App Icon.jpg')
+const FlashScreen = require('../assets/image/messica/FlashScreen.png')
+const Logo = require('../assets/image/messica/Logo_png.png')
+const Logo_White = require('../assets/image/messica/Logo_White_png.png')
+const Logo01 = require('../assets/image/messica/Logo_png.png')
+const LogoOther = require('../assets/image/messica/LogoOther_png.png')
+const LogoOther_white = require('../assets/image/messica/LogoOther_White_png.png')
+const LogoOther01 = require('../assets/image/messica/LogoOther.png')
 export const imagePath = {
+    App_icon,
+    FlashScreen,
+    Logo,
+    Logo_White,
+    Logo01,
+    LogoOther,
+    LogoOther_white,
+    LogoOther01,
     headphone,
     sun,
     like,

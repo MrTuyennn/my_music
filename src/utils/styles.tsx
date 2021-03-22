@@ -50,6 +50,7 @@ export const ptColor = {
   gray6: '#F2F2F2',
   gray2: '#DCDCDC',
   gray3: '#B8B8B8',
+  gray5:'#474545',
   appColor: '#0A8FD8',
   appColor2: '#FFE2D1',
   textColor: '#032E42',
