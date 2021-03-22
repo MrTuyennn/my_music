@@ -19,7 +19,7 @@ class CategoryMusic extends React.Component<CategoryMusicProps, any> {
     render() {
         const { navigation } = this.props
         return (
-            <LinearGradient colors={['#000000', '#006633', '#009999', '#00FFCC']} style={{
+            <LinearGradient colors={['#000000', '#000000', '#000000', '#000000']} style={{
                 flex: 1,
                 paddingHorizontal: 10 * WIDTH_SCALE_RATIO,
             }}>

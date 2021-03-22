@@ -42,13 +42,13 @@ const HomeScreen = (props: Props,) => {
     const renderItemData = ({ item }) => {
         return <View style={{
             alignItems: 'center',
-            marginHorizontal: 24 * WIDTH_SCALE_RATIO
+            marginHorizontal: 2 * WIDTH_SCALE_RATIO
         }}>
             <MyTouchableOpacity
                 onPress={() => funC(item)}
                 style={{
-                    height: 50 * HEIGHT_SCALE_RATIO,
-                    width: 50 * WIDTH_SCALE_RATIO,
+                    height: 60 * HEIGHT_SCALE_RATIO,
+                    width: 90 * WIDTH_SCALE_RATIO,
                     borderRadius: 20,
                     backgroundColor: ptColor.greenSuccess,
                     justifyContent: 'center',
@@ -60,7 +60,7 @@ const HomeScreen = (props: Props,) => {
                     width: 25 * WIDTH_SCALE_RATIO,
                 }} source={item?.image} />
             </MyTouchableOpacity>
-            <Text style={[style.textCaption, { fontSize: FS(9), color: ptColor.white }]}>{item?.title}</Text>
+            <Text style={[style.textCaption, { fontSize: FS(9), color: ptColor.white, flex: 1 }]}>{item?.title}</Text>
         </View>
     }
 
@@ -100,16 +100,19 @@ const HomeScreen = (props: Props,) => {
 
             <Text style={{
                 flex: 1,
-                color: ptColor.white
+                color: ptColor.white,
+                fontFamily: 'bold',
+                fontSize: FS(10)
             }}>{item?.title}</Text>
         </View>
     }
     return (
         <ScrollView >
-            <LinearGradient colors={['#000000', '#006633', '#009999', '#00FFCC']} style={{
-                flex: 1,
-                paddingHorizontal: 10 * WIDTH_SCALE_RATIO,
-            }}>
+            <LinearGradient
+                colors={['#000000', '#000000', '#000000', '#000000']} style={{
+                    flex: 1,
+                    paddingHorizontal: 10 * WIDTH_SCALE_RATIO,
+                }}>
                 <View style={{
                     flexDirection: 'row',
                 }}>
@@ -190,10 +193,10 @@ const HomeScreen = (props: Props,) => {
 
                         }}
                         dot={
-                            <View style={{ backgroundColor: ptColor.blue, width: 8, height: 8, borderRadius: 4, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3, }} />
+                            <View style={{ backgroundColor: ptColor.white, width: 8, height: 8, borderRadius: 4, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3, }} />
                         }
                         activeDot={
-                            <View style={{ backgroundColor: ptColor.blue, width: 15, height: 8, borderRadius: 4, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3, }} />
+                            <View style={{ backgroundColor: ptColor.white, width: 15, height: 8, borderRadius: 4, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3, }} />
 
                         }
                         showsButtons={false}
@@ -221,11 +224,13 @@ const HomeScreen = (props: Props,) => {
                 </View>
                 <View style={{
                     flexDirection: 'row',
-                    alignItems: 'center'
+                    alignItems: 'center',
+                    marginTop: 20 * HEIGHT_SCALE_RATIO
                 }}>
                     <Text style={[style.textCaption, {
                         color: ptColor.white,
-                        fontWeight: 'bold'
+                        fontWeight: 'bold',
+                        fontSize: FS(20)
                     }]}>Có thể bạn muốn nghe</Text>
                     <Icon
                         name="chevron-right"
@@ -242,11 +247,13 @@ const HomeScreen = (props: Props,) => {
                 </View>
                 <View style={{
                     flexDirection: 'row',
-                    alignItems: 'center'
+                    alignItems: 'center',
+                    marginTop: 20 * HEIGHT_SCALE_RATIO
                 }}>
                     <Text style={[style.textCaption, {
                         color: ptColor.white,
-                        fontWeight: 'bold'
+                        fontWeight: 'bold',
+                        fontSize: FS(15)
                     }]}>Nhạc Việt</Text>
                     <Icon
                         name="chevron-right"
@@ -263,11 +270,13 @@ const HomeScreen = (props: Props,) => {
                 </View>
                 <View style={{
                     flexDirection: 'row',
-                    alignItems: 'center'
+                    alignItems: 'center',
+                    marginTop: 20 * HEIGHT_SCALE_RATIO
                 }}>
                     <Text style={[style.textCaption, {
                         color: ptColor.white,
-                        fontWeight: 'bold'
+                        fontWeight: 'bold',
+                        fontSize: FS(15)
                     }]}>Nhạc Âu Mỹ</Text>
                     <Icon
                         name="chevron-right"

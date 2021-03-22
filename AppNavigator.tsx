@@ -82,18 +82,18 @@ function TabNavigator() {
           let type;
           let sub;
           if (route.name === ROUTE_KEY.HomeScreen) {
-            iconName = 'headphones'
+            iconName = 'home'
             Iconsize = focused ? FS(27) : FS(20)
             type = 'feather'
             sub = focused ? true : false
           } else if (route.name === ROUTE_KEY.OderScreen) {
-            iconName = 'heart'
+            iconName = 'search'
             Iconsize = focused ? FS(27) : FS(20)
             type = 'feather'
             sub = focused ? true : false
           }
           else if (route.name === ROUTE_KEY.HistoryScreen) {
-            iconName = 'music'
+            iconName = 'layout'
             Iconsize = focused ? FS(27) : FS(20)
             type = 'feather'
             sub = focused ? true : false
@@ -112,21 +112,30 @@ function TabNavigator() {
 
       })}
       tabBarOptions={{
-        activeTintColor: ptColor.greenSuccess,
-        inactiveTintColor: ptColor.white,
+        activeTintColor: ptColor.white,
+        inactiveTintColor: ptColor.gray2,
         style: {
           alignItems: 'center',
           justifyContent: 'center',
           padding: FS(10),
-          backgroundColor: ptColor.black,
+          backgroundColor: ptColor.colorTabar,
           height: 60
         },
       }}
     >
-      <Tab.Screen name={ROUTE_KEY.HomeScreen} component={HomeScreen} />
-      <Tab.Screen name={ROUTE_KEY.OderScreen} component={OderScreen} />
-      <Tab.Screen name={ROUTE_KEY.HistoryScreen} component={HistoryScreen} />
-      <Tab.Screen name={ROUTE_KEY.ProfileUserScreen} component={ProfileUserScreen} />
+      <Tab.Screen options={{
+        tabBarLabel: 'Trang chủ'
+      }} name={ROUTE_KEY.HomeScreen} component={HomeScreen} />
+      <Tab.Screen options={{
+        tabBarLabel: 'Tìm kiếm'
+      }} name={ROUTE_KEY.OderScreen} component={OderScreen} />
+      <Tab.Screen
+        options={{
+          tabBarLabel: 'Thư viện'
+        }} name={ROUTE_KEY.HistoryScreen} component={HistoryScreen} />
+      <Tab.Screen options={{
+        tabBarLabel: 'Tài khoản'
+      }} name={ROUTE_KEY.ProfileUserScreen} component={ProfileUserScreen} />
     </Tab.Navigator>
   )
 }

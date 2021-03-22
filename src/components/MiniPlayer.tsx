@@ -20,7 +20,7 @@ const MiniPlayer = (props: Props) => {
         console.log('playerContext', JSON.stringify(playerContext, null, 2))
         return (
             <LinearGradient
-                colors={['#006633', '#009999', '#00FFCC']} style={{
+                colors={['#282828', '#282828', '#282828']} style={{
                     height: 60 * HEIGHT_SCALE_RATIO,
                     width: WIDTH,
                     backgroundColor: ptColor.white,

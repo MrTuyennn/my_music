@@ -40,8 +40,16 @@ const ProfileUser = (props: Props) => {
                         break;
                 }
             }}>
-            <View style={[style.border, { height: 120 * HEIGHT_SCALE_RATIO, width: 120 * WIDTH_SCALE_RATIO, borderColor: ptColor.white, justifyContent: 'center', alignItems: 'center' }]}>
-                <Image style={{ height: 50, width: 50, tintColor: ptColor.white }} source={item.icon}></Image>
+            <View style={[style.border,
+            {
+                height: 120 * HEIGHT_SCALE_RATIO,
+                width: 120 * WIDTH_SCALE_RATIO,
+                // borderColor: ptColor.white,
+                justifyContent: 'center',
+                alignItems: 'center',
+                backgroundColor:ptColor.greenSuccess
+            }]}>
+                <Image style={{ height: 50, width: 50, tintColor: ptColor.white, }} source={item.icon}></Image>
                 <Text
                     style={[
                         style.textCaption,
@@ -68,7 +76,7 @@ const ProfileUser = (props: Props) => {
 
 
     return (
-        <LinearGradient colors={['#000000', '#006633', '#009999', '#00FFCC']} style={{
+        <LinearGradient colors={['#000000', '#000000', '#000000', '#000000']} style={{
             flex: 3,
             paddingHorizontal: 10 * WIDTH_SCALE_RATIO,
         }}>
@@ -90,8 +98,8 @@ const ProfileUser = (props: Props) => {
                     // backgroundColor: ptColor.black
                 }}>
                     <Image style={{
-                        height: 100 * HEIGHT_SCALE_RATIO,
-                        width: 100 * WIDTH_SCALE_RATIO,
+                        height: 70 * HEIGHT_SCALE_RATIO,
+                        width: 70 * WIDTH_SCALE_RATIO,
                         borderRadius: 50 * WIDTH_SCALE_RATIO,
                         borderWidth: 1.5 * HEIGHT_SCALE_RATIO,
                         borderColor: ptColor.white,
@@ -172,10 +180,10 @@ const ProfileUser = (props: Props) => {
                                     alignItems: 'center'
                                 }}>
                                     <Image style={{
-                                        height: 31 * HEIGHT_SCALE_RATIO,
-                                        width: 33 * WIDTH_SCALE_RATIO,
+                                        height: 25 * HEIGHT_SCALE_RATIO,
+                                        width: 26 * WIDTH_SCALE_RATIO,
                                         margin: 10 * HEIGHT_SCALE_RATIO,
-                                        tintColor:ptColor.white
+                                        tintColor: ptColor.white
                                     }} source={result?.icon}></Image>
                                     <Text style={[
                                         style.textCaption,

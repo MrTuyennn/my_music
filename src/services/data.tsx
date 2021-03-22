@@ -45,7 +45,7 @@ export const funcData = [
     {
         type: 3,
         image: imagePath.video,
-        title: 'MV thịnh\n hành'
+        title: 'MV hot'
     },
 ]
 

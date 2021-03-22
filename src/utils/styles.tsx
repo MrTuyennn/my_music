@@ -61,6 +61,8 @@ export const ptColor = {
   white: '#ffffff',
   noWhite: '#f5f5f5',
   transparent: 'transparent',
+  greyTab: '#b2b2b2',
+  colorTabar:'#282828',
   lineGradientBlue: ['#F44336', '#F44336'],
 };
 
@@ -248,7 +250,7 @@ export const style = {
     ...ptText.H0,
     fontFamily: ptFont.BOLD,
     color: ptColor.textColor,
-    paddingBottom : 10
+    paddingBottom: 10
   },
   textTitle: {
     ...ptText.H3,
