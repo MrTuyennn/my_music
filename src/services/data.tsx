@@ -120,3 +120,78 @@ export const ListMusic = [
         artwork: imagePath.mtp09
     },
 ]
+
+export const dataCate = [
+    {
+        title: 'Nhạc Việt',
+        imageCate: imagePath.imgMusic01
+    },
+    {
+        title: 'Podcasts',
+        imageCate: imagePath.imgMusic01
+    },
+    {
+        title: 'K-Pop',
+        imageCate: imagePath.imgMusic01
+    },
+    {
+        title: 'Thư giãn',
+        imageCate: imagePath.imgMusic01
+    },
+    {
+        title: 'Không gian lãng mạng',
+        imageCate: imagePath.imgMusic01
+    },
+    {
+        title: 'Hip Hop',
+        imageCate: imagePath.imgMusic01
+    },
+    {
+        title: 'Nhạc Dance/Điện tử',
+        imageCate: imagePath.imgMusic01
+    },
+    {
+        title: 'Tâm Trạng',
+        imageCate: imagePath.imgMusic01
+    },
+    {
+        title: 'Ở nhà',
+        imageCate: imagePath.imgMusic01
+    },
+    {
+        title: 'Ngủ ngon',
+        imageCate: imagePath.imgMusic01
+    },
+    {
+        title: 'Nhạc không lời',
+        imageCate: imagePath.imgMusic01
+    },
+    {
+        title: 'Tập Trung',
+        imageCate: imagePath.imgMusic01
+    },
+    {
+        title: 'Tập Luyện',
+        imageCate: imagePath.imgMusic01
+    },
+    {
+        title: 'Sức khỏe',
+        imageCate: imagePath.imgMusic01
+    },
+    {
+        title: 'Tiệc Tùng',
+        imageCate: imagePath.imgMusic01
+    },
+    {
+        title: 'Thịnh Hành',
+        imageCate: imagePath.imgMusic01
+    },
+    {
+        title: 'Thập Niên',
+        imageCate: imagePath.imgMusic01
+    },
+    {
+        title: 'Chơi game',
+        imageCate: imagePath.imgMusic01
+    },
+]

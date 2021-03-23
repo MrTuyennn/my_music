@@ -137,11 +137,11 @@ function TabNavigator() {
       }} name={ROUTE_KEY.HomeScreen} component={HomeScreen} />
       <Tab.Screen options={{
         tabBarLabel: 'Tìm kiếm'
-      }} name={ROUTE_KEY.OderScreen} component={OderScreen} />
+      }} name={ROUTE_KEY.OderScreen} component={HistoryScreen} />
       <Tab.Screen
         options={{
           tabBarLabel: 'Thư viện'
-        }} name={ROUTE_KEY.HistoryScreen} component={HistoryScreen} />
+        }} name={ROUTE_KEY.HistoryScreen} component={OderScreen} />
       <Tab.Screen options={{
         tabBarLabel: 'Tài khoản'
       }} name={ROUTE_KEY.ProfileUserScreen} component={ProfileUserScreen} />

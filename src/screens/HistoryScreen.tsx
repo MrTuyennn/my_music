@@ -1,15 +1,136 @@
+import { useNavigation } from '@react-navigation/native'
+import MyTouchableOpacity from '../components/MyTouchableOpacity'
 import React from 'react'
-import { View, Text } from 'react-native'
+import { Image, Text, View } from 'react-native'
+import { Icon, Input } from 'react-native-elements'
+import LinearGradient from 'react-native-linear-gradient'
+import { ROUTE_KEY } from '../utils/contains'
+import { imagePath } from '../utils/imagePath'
+import { FS, HEIGHT_SCALE_RATIO, ptColor, style, WIDTH_SCALE_RATIO } from '../utils/styles'
+import PFlatList from '../components/PFlatList'
+import { dataCate } from '../services/data'
 
 interface Props {
-    
+
 }
 
 const HistoryScreen = (props: Props) => {
+    const navigation = useNavigation()
+
+    const renderitem = ({ item }) => {
+        return (
+            <View style={{
+                height: 100 * HEIGHT_SCALE_RATIO,
+                width: 180 * WIDTH_SCALE_RATIO,
+                margin: 5 * HEIGHT_SCALE_RATIO
+            }}>
+                <Image
+                    resizeMode='cover'
+                    style={{
+                        height: '100%',
+                        width: '100%'
+                    }}
+                    source={item?.imageCate}></Image>
+                <LinearGradient colors={['rgba(225, 225, 225, 0.03)', 'rgba(0, 0, 0, 0.8)']}
+                    start={{ x: 1, y: 0 }}
+                    end={{ x: 1, y: 1 }}
+                    style={{
+                        position: 'absolute',
+                        bottom: -1,
+                        width: '100%',
+                        height: 40 * HEIGHT_SCALE_RATIO,
+                    }}>
+                    <Text style={[style.textCaption, {
+                        color: ptColor.white,
+                        textAlign: 'center',
+                        flex: 1,
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        top: 10 * HEIGHT_SCALE_RATIO
+                    }]}>{item?.title}</Text>
+                </LinearGradient>
+            </View>
+
+
+        )
+    }
     return (
-        <View>
-            <Text>Màn hình history</Text>
-        </View>
+        <LinearGradient colors={['#000000', '#000000', '#000000', '#000000']} style={{
+            flex: 1,
+            paddingHorizontal: 10 * WIDTH_SCALE_RATIO,
+        }}>
+            <View style={{
+                flexDirection: 'row',
+            }}>
+                <MyTouchableOpacity
+                    onPress={() => navigation.navigate(ROUTE_KEY.ProfileUserScreen)}
+                    style={{
+                        flex: 0.5,
+                        height: 40 * HEIGHT_SCALE_RATIO,
+                        width: 60 * WIDTH_SCALE_RATIO,
+                        marginTop: 15 * HEIGHT_SCALE_RATIO,
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                    }}>
+                    <Image
+                        style={{
+                            tintColor: ptColor.white,
+                            height: '60%',
+                            width: '130%',
+                        }} source={imagePath.profile_user} />
+                </MyTouchableOpacity>
+                <View style={{
+                    marginTop: 15 * HEIGHT_SCALE_RATIO,
+                    flex: 9
+                }}>
+                    <Input
+                        placeholder="Bài hát, playlist, nghệ sĩ ..."
+                        placeholderTextColor={ptColor.textPlaceholderColor}
+                        inputContainerStyle={{
+                            borderRadius: 30,
+                            borderColor: ptColor.blue,
+                            borderWidth: 1,
+                            height: 35 * HEIGHT_SCALE_RATIO,
+                            backgroundColor: ptColor.white,
+                        }}
+                        inputStyle={[style.textCaption, {
+                            fontSize: FS(12),
+                            height: 40 * HEIGHT_SCALE_RATIO,
+
+                        }]}
+                        containerStyle={{
+                            height: 40 * HEIGHT_SCALE_RATIO,
+                        }}
+                        leftIcon={
+                            <Icon
+                                style={{ marginHorizontal: 10 }}
+                                name="search"
+                                size={18 * HEIGHT_SCALE_RATIO}
+                                color={ptColor.textPlaceholderColor}
+                                type="feather"
+                            />
+                        }
+                        rightIcon={
+                            <Icon
+                                style={{ marginHorizontal: 10 }}
+                                name="mic"
+                                size={18 * HEIGHT_SCALE_RATIO}
+                                color={ptColor.textPlaceholderColor}
+                                type="feather"
+                            />
+                        }
+                    />
+                </View>
+            </View>
+            <PFlatList
+                // contentContainerStyle={{
+                //     padding: 10 * HEIGHT_SCALE_RATIO
+                // }}
+                numColumns={2}
+                data={dataCate || []}
+                renderItem={renderitem}
+            ></PFlatList>
+        </LinearGradient>
     )
 }
 
