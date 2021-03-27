@@ -1,4 +1,5 @@
 import {
+  FS,
   HEIGHT,
   HEIGHT_SCALE_RATIO,
   ptColor,
@@ -96,7 +97,6 @@ export default class ModalAlert extends React.PureComponent {
         swipeDirection={undefined}
         isVisible={ModalAlert?.instance?.state?.visible || false}
         onRequestClose={() => ModalAlert.hide()}
-        //onBackdropPress={() => ModalAlert.hide()}
         onSwipeComplete={() => ModalAlert.hide()}
         style={{
           margin: 0,
@@ -105,9 +105,9 @@ export default class ModalAlert extends React.PureComponent {
       >
         <View
           style={{
-            maxWidth: WIDTH * 0.9,
+            maxWidth: WIDTH * 0.8,
             backgroundColor: 'white',
-            padding: 24 * WIDTH_SCALE_RATIO,
+            padding: 10 * WIDTH_SCALE_RATIO,
             paddingBottom: 0,
             alignItems: 'center',
             alignSelf: 'center',
@@ -115,8 +115,8 @@ export default class ModalAlert extends React.PureComponent {
           }}
         >
           {!!title && (
-            <Text style={[style.textTitle, { textTransform: 'uppercase' }]}>
-              {title || 'Thông báo'}
+            <Text style={[style.textCaption, { textTransform: 'uppercase',color:ptColor.black,fontSize:FS(12) }]}>
+              {title || 'Thông báo'} 
             </Text>
           )}
           {image && (
@@ -154,10 +154,12 @@ export default class ModalAlert extends React.PureComponent {
           {!!detail && (
             <Text
               style={[
-                style.text,
+                style.textCaption,
                 {
-                  paddingVertical: 32 * HEIGHT_SCALE_RATIO,
+                  paddingVertical: 10 * HEIGHT_SCALE_RATIO,
                   paddingTop: image ? 0 : 28 * HEIGHT_SCALE_RATIO,
+                  color:ptColor.black,
+                  textAlign:'center'
                 },
               ]}
             >
@@ -177,7 +179,7 @@ export default class ModalAlert extends React.PureComponent {
               width: WIDTH * 0.9 - 24 * WIDTH_SCALE_RATIO,
               justifyContent: 'center',
               alignItems: 'center',
-              height: 60 * HEIGHT_SCALE_RATIO,
+              height: 50 * HEIGHT_SCALE_RATIO,
             }}
           >
             <PTouchableOpacity
@@ -191,7 +193,7 @@ export default class ModalAlert extends React.PureComponent {
             >
               <Text
                 style={[
-                  style.textButton,
+                  style.textCaption,
                   {
                     textTransform: 'none',
                     color: button2 ? ptColor.textSubColor : ptColor.appColor,
@@ -223,8 +225,8 @@ export default class ModalAlert extends React.PureComponent {
               >
                 <Text
                   style={[
-                    style.textButton,
-                    { textTransform: 'none', color: ptColor.appColor },
+                    style.textCaption,
+                    { textTransform: 'none', color: ptColor.greenSuccess },
                   ]}
                 >
                   {button2 || 'Đồng ý'}

@@ -5,9 +5,12 @@ export const Data = [
     { icon: imagePath.headphone, title: 'Nghe gì\n hôm nay', type: 2 },
     { icon: imagePath.sun, title: 'Có thể\n bạn biết', type: 3 },]
 export const DataItem = [
-    { icon: imagePath.ic_conversation, title: 'Điều khoản', type: 1 },
-    { icon: imagePath.ic_conversation, title: 'Giới thiệu', type: 2 },
-    { icon: imagePath.ic_logout, title: 'Đăng xuất', type: 3 },
+    { icon: imagePath.ic_conversation, title: 'Trợ giúp', type: 1 },
+    { icon: imagePath.ic_conversation, title: 'Góp ý, báo lỗi', type: 2 },
+    { icon: imagePath.ic_conversation, title: 'Đánh giá ứng dụng', type: 3 },
+    { icon: imagePath.ic_conversation, title: 'Điều khoản dịch vụ', type: 4 },
+    { icon: imagePath.ic_conversation, title: 'Chính sách bảo mật', type: 5 },
+    { icon: imagePath.ic_logout, title: 'Đăng xuất', type:  6},
 ]
 export const dataSwipper = [
     {

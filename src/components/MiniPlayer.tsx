@@ -7,14 +7,17 @@ import { imagePath } from '../utils/imagePath';
 import LinearGradient from 'react-native-linear-gradient';
 import { usePlayerContext } from '../contexts/PlayerContext'
 import RNTrackPlayer, { STATE_PLAYING, STATE_PAUSED } from 'react-native-track-player';
+import ModalPlayMusic from './ModalPlayMusic';
 interface Props {
-
+    isModal?: any
 }
 
 const MiniPlayer = (props: Props) => {
     const playerContext = usePlayerContext();
     const [trackObject, settrackObject] = useState({})
     const [delay, setdelay] = useState(0)
+    const isModal = React.createRef()
+
 
     if (playerContext.isEmpty || playerContext?.currentTrack) {
         console.log('playerContext', JSON.stringify(playerContext, null, 2))
@@ -29,9 +32,11 @@ const MiniPlayer = (props: Props) => {
                     alignItems: 'center',
                     justifyContent: 'space-between'
                 }}>
-                <View style={{
-                    flexDirection: 'row',
-                }}>
+                <MyTouchableOpacity
+                    onPress={() => isModal.current?.show()}
+                    style={{
+                        flexDirection: 'row',
+                    }}>
                     <Image source={{ uri: playerContext?.currentTrack?.artwork?.uri || 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.iconfinder.com%2Ficons%2F5584525%2Fapple_apple_music_music_shubhambhatia_thevectorframe_icon&psig=AOvVaw0pXiK7z-rwtwnG6mncwwpr&ust=1615998368118000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMCG7Jmdte8CFQAAAAAdAAAAABAP' }} style={{
                         height: 45 * HEIGHT_SCALE_RATIO,
                         width: 45 * WIDTH_SCALE_RATIO,
@@ -52,7 +57,7 @@ const MiniPlayer = (props: Props) => {
                             marginLeft: 10 * HEIGHT_SCALE_RATIO
                         }]}>{playerContext?.currentTrack?.artist}</Text>
                     </View>
-                </View>
+                </MyTouchableOpacity>
                 <MyTouchableOpacity onPress={() => playerContext.isPlaying ? playerContext.pause() : RNTrackPlayer.play()}>
                     <Icon
                         name={playerContext.isPlaying ? 'pause' : 'play'}
@@ -60,6 +65,7 @@ const MiniPlayer = (props: Props) => {
                         color={ptColor.white}
                     />
                 </MyTouchableOpacity>
+                <ModalPlayMusic ref={isModal}></ModalPlayMusic>
             </LinearGradient>
         )
     } else {

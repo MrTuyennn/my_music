@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import MyTouchableOpacity from '../components/MyTouchableOpacity';
 import { ROUTE_KEY } from '../utils/contains';
 import { imagePath } from '../utils/imagePath';
-import { FS, HEIGHT, HEIGHT_SCALE_RATIO, ptColor, WIDTH, WIDTH_SCALE_RATIO } from '../utils/styles';
+import { FS, HEIGHT, HEIGHT_SCALE_RATIO, ptColor, style, WIDTH, WIDTH_SCALE_RATIO } from '../utils/styles';
 import { LoginUser, resetLoginUser, logOut } from '../states/ducks/user/action'
 import MySpinner from '../components/MySpinner';
 export interface LoginScreenProps {
@@ -80,7 +80,7 @@ class LoginScreen extends React.Component<LoginScreenProps, any> {
                 duration: 4000,
                 type: 'danger',
             });
-            // this.props.logOut()
+            this.props.logOut()
         }
     }
     componentDidMount() {
@@ -106,9 +106,10 @@ class LoginScreen extends React.Component<LoginScreenProps, any> {
                 }}>
 
                     <View style={{
-                        height: 80 * HEIGHT_SCALE_RATIO,
-                        width: 250 * WIDTH_SCALE_RATIO,
-                        marginVertical: 50 * HEIGHT_SCALE_RATIO
+                        height: 63 * HEIGHT_SCALE_RATIO,
+                        width: 220 * WIDTH_SCALE_RATIO,
+                        // marginVertical: 50 * HEIGHT_SCALE_RATIO,
+                        marginBottom: 50 * HEIGHT_SCALE_RATIO
                     }}>
                         <Image
                             resizeMode='stretch'
@@ -120,11 +121,11 @@ class LoginScreen extends React.Component<LoginScreenProps, any> {
                             }} />
                     </View>
                     <View style={{
-                        height: 0.06 * HEIGHT,
+                        height: 0.055 * HEIGHT,
                         width: '100%',
                         borderRadius: 10,
                         backgroundColor: ptColor.gray5,
-                        marginVertical: 10 * HEIGHT_SCALE_RATIO
+                        marginVertical: 13 * HEIGHT_SCALE_RATIO
                     }}>
                         <Input
                             containerStyle={{
@@ -139,28 +140,29 @@ class LoginScreen extends React.Component<LoginScreenProps, any> {
                             }}
                             inputStyle={{
                                 justifyContent: 'center',
-                                color:ptColor.white
+                                color: ptColor.white,
+                                fontSize: FS(12)
                             }}
                             underlineColorAndroid="transparent"
                             placeholder='Nhập số điện thoại'
-                            placeholderTextColor={ptColor.white}
+                            placeholderTextColor={ptColor.gray7}
                             keyboardType="phone-pad"
-                            rightIcon={
-                                <Icon
-                                    name='phone'
-                                    size={24}
-                                    color={ptColor.greenSuccess}
-                                    type='feather'
-                                />
-                            }
+                        // rightIcon={
+                        //     <Icon
+                        //         name='phone'
+                        //         size={24}
+                        //         color={ptColor.greenSuccess}
+                        //         type='feather'
+                        //     />
+                        // }
                         ></Input>
                     </View>
                     <View style={{
-                        height: 0.06 * HEIGHT,
+                        height: 0.055 * HEIGHT,
                         width: '100%',
                         borderRadius: 10,
                         backgroundColor: ptColor.gray5,
-                        marginVertical: 10 * HEIGHT_SCALE_RATIO
+                        marginVertical: 13 * HEIGHT_SCALE_RATIO
                     }}>
                         <Input
                             containerStyle={{
@@ -175,47 +177,59 @@ class LoginScreen extends React.Component<LoginScreenProps, any> {
                             }}
                             inputStyle={{
                                 justifyContent: 'center',
-                                color: ptColor.white
+                                color: ptColor.white,
+                                fontSize: FS(12)
                             }}
                             underlineColorAndroid="transparent"
                             placeholder='Nhập mật khẩu'
                             secureTextEntry={!isShowPassword}
-                            placeholderTextColor={ptColor.white}
+                            placeholderTextColor={ptColor.gray7}
                             rightIcon={
                                 <Icon
                                     name={isShowPassword ? 'eye-off' : 'eye'}
                                     size={24}
-                                    color={ptColor.greenSuccess}
+                                    color={ptColor.white}
                                     type='feather'
                                     onPress={() => this.showPass()}
                                 />
                             }
                         ></Input>
                     </View>
-                    <PButton title='ĐĂNG NHẬP'
-                        buttonStyle={{
-                            backgroundColor: ptColor.greenSuccess,
-                        }}
-                        containerStyle={{
-                            width: '100%',
-                            marginTop: 20 * HEIGHT_SCALE_RATIO
-                        }}
-                        onPress={() => this.loginUser()}></PButton>
-                    <Text style={{
-                        color: ptColor.white,
+                    <View style={{
+                        borderRadius: 30 * HEIGHT_SCALE_RATIO,
+                        width: '100%',
+                    }}>
+                        <PButton title='ĐĂNG NHẬP'
+                            buttonStyle={{
+                                backgroundColor: ptColor.greenSuccess,
+                                borderRadius: 30 * HEIGHT_SCALE_RATIO
+                            }}
+                            titleStyle={{
+                                fontSize: FS(10)
+                            }}
+                            containerStyle={{
+                                width: '100%',
+                                marginTop: 20 * HEIGHT_SCALE_RATIO,
+                                borderRadius: 30 * HEIGHT_SCALE_RATIO
+                            }}
+                            onPress={() => this.loginUser()}></PButton>
+                    </View>
+                    <Text style={[style.textCaption, {
+                        color: ptColor.gray7,
                         textAlign: 'center',
                         marginVertical: 20 * HEIGHT_SCALE_RATIO,
                         fontSize: FS(12)
-                    }}>Nếu bạn chưa có tài khoản? <Text onPress={() => this.props.navigation.push(ROUTE_KEY.RegisterScreen)} style={{
+                    }]}>Bạn chưa có tài khoản? <Text onPress={() => this.props.navigation.push(ROUTE_KEY.RegisterScreen)} style={[style.textCaption, {
                         color: ptColor.greenSuccess,
                         fontSize: FS(12)
-                    }}>Đăng kí</Text></Text>
-                    <Text style={{
+                    }]}>Đăng kí ngay</Text></Text>
+                    <Text style={[style.textCaption, {
                         textAlign: 'center',
-                        color: ptColor.white,
+                        color: ptColor.gray7,
                         paddingVertical: 10,
+                        fontSize: FS(10)
 
-                    }}>Hoặc</Text>
+                    }]}>Hoặc đăng nhập với</Text>
                     <View style={{
                         width: '100%',
                         flexDirection: 'row',

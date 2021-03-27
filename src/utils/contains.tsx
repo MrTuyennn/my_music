@@ -1,6 +1,8 @@
 const SplashScreen = 'SplashScreen';
 const PlayMusic = 'PlayMusic'
 const CategoryMusic = 'CategoryMusic'
+const Broswer = 'Broswer';
+const ProfileArtist = 'ProfileArtist'
 
 //StackAuth
 const StackAuth = 'StackAuth'
@@ -28,5 +30,7 @@ export const ROUTE_KEY = {
     ProfileUserScreen,
     TabNavigator,
     MainNavigator,
-    CategoryMusic
+    CategoryMusic,
+    Broswer,
+    ProfileArtist
 }

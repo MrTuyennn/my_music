@@ -15,7 +15,7 @@ import {
   Text,
   View,
 } from 'react-native';
-import { DotIndicator, SkypeIndicator,BarIndicator } from 'react-native-indicators';
+import { DotIndicator, SkypeIndicator, BarIndicator } from 'react-native-indicators';
 import PScrollView from './PScrollView';
 
 export interface PScrollViewProps extends FlatListProps {
@@ -46,7 +46,7 @@ export default class PFlatList extends PureComponent<PScrollViewProps> {
               onRefresh={onRefresh}
             />
           }>
-          <View style={[{ flex: 1 }, style.center]}>
+          <View style={[{ flex: 1,backgroundColor:ptColor.black }, style.center]}>
             {isLoading ? (
               <DotIndicator
                 color={ptColor.appColor}
@@ -54,17 +54,9 @@ export default class PFlatList extends PureComponent<PScrollViewProps> {
                 count={8}
               />
             ) : (
-              <View style={{
-                justifyContent: 'center',
-                alignItems: 'center',
-                backgroundColor:ptColor.gray2,
-                width:WIDTH
-              }}>
-                <BarIndicator count={6} color={ptColor.gray6} size={50} animationDuration={1000} />
-                <Text style={[style.textCaption,{
-                  color:ptColor.gray3
-                }]}>Chờ dữ liệu trong giây lát</Text>
-              </View>
+
+              <BarIndicator count={6} color={ptColor.gray6} size={50} animationDuration={1000} />
+
             )}
           </View>
         </PScrollView>

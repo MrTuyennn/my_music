@@ -29,10 +29,16 @@ const HomeScreen = (props: Props,) => {
                 navigation.navigate(ROUTE_KEY.CategoryMusic)
                 break;
             case 2:
-                console.log('item', item)
+                navigation.navigate(ROUTE_KEY.Broswer, {
+                    title: item?.title,
+                    url: 'https://zingmp3.vn/album/Top-100-Bai-Hat-Nhac-Tre-Hay-Nhat-Various-Artists/ZWZB969E.html'
+                })
                 break;
             case 3:
-                console.log('item', item)
+                navigation.navigate(ROUTE_KEY.Broswer, {
+                    title: item?.title,
+                    url: 'https://www.youtube.com/feed/trending?bp=6gQJRkVleHBsb3Jl'
+                })
                 break;
             default:
                 break;
@@ -42,23 +48,25 @@ const HomeScreen = (props: Props,) => {
     const renderItemData = ({ item }) => {
         return <View style={{
             alignItems: 'center',
-            marginHorizontal: 2 * WIDTH_SCALE_RATIO
+            marginHorizontal: 7 * WIDTH_SCALE_RATIO,
+            marginTop: 5 * HEIGHT_SCALE_RATIO
         }}>
             <MyTouchableOpacity
                 onPress={() => funC(item)}
                 style={{
-                    height: 60 * HEIGHT_SCALE_RATIO,
-                    width: 90 * WIDTH_SCALE_RATIO,
+                    height: 45 * HEIGHT_SCALE_RATIO,
+                    width: 80 * WIDTH_SCALE_RATIO,
                     borderRadius: 20,
-                    backgroundColor: ptColor.greenSuccess,
+                    // backgroundColor: ptColor.white,
                     justifyContent: 'center',
                     alignItems: 'center',
                 }}>
-                <Image style={{
-                    tintColor: ptColor.white,
-                    height: 24 * HEIGHT_SCALE_RATIO,
-                    width: 25 * WIDTH_SCALE_RATIO,
-                }} source={item?.image} />
+                <Image
+                    resizeMode='contain'
+                    style={{
+                        height: '100%',
+                        width: '100%',
+                    }} source={item?.image} />
             </MyTouchableOpacity>
             <Text style={[style.textCaption, { fontSize: FS(9), color: ptColor.white, flex: 1 }]}>{item?.title}</Text>
         </View>

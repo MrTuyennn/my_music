@@ -17,6 +17,8 @@ function buildTime(totalSeconds: number): string {
 
   if (hours > 0) {
     return `${hours}:${minutesStr}:${secondsStr}`;
+  } else if (hours < 0) {
+    return `${'00'}:${'00'}`
   }
 
   return `${minutesStr}:${secondsStr}`;
@@ -47,15 +49,15 @@ class ProgressSlider extends ProgressComponent {
           thumbTintColor={ptColor.white}
           minimumTrackTintColor={ptColor.white}
           maximumTrackTintColor={`${ptColor.white}30`}
-          
+
         />
         <View style={{
           flexDirection: 'row',
           justifyContent: 'space-between',
           alignItems: 'center',
         }}>
-          <Text style={{color:ptColor.white}}>{this.currentTime}</Text>
-          <Text style={{color:ptColor.white}}>- {this.totalTime}</Text>
+          <Text style={{ color: ptColor.white }}>{this.currentTime}</Text>
+          <Text style={{ color: ptColor.white }}> {this.totalTime}</Text>
         </View>
       </>
     );

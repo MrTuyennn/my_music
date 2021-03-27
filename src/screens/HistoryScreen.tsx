@@ -1,14 +1,16 @@
 import { useNavigation } from '@react-navigation/native'
-import MyTouchableOpacity from '../components/MyTouchableOpacity'
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import { Image, Text, View } from 'react-native'
 import { Icon, Input } from 'react-native-elements'
 import LinearGradient from 'react-native-linear-gradient'
+import { useDispatch, useSelector } from 'react-redux'
+import MyTouchableOpacity from '../components/MyTouchableOpacity'
+import PFlatList from '../components/PFlatList'
+import { dataCate } from '../services/data'
 import { ROUTE_KEY } from '../utils/contains'
 import { imagePath } from '../utils/imagePath'
 import { FS, HEIGHT_SCALE_RATIO, ptColor, style, WIDTH_SCALE_RATIO } from '../utils/styles'
-import PFlatList from '../components/PFlatList'
-import { dataCate } from '../services/data'
+import { getCataMusic } from '../states/ducks/cate/action'
 
 interface Props {
 
@@ -16,21 +18,31 @@ interface Props {
 
 const HistoryScreen = (props: Props) => {
     const navigation = useNavigation()
+    const disPatch = useDispatch()
+    useEffect(() => {
+        disPatch(getCataMusic())
+    }, [disPatch])
+    const getData = useSelector((state) => state?.cate?.dataCate)
+    console.log(JSON.stringify(getData?.data, null, 2))
+
 
     const renderitem = ({ item }) => {
+        console.log('item',item)
         return (
             <View style={{
                 height: 100 * HEIGHT_SCALE_RATIO,
                 width: 180 * WIDTH_SCALE_RATIO,
-                margin: 5 * HEIGHT_SCALE_RATIO
+                margin: 5 * HEIGHT_SCALE_RATIO,
+                borderRadius : 10 * HEIGHT_SCALE_RATIO
             }}>
                 <Image
                     resizeMode='cover'
                     style={{
                         height: '100%',
-                        width: '100%'
+                        width: '100%',
+                        borderRadius: 10 * HEIGHT_SCALE_RATIO
                     }}
-                    source={item?.imageCate}></Image>
+                    source={imagePath.imgMusic01}></Image>
                 <LinearGradient colors={['rgba(225, 225, 225, 0.03)', 'rgba(0, 0, 0, 0.8)']}
                     start={{ x: 1, y: 0 }}
                     end={{ x: 1, y: 1 }}
@@ -47,7 +59,7 @@ const HistoryScreen = (props: Props) => {
                         alignItems: 'center',
                         justifyContent: 'center',
                         top: 10 * HEIGHT_SCALE_RATIO
-                    }]}>{item?.title}</Text>
+                    }]}>{item?.name}</Text>
                 </LinearGradient>
             </View>
 
@@ -55,7 +67,7 @@ const HistoryScreen = (props: Props) => {
         )
     }
     return (
-        <LinearGradient colors={['#000000', '#000000', '#000000', '#000000']} style={{
+        <LinearGradient colors={[ptColor.black, ptColor.black, ptColor.black, ptColor.black]} style={{
             flex: 1,
             paddingHorizontal: 10 * WIDTH_SCALE_RATIO,
         }}>
@@ -127,7 +139,7 @@ const HistoryScreen = (props: Props) => {
                 //     padding: 10 * HEIGHT_SCALE_RATIO
                 // }}
                 numColumns={2}
-                data={dataCate || []}
+                data={getData?.data || []}
                 renderItem={renderitem}
             ></PFlatList>
         </LinearGradient>

@@ -34,13 +34,17 @@ const OderScreen = (props: Props) => {
 
     const renderItemMusicCate = ({ item }) => {
         return (
-            <Text style={{
-                color: ptColor.black,
-                backgroundColor: ptColor.white,
-                margin: 3 * HEIGHT_SCALE_RATIO,
-                padding: 3 * HEIGHT_SCALE_RATIO,
-                borderRadius: 10 * HEIGHT_SCALE_RATIO
-            }}>{item}</Text>
+            <MyTouchableOpacity onPress={() => navigation.navigate(ROUTE_KEY.ProfileArtist, {
+                item: item
+            })}>
+                <Text style={{
+                    color: ptColor.black,
+                    backgroundColor: ptColor.white,
+                    margin: 3 * HEIGHT_SCALE_RATIO,
+                    padding: 3 * HEIGHT_SCALE_RATIO,
+                    borderRadius: 10 * HEIGHT_SCALE_RATIO
+                }}>{item}</Text>
+            </MyTouchableOpacity >
         )
     }
 
@@ -84,7 +88,7 @@ const OderScreen = (props: Props) => {
     }
 
     return (
-        <LinearGradient colors={['#000000', '#000000', '#000000', '#000000']} style={{
+        <LinearGradient colors={[ptColor.black, ptColor.black, ptColor.black, ptColor.black]} style={{
             flex: 1,
             paddingHorizontal: 10 * WIDTH_SCALE_RATIO,
         }}>

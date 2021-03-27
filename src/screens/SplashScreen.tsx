@@ -29,14 +29,12 @@ const SplashScreen = ({ navigation }) => {
             }}>
                 <Image source={imagePath.Logo}
                     style={{
-                        height: 164 * HEIGHT_SCALE_RATIO,
-                        width: 180 * WIDTH_SCALE_RATIO,
-                        // borderRadius: 20,
+                        height: 120 * HEIGHT_SCALE_RATIO,
+                        width: 132 * WIDTH_SCALE_RATIO,
                         tintColor: ptColor.greenSuccess,
-                        marginTop: 100 * HEIGHT_SCALE_RATIO
+                        marginTop: 150 * HEIGHT_SCALE_RATIO,
                     }} />
-                <Text style={[style.textHeader, { color: ptColor.white, marginTop: 30 * HEIGHT_SCALE_RATIO }]}>Thế giới âm nhạc</Text>
-
+                {/* <Text style={[style.textHeader, { color: ptColor.white, marginTop: 30 * HEIGHT_SCALE_RATIO }]}>Thế giới âm nhạc</Text> */}
                 <BarIndicator count={6} color={ptColor.greenSuccess} size={50} animationDuration={1000} />
             </View>
         </View>

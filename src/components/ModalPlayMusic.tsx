@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActivityIndicator, Animated, Easing, Text, View, ViewStyle } from 'react-native';
+import { ActivityIndicator, Animated, Easing, Share, Text, View, ViewStyle } from 'react-native';
 import { Icon } from 'react-native-elements';
 import LinearGradient from 'react-native-linear-gradient';
 import Modal from 'react-native-modal';
@@ -15,6 +15,8 @@ import {
     WIDTH_SCALE_RATIO
 } from '../utils/styles';
 import Circle from './Circle';
+import { myAlert } from './MyAlert';
+import MyTouchableOpacity from './MyTouchableOpacity';
 import ProgressSlider from './ProgressSlider';
 import PRow from './PRow';
 
@@ -57,6 +59,27 @@ export default class ModalPlayMusic extends React.PureComponent<ModalPlayMusicPr
         })
 
     }
+
+    onShare = async () => {
+        try {
+            const result = await Share.share({
+                message:
+                    'React Native | A framework for building native apps using React',
+            });
+
+            if (result.action === Share.sharedAction) {
+                if (result.activityType) {
+                    // shared with activity type of result.activityType
+                } else {
+                    // shared
+                }
+            } else if (result.action === Share.dismissedAction) {
+                // dismissed
+            }
+        } catch (error) {
+            alert(error.message);
+        }
+    };
     hide(onDone = () => { }) {
         this.setState({ visible: false }, () => {
             setTimeout(() => {
@@ -95,6 +118,17 @@ export default class ModalPlayMusic extends React.PureComponent<ModalPlayMusicPr
 
     }
 
+    addFavoriteMusic() {
+        myAlert(
+            '',
+            'Có muốn thêm bài hát này vào danh sách yêu thích không ?',
+            'Trở lại',
+            () => { },
+            'Đồng ý',
+            () => console.log('Thêm')
+        )
+    }
+
     render() {
         const spin = this.spinValue.interpolate({
             inputRange: [0, 1],
@@ -122,7 +156,7 @@ export default class ModalPlayMusic extends React.PureComponent<ModalPlayMusicPr
                 }}
                 {...this.props}
             >
-                <LinearGradient colors={['#000000', '#006633', '#009999', '#00FFCC']} style={{
+                <LinearGradient colors={[ptColor.black, ptColor.black, ptColor.black, ptColor.black]} style={{
                     flex: 1,
                     paddingHorizontal: 10 * WIDTH_SCALE_RATIO,
                 }}>
@@ -175,7 +209,7 @@ export default class ModalPlayMusic extends React.PureComponent<ModalPlayMusicPr
                                             alignContent: 'flex-end',
                                             marginTop: 10 * HEIGHT_SCALE_RATIO,
                                         }}
-                                        name='more-vertical'
+                                        name='clock'
                                         type='feather'
                                         color={ptColor.white}
                                         size={24}></Icon>
@@ -196,17 +230,37 @@ export default class ModalPlayMusic extends React.PureComponent<ModalPlayMusicPr
                                             transform: [{ rotate: spin }],
                                         }}></Animated.Image>
                                 </View>
-                                <View>
-                                    <Icon
-                                        style={{
-                                            alignItems: 'flex-end',
-                                            marginTop: 10 * HEIGHT_SCALE_RATIO,
-                                        }}
-                                        name='heart'
-                                        type='feather'
-                                        color={ptColor.white}
-                                        size={28}></Icon>
-                                </View>
+                                <MyTouchableOpacity style={{
+                                    justifyContent: 'flex-end',
+                                    marginVertical: 10 * HEIGHT_SCALE_RATIO
+                                }}>
+                                    <View style={{
+                                        width : 100 * WIDTH_SCALE_RATIO,
+                                        flexDirection:'row',
+                                        justifyContent:'space-around'
+                                    }}>
+                                        <Icon
+                                            onPress={() => this.onShare()}
+                                            style={{
+                                                alignItems: 'flex-end',
+                                                marginTop: 10 * HEIGHT_SCALE_RATIO,
+                                            }}
+                                            name='share-2'
+                                            type='feather'
+                                            color={ptColor.white}
+                                            size={28}></Icon>
+                                        <Icon
+                                            onPress={() => this.addFavoriteMusic()}
+                                            style={{
+                                                marginTop: 10 * HEIGHT_SCALE_RATIO,
+                                                marginLeft : 10 * HEIGHT_SCALE_RATIO
+                                            }}
+                                            name='heart'
+                                            type='feather'
+                                            color={ptColor.white}
+                                            size={28}></Icon>
+                                    </View>
+                                </MyTouchableOpacity>
                                 <ProgressSlider />
                                 <PRow style={{
                                     justifyContent: 'space-around',

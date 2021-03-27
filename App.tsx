@@ -14,6 +14,7 @@ import ModalPlayMusic from './src/components/ModalPlayMusic'
 import configureStore from './src/states';
 import { Platform } from 'react-native';
 import { imagePath } from './src/utils/imagePath';
+import { MenuProvider } from 'react-native-popup-menu';
 const { store, persistor } = configureStore();
 const theme = {
   Button: {
@@ -65,15 +66,18 @@ const App = () => {
 
         <ThemeProvider theme={theme}>
           <PlayerContextProvider>
-            <NavigationContainer ref={navigationRef}>
+            <MenuProvider>
 
-              <AppNavigator />
-              <MySpinner />
-              <ModalAlert />
-              <ModalPlayMusic />
-              <FlashMessage position="top" floating={true} />
+              <NavigationContainer ref={navigationRef}>
 
-            </NavigationContainer>
+                <AppNavigator />
+                <MySpinner />
+                <ModalAlert />
+                <ModalPlayMusic />
+                <FlashMessage position="top" floating={true} />
+
+              </NavigationContainer>
+            </MenuProvider>
           </PlayerContextProvider>
         </ThemeProvider>
 

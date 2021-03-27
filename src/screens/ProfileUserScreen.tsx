@@ -76,7 +76,7 @@ const ProfileUser = (props: Props) => {
 
 
     return (
-        <LinearGradient colors={['#000000', '#000000', '#000000', '#000000']} style={{
+        <LinearGradient colors={[ptColor.black, ptColor.black, ptColor.black, ptColor.black]} style={{
             flex: 3,
             paddingHorizontal: 10 * WIDTH_SCALE_RATIO,
         }}>
