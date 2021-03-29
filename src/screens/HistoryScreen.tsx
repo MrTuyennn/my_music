@@ -6,7 +6,7 @@ import LinearGradient from 'react-native-linear-gradient'
 import { useDispatch, useSelector } from 'react-redux'
 import MyTouchableOpacity from '../components/MyTouchableOpacity'
 import PFlatList from '../components/PFlatList'
-import { dataCate } from '../services/data'
+// import { dataCate } from '../services/data'
 import { ROUTE_KEY } from '../utils/contains'
 import { imagePath } from '../utils/imagePath'
 import { FS, HEIGHT_SCALE_RATIO, ptColor, style, WIDTH_SCALE_RATIO } from '../utils/styles'
@@ -23,7 +23,7 @@ const HistoryScreen = (props: Props) => {
         disPatch(getCataMusic())
     }, [disPatch])
     const getData = useSelector((state) => state?.cate?.dataCate)
-    console.log(JSON.stringify(getData?.data, null, 2))
+    console.log('//////////////',JSON.stringify(getData?.data, null, 2))
 
 
     const renderitem = ({ item }) => {
@@ -42,7 +42,7 @@ const HistoryScreen = (props: Props) => {
                         width: '100%',
                         borderRadius: 10 * HEIGHT_SCALE_RATIO
                     }}
-                    source={imagePath.imgMusic01}></Image>
+                    source={{ uri: item?.thumbnail}}></Image>
                 <LinearGradient colors={['rgba(225, 225, 225, 0.03)', 'rgba(0, 0, 0, 0.8)']}
                     start={{ x: 1, y: 0 }}
                     end={{ x: 1, y: 1 }}
@@ -139,7 +139,7 @@ const HistoryScreen = (props: Props) => {
                 //     padding: 10 * HEIGHT_SCALE_RATIO
                 // }}
                 numColumns={2}
-                data={getData?.data || []}
+                data={getData || []}
                 renderItem={renderitem}
             ></PFlatList>
         </LinearGradient>

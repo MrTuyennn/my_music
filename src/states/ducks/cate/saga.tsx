@@ -13,9 +13,12 @@ function* watchRequestUser() {
 
 function* getcateMusic() {
     try {
+        const user = yield select((state) => state.user?.userInfo?.data?.accessToken);
+        console.log(user)
         console.log('2')
-        const { data } = yield call(api.getCateMusic)
-        yield put({ type: types.GET_CATEGORY_MUSIC_SUCCESS, payload: data })
+        const { data } = yield call(api.getCateMusic,user)
+        console.log('data cate', JSON.stringify(data?.data?.data, null, 2))
+        yield put({ type: types.GET_CATEGORY_MUSIC_SUCCESS, payload: data?.data?.data })
     } catch (error) {
         console.log('error có lỗi xãy ra', error)
     }

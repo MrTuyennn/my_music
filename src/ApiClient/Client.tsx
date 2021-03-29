@@ -38,7 +38,7 @@ class ApiClient {
         method: Method = 'get',
         params = {},
     ) => {
-        console.log('aaaaa', restComponent, method);
+        console.log('aaaaa', restComponent, method, params);
 
         switch (method) {
             case 'get':

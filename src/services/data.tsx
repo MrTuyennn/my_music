@@ -10,7 +10,7 @@ export const DataItem = [
     { icon: imagePath.ic_conversation, title: 'Đánh giá ứng dụng', type: 3 },
     { icon: imagePath.ic_conversation, title: 'Điều khoản dịch vụ', type: 4 },
     { icon: imagePath.ic_conversation, title: 'Chính sách bảo mật', type: 5 },
-    { icon: imagePath.ic_logout, title: 'Đăng xuất', type:  6},
+    { icon: imagePath.ic_logout, title: 'Đăng xuất', type: 6 },
 ]
 export const dataSwipper = [
     {
@@ -197,4 +197,44 @@ export const dataCate = [
         title: 'Chơi game',
         imageCate: imagePath.imgMusic01
     },
+]
+
+
+
+export const DataAlBums = [
+    {
+        idAlbums: 1,
+        titleAlbums: 'Albums tháng 4',
+        imageAlbums : imagePath.mtp01
+    },
+    {
+        idAlbums: 2,
+        titleAlbums: 'Albums tháng 5',
+        imageAlbums: imagePath.mtp02
+    },
+    {
+        idAlbums: 3,
+        titleAlbums: 'Albums tháng 6',
+        imageAlbums: imagePath.mtp03
+    },
+    {
+        idAlbums: 4,
+        titleAlbums: 'Albums tháng 7',
+        imageAlbums: imagePath.mtp04
+    },
+    {
+        idAlbums: 5,
+        titleAlbums: 'Albums tháng 8',
+        imageAlbums: imagePath.mtp05
+    },
+    {
+        idAlbums: 6,
+        titleAlbums: 'Albums tháng 9',
+        imageAlbums: imagePath.mtp09
+    },
+    {
+        idAlbums: 7,
+        titleAlbums: 'Albums tháng 10',
+        imageAlbums: imagePath.mtp02
+    }
 ]

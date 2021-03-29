@@ -99,7 +99,7 @@ class RegisterScreen extends React.Component<RegisterScreenProps, any> {
                 type: 'danger',
             });
             this.props.logOut()
-        } else if (nextProps.userData?.userInfo?.err) {
+        } else if (nextProps.userData?.err) {
             Myspinner.hide()
             showMessage({
                 message: 'Thông báo',
