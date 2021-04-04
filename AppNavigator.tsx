@@ -81,7 +81,7 @@ function TabNavigator() {
       )}
       screenOptions={({ route }) => ({
         tabBarLabel: '',
-        tabBarIcon: ({ focused, color, tintColor }) => {
+        tabBarIcon: ({ focused, color,  }) => {
           let iconName;
           let Iconsize;
           let type;

@@ -18,6 +18,7 @@ interface Props {
 
 const OderScreen = (props: Props) => {
     const [DataArtist, setDataArtist] = useState(Array)
+    const [search, setsearch] = useState(String)
     const playerContext = usePlayerContext()
     const track = playerContext.currentTrack;
     const navigation = useNavigation()
@@ -31,7 +32,7 @@ const OderScreen = (props: Props) => {
         const arr = [...new Set(data)]
         setDataArtist(arr)
     }, [])
-
+    console.log('tìm kiếm à', search)
     const renderItemMusicCate = ({ item }) => {
         return (
             <MyTouchableOpacity onPress={() => navigation.navigate(ROUTE_KEY.ProfileArtist, {
@@ -119,6 +120,7 @@ const OderScreen = (props: Props) => {
                     <Input
                         placeholder="Bài hát, playlist, nghệ sĩ ..."
                         placeholderTextColor={ptColor.textPlaceholderColor}
+                        onChangeText={(text) => setsearch(text)}
                         inputContainerStyle={{
                             borderRadius: 30,
                             borderColor: ptColor.blue,

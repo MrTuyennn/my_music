@@ -11,6 +11,7 @@ import { ROUTE_KEY } from '../utils/contains'
 import { imagePath } from '../utils/imagePath'
 import { FS, HEIGHT_SCALE_RATIO, ptColor, style, WIDTH_SCALE_RATIO } from '../utils/styles'
 import { getCataMusic } from '../states/ducks/cate/action'
+import { removeAscent } from '../utils/func';
 
 interface Props {
 
@@ -18,22 +19,34 @@ interface Props {
 
 const HistoryScreen = (props: Props) => {
     const navigation = useNavigation()
+    const [search, setsearch] = useState(String)
     const disPatch = useDispatch()
     useEffect(() => {
         disPatch(getCataMusic())
     }, [disPatch])
-    const getData = useSelector((state) => state?.cate?.dataCate)
-    console.log('//////////////',JSON.stringify(getData?.data, null, 2))
+    var getData = useSelector((state) => state?.cate?.dataCate)
+    console.log('///////', JSON.stringify(getData, null, 2))
+    console.log('tìm kiếm à', search)
+    if (search?.length > 0) {
+
+        getData = getData.filter((m) =>
+            // console.log('m', m?.name)
+            removeAscent(m?.name.toLowerCase()).includes(
+                removeAscent(search?.toLowerCase()),
+            ),
+        );
+    }
+
 
 
     const renderitem = ({ item }) => {
-        console.log('item',item)
+        console.log('item', item)
         return (
             <View style={{
                 height: 100 * HEIGHT_SCALE_RATIO,
                 width: 180 * WIDTH_SCALE_RATIO,
                 margin: 5 * HEIGHT_SCALE_RATIO,
-                borderRadius : 10 * HEIGHT_SCALE_RATIO
+                borderRadius: 10 * HEIGHT_SCALE_RATIO
             }}>
                 <Image
                     resizeMode='cover'
@@ -42,7 +55,7 @@ const HistoryScreen = (props: Props) => {
                         width: '100%',
                         borderRadius: 10 * HEIGHT_SCALE_RATIO
                     }}
-                    source={{ uri: item?.thumbnail}}></Image>
+                    source={{ uri: item?.thumbnail }}></Image>
                 <LinearGradient colors={['rgba(225, 225, 225, 0.03)', 'rgba(0, 0, 0, 0.8)']}
                     start={{ x: 1, y: 0 }}
                     end={{ x: 1, y: 1 }}
@@ -98,6 +111,7 @@ const HistoryScreen = (props: Props) => {
                     <Input
                         placeholder="Bài hát, playlist, nghệ sĩ ..."
                         placeholderTextColor={ptColor.textPlaceholderColor}
+                        onChangeText={(text) => setsearch(text)}
                         inputContainerStyle={{
                             borderRadius: 30,
                             borderColor: ptColor.blue,
