@@ -81,42 +81,42 @@ export const dataListMusic = [
 
 export const ListMusic = [
     {
-        id: '1',
+        id: 1,
         url: imagePath.QuenEmDi,
         title: 'Quên Em Đi',
         artist: 'Sơn Tùng M-TP',
         artwork: imagePath.mtp01
     },
     {
-        id: '2',
+        id: 2,
         url: imagePath.GiveUp,
         title: 'Give Up',
         artist: 'BTS Army',
         artwork: imagePath.mtp02
     },
     {
-        id: '3',
+        id: 3,
         url: imagePath.NhacCuaTui,
         title: 'Không phải dạng vừa đâu',
         artist: 'Sơn Tùng M-TP',
         artwork: imagePath.mtp03
     },
     {
-        id: '4',
+        id: 4,
         url: imagePath.TaLaiGanBenNhau,
         title: 'Ta lại gần bên nhau',
         artist: 'Mr Siro',
         artwork: imagePath.mtp04
     },
     {
-        id: '5',
+        id: 5,
         url: imagePath.ThoiKhongSaiLech,
         title: 'Một lần sai',
         artist: 'Jack 97',
         artwork: imagePath.mtp05
     },
     {
-        id: '6',
+        id: 6,
         url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2Fnhaccuatui.mp3?alt=media&token=aacc40c0-a938-4d9f-8e50-daa02edc5805',
         title: 'Trên tình bạn dưới tình yêu',
         artist: 'MIN',

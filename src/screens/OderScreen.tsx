@@ -32,7 +32,7 @@ const OderScreen = (props: Props) => {
         const arr = [...new Set(data)]
         setDataArtist(arr)
     }, [])
-    console.log('tìm kiếm à', search)
+    // console.log('tìm kiếm à', search)
     const renderItemMusicCate = ({ item }) => {
         return (
             <MyTouchableOpacity onPress={() => navigation.navigate(ROUTE_KEY.ProfileArtist, {

@@ -25,8 +25,6 @@ const HistoryScreen = (props: Props) => {
         disPatch(getCataMusic())
     }, [disPatch])
     var getData = useSelector((state) => state?.cate?.dataCate)
-    console.log('///////', JSON.stringify(getData, null, 2))
-    console.log('tìm kiếm à', search)
     if (search?.length > 0) {
 
         getData = getData.filter((m) =>
@@ -40,7 +38,7 @@ const HistoryScreen = (props: Props) => {
 
 
     const renderitem = ({ item }) => {
-        console.log('item', item)
+        // console.log('item', item)
         return (
             <View style={{
                 height: 100 * HEIGHT_SCALE_RATIO,

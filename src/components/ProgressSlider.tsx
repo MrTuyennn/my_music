@@ -1,12 +1,17 @@
-import React from 'react';
+import React,{} from 'react';
 import { ProgressComponent } from 'react-native-track-player';
 import Slider from '@react-native-community/slider';
 
 import { PlayerContext } from '../contexts/PlayerContext';
 import { Text, View } from 'react-native';
 import { ptColor } from '../utils/styles';
-
+import RNTrackPlayer, { STATE_PLAYING, STATE_PAUSED } from 'react-native-track-player';
+import { ListMusic } from '../services/data'
+// import { usePlayerContext } from '../contexts/PlayerContext';
 function buildTime(totalSeconds: number): string {
+  // const playerContext = usePlayerContext()
+
+  
   const hours = Math.floor(totalSeconds / 3600);
   totalSeconds %= 3600;
   const minutes = Math.floor(totalSeconds / 60);
@@ -14,11 +19,18 @@ function buildTime(totalSeconds: number): string {
 
   const minutesStr = String(minutes).padStart(2, '0');
   const secondsStr = String(seconds).padStart(2, '0');
+  const skip = async () => {
+    `${'00'}:${'00'}`
+    const tracks = await RNTrackPlayer.getQueue();
+  
+    await RNTrackPlayer.skip(tracks[0]?.id);
 
+    // await RNTrackPlayer.skipToNext();
+  }
   if (hours > 0) {
     return `${hours}:${minutesStr}:${secondsStr}`;
   } else if (hours < 0) {
-    return `${'00'}:${'00'}`
+    skip()
   }
 
   return `${minutesStr}:${secondsStr}`;

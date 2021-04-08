@@ -19,7 +19,7 @@ import { myAlert } from './MyAlert';
 import MyTouchableOpacity from './MyTouchableOpacity';
 import ProgressSlider from './ProgressSlider';
 import PRow from './PRow';
-
+import { ListMusic } from '../services/data';
 interface ModalPlayMusicProps {
     styleContainer?: ViewStyle;
 
@@ -33,7 +33,8 @@ export default class ModalPlayMusic extends React.PureComponent<ModalPlayMusicPr
             visible: false,
             trackObject: {},
             PlayerContext: React.createContext(usePlayerContext),
-            playMusic: true
+            playMusic: true,
+            songIndex: 0
         };
     }
     seekTo = async (amount = 30) => {
@@ -58,6 +59,13 @@ export default class ModalPlayMusic extends React.PureComponent<ModalPlayMusicPr
             trackObject: trackObject
         })
 
+    }
+
+    async nextMusic() {
+        const tracks = await RNTrackPlayer.getQueue();
+        // console.log('tuyên', JSON.stringify(tracks[0]?.id, null, 2))
+        await RNTrackPlayer.skip(tracks[0]?.id);
+        await RNTrackPlayer.skipToNext();
     }
 
     onShare = async () => {
@@ -134,7 +142,7 @@ export default class ModalPlayMusic extends React.PureComponent<ModalPlayMusicPr
             inputRange: [0, 1],
             outputRange: ['0deg', '360deg']
         })
-        const { visible, trackObject, PlayerContext, playMusic } = this.state;
+        const { visible, trackObject, PlayerContext, playMusic, songIndex } = this.state;
         const { styleContainer } = this.props;
         return (
             <Modal
@@ -224,7 +232,8 @@ export default class ModalPlayMusic extends React.PureComponent<ModalPlayMusicPr
                                     overflow: 'hidden',
                                 }}>
                                     <Animated.Image
-                                        resizeMode='cover' source={{ uri: trackObject?.artwork?.uri }} style={{
+                                        resizeMode='cover' source={{ uri: trackObject?.artwork?.uri }}
+                                        style={{
                                             height: '100%',
                                             width: '100%',
                                             transform: [{ rotate: spin }],
@@ -235,9 +244,9 @@ export default class ModalPlayMusic extends React.PureComponent<ModalPlayMusicPr
                                     marginVertical: 10 * HEIGHT_SCALE_RATIO
                                 }}>
                                     <View style={{
-                                        width : 100 * WIDTH_SCALE_RATIO,
-                                        flexDirection:'row',
-                                        justifyContent:'space-around'
+                                        width: 100 * WIDTH_SCALE_RATIO,
+                                        flexDirection: 'row',
+                                        justifyContent: 'space-around'
                                     }}>
                                         <Icon
                                             onPress={() => this.onShare()}
@@ -253,7 +262,7 @@ export default class ModalPlayMusic extends React.PureComponent<ModalPlayMusicPr
                                             onPress={() => this.addFavoriteMusic()}
                                             style={{
                                                 marginTop: 10 * HEIGHT_SCALE_RATIO,
-                                                marginLeft : 10 * HEIGHT_SCALE_RATIO
+                                                marginLeft: 10 * HEIGHT_SCALE_RATIO
                                             }}
                                             name='heart'
                                             type='feather'
@@ -330,6 +339,9 @@ export default class ModalPlayMusic extends React.PureComponent<ModalPlayMusicPr
                                         style={{
                                             alignItems: 'flex-end',
                                             marginTop: 10 * HEIGHT_SCALE_RATIO,
+                                        }}
+                                        onPress={() => {
+                                            this.nextMusic()
                                         }}
                                         name='skip-forward'
                                         type='feather'
