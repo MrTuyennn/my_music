@@ -1,16 +1,19 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Animated, Image, Text, View } from 'react-native';
+import React, { useEffect, useRef, useState } from 'react';
+import { Animated, Text, View } from 'react-native';
 import { Icon } from 'react-native-elements';
 import LinearGradient from 'react-native-linear-gradient';
+import { Easing } from 'react-native-reanimated';
 import RNTrackPlayer from 'react-native-track-player';
-import { imagePath } from '../utils/imagePath';
 import { usePlayerContext } from '../contexts/PlayerContext';
+import { imagePath } from '../utils/imagePath';
 import { FS, HEIGHT_SCALE_RATIO, ptColor, style, WIDTH, WIDTH_SCALE_RATIO } from '../utils/styles';
-import ModalPlayMusic from './ModalPlayMusic';
+import { myAlert } from './MyAlert';
 import MyTouchableOpacity from './MyTouchableOpacity';
 import PRow from './PRow';
-import { Easing } from 'react-native-reanimated';
-import { myAlert } from './MyAlert';
+import { useNavigation } from '@react-navigation/native';
+import { ROUTE_KEY } from '../utils/contains';
+
+
 interface Props {
     isModal?: any
 }
@@ -21,6 +24,7 @@ const MiniPlayer = (props: Props) => {
     const [delay, setdelay] = useState(0)
     const isModal = React.createRef()
     const spinValue = useRef(new Animated.Value(0)).current;
+    const navigation = useNavigation()
     useEffect(() => {
         spin()
     }, [])
@@ -31,7 +35,8 @@ const MiniPlayer = (props: Props) => {
             {
                 toValue: 1,
                 duration: 30000,
-                easing: Easing.linear
+                easing: Easing.linear,
+                useNativeDriver: true
             }
         ).start(() => spin())
     }
@@ -66,7 +71,7 @@ const MiniPlayer = (props: Props) => {
                     justifyContent: 'space-between'
                 }}>
                 <MyTouchableOpacity
-                    onPress={() => isModal.current?.show()}
+                    onPress={() => navigation.navigate(ROUTE_KEY.PlayMusic) }
                     style={{
                         flexDirection: 'row',
                     }}>
@@ -131,7 +136,6 @@ const MiniPlayer = (props: Props) => {
                     </MyTouchableOpacity>
                 </PRow>
 
-                <ModalPlayMusic ref={isModal}></ModalPlayMusic>
             </LinearGradient>
         )
     } else {

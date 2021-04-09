@@ -9,6 +9,7 @@ const StackAuth = 'StackAuth'
 const LoginScreen = 'LoginScreen'
 const RegisterScreen = 'RegisterScreen'
 const StackMusic = 'StackMusic'
+const MusicDetail = 'MusicDetail'
 
 // TabNavigator
 const TabNavigator = 'TabNavigator'
@@ -18,6 +19,7 @@ const OderScreen = 'OderScreen'
 const ProfileUserScreen = 'ProfileUserScreen'
 const MainNavigator = 'MainNavigator'
 export const ROUTE_KEY = {
+    MusicDetail,
     PlayMusic,
     StackMusic,
     SplashScreen,

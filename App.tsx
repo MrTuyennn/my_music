@@ -15,6 +15,8 @@ import configureStore from './src/states';
 import { Platform } from 'react-native';
 import { imagePath } from './src/utils/imagePath';
 import { MenuProvider } from 'react-native-popup-menu';
+import { LogBox } from 'react-native';
+
 const { store, persistor } = configureStore();
 const theme = {
   Button: {
@@ -30,6 +32,7 @@ const App = () => {
     //   console.log('setup Tracker')
     //   TrackPlayer.registerPlaybackService(() => trackPlayerServices)
     // });
+    LogBox.ignoreLogs(['Animated: `useNativeDriver`']);
     TrackPlayer.setupPlayer().then(() => {
       console.log('player is setup');
       TrackPlayer.updateOptions({

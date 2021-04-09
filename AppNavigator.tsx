@@ -21,6 +21,7 @@ import CategoryMusic from './src/screens/CategoryMusic'
 import { imagePath } from './src/utils/imagePath';
 import Broswer from './src/screens/Broswer';
 import ProfileArtist from './src/screens/ProfileArtist'
+import MusicDetail from './src/screens/MusicDetail'
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator()
 
@@ -63,8 +64,9 @@ function StackMusic() {
     }}>
       <Stack.Screen name={ROUTE_KEY.PlayMusic} component={PlayMusic} />
       <Stack.Screen name={ROUTE_KEY.CategoryMusic} component={CategoryMusic} />
-      <Stack.Screen name={ROUTE_KEY.Broswer} component={Broswer}/>
-      <Stack.Screen name={ROUTE_KEY.ProfileArtist} component={ProfileArtist}/>
+      <Stack.Screen name={ROUTE_KEY.Broswer} component={Broswer} />
+      <Stack.Screen name={ROUTE_KEY.ProfileArtist} component={ProfileArtist} />
+      <Stack.Screen name={ROUTE_KEY.MusicDetail} component={MusicDetail} />
       <Stack.Screen name={ROUTE_KEY.TabNavigator} component={TabNavigator} />
     </Stack.Navigator>
   )
@@ -81,7 +83,7 @@ function TabNavigator() {
       )}
       screenOptions={({ route }) => ({
         tabBarLabel: '',
-        tabBarIcon: ({ focused, color,  }) => {
+        tabBarIcon: ({ focused, color, }) => {
           let iconName;
           let Iconsize;
           let type;
@@ -111,7 +113,7 @@ function TabNavigator() {
             return (<Image
               source={imagePath.Logo}
               style={{
-                tintColor: focused ? ptColor.greenSuccess : ptColor.gray6 ,
+                tintColor: focused ? ptColor.greenSuccess : ptColor.gray6,
                 height: focused ? 22 * HEIGHT_SCALE_RATIO : 17 * HEIGHT_SCALE_RATIO,
                 width: focused ? 25 * HEIGHT_SCALE_RATIO : 20 * HEIGHT_SCALE_RATIO
               }}

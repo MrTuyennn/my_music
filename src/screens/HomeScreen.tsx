@@ -211,7 +211,7 @@ const HomeScreen = (props: Props,) => {
                     >
                         {
                             dataSwipper?.map((data) => {
-                                return <Image style={{
+                                return <Image key="{data}" style={{
                                     height: 200 * HEIGHT_SCALE_RATIO,
                                     width: '100%',
                                     borderRadius: 10

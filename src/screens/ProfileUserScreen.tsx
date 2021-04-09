@@ -141,7 +141,8 @@ const ProfileUser = (props: Props) => {
             }}>
                 {DataItem?.map(result => {
                     return (
-                        <MyTouchableOpacity
+                        <MyTouchableOpacity 
+                            key="{result}"
                             onPress={() => {
                                 switch (result.type) {
                                     case 1:

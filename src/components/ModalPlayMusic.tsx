@@ -20,12 +20,14 @@ import MyTouchableOpacity from './MyTouchableOpacity';
 import ProgressSlider from './ProgressSlider';
 import PRow from './PRow';
 import { ListMusic } from '../services/data';
+import { ROUTE_KEY } from '../utils/contains';
 interface ModalPlayMusicProps {
     styleContainer?: ViewStyle;
-
+    navigation?:any
 }
 
 export default class ModalPlayMusic extends React.PureComponent<ModalPlayMusicProps> {
+    navigation?: any
     constructor(props) {
         super(props);
         this.spinValue = new Animated.Value(0)
@@ -136,6 +138,9 @@ export default class ModalPlayMusic extends React.PureComponent<ModalPlayMusicPr
             () => console.log('Thêm')
         )
     }
+    roukey(){
+        this.navigation.navigate(ROUTE_KEY.MusicDetail)
+    }
 
     render() {
         const spin = this.spinValue.interpolate({
@@ -143,7 +148,7 @@ export default class ModalPlayMusic extends React.PureComponent<ModalPlayMusicPr
             outputRange: ['0deg', '360deg']
         })
         const { visible, trackObject, PlayerContext, playMusic, songIndex } = this.state;
-        const { styleContainer } = this.props;
+        const { styleContainer ,navigation} = this.props;
         return (
             <Modal
                 deviceWidth={WIDTH}
@@ -212,15 +217,17 @@ export default class ModalPlayMusic extends React.PureComponent<ModalPlayMusicPr
                                         </PRow>
 
                                     </View>
-                                    <Icon
-                                        style={{
-                                            alignContent: 'flex-end',
-                                            marginTop: 10 * HEIGHT_SCALE_RATIO,
-                                        }}
-                                        name='clock'
-                                        type='feather'
-                                        color={ptColor.white}
-                                        size={24}></Icon>
+                                    <MyTouchableOpacity onPress={() => this.roukey()}>
+                                        <Icon
+                                            style={{
+                                                alignContent: 'flex-end',
+                                                marginTop: 10 * HEIGHT_SCALE_RATIO,
+                                            }}
+                                            name='external-link'
+                                            type='feather'
+                                            color={ptColor.white}
+                                            size={24}></Icon>
+                                    </MyTouchableOpacity>
                                 </PRow>
 
                                 <View style={{
