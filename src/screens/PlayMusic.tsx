@@ -52,6 +52,7 @@ export class PlayMusic extends Component<PlayMusicProps> {
     };
 
     async show() {
+        console.log('chạy')
         this.setState({ visible: true });
         const position = await RNTrackPlayer.getPosition();
         var minutes = Math.floor(position / 60)
@@ -59,6 +60,7 @@ export class PlayMusic extends Component<PlayMusicProps> {
         var minutesw = Math.floor(duration / 60)
         const trackId = await RNTrackPlayer.getCurrentTrack();
         const trackObject = await RNTrackPlayer.getTrack(trackId);
+        console.log('trackObject', JSON.stringify(trackObject))
         this.setState({
             trackObject: trackObject
         })
@@ -67,24 +69,55 @@ export class PlayMusic extends Component<PlayMusicProps> {
 
 
     async nextMusic() {
-        var trackMusic = {}
-        const trackId = await RNTrackPlayer.getCurrentTrack();
-        const trackObject = await RNTrackPlayer.getTrack(trackId);
-        await ListMusic.forEach(element => {
-            if (element?.id + 1 === parseInt(trackObject?.id) + 1) {
-                trackMusic = ListMusic.map(async result => {
-                    if (result?.id === parseInt(trackObject?.id) + 1) {
-                        // await RNTrackPlayer.reset()
-                        // await RNTrackPlayer.add(result)
-                        // await RNTrackPlayer.play();
-                        // return result
-                        console.log(result)
-                    }
-                })
+        var GettrackObject = {}
+        await ListMusic.map(async function (item, index) {
+            const trackId = await RNTrackPlayer.getCurrentTrack();
+            console.log('tren nà', trackId)
+            const trackObject = await RNTrackPlayer.getTrack(trackId);
+            // console.log('item', JSON.stringify(item, null, 2))
+            if (item?.id === parseInt(trackObject?.id)) {
+                await RNTrackPlayer.reset()
+                await RNTrackPlayer.add(ListMusic[index + 1])
+                await RNTrackPlayer.play()
+                const trackId = await RNTrackPlayer.getCurrentTrack();
+                console.log('có lấy dc +++++', trackId)
+                GettrackObject = await RNTrackPlayer.getTrack(trackId);
+                console.log('tuyên của tuyên *****', JSON.stringify(GettrackObject, null, 2))
             }
+
         });
 
-        console.log('trackMusic', JSON.stringify(trackMusic, null, 2))
+        await setTimeout(() => {
+            this.setState({
+                trackObject: GettrackObject
+            })
+        }, 2000);
+
+    }
+    async prew() {
+        var GettrackObject = {}
+        await ListMusic.map(async function (item, index) {
+            const trackId = await RNTrackPlayer.getCurrentTrack();
+            console.log('tren nà', trackId)
+            const trackObject = await RNTrackPlayer.getTrack(trackId);
+            // console.log('item', JSON.stringify(item, null, 2))
+            if (item?.id === parseInt(trackObject?.id)) {
+                await RNTrackPlayer.reset()
+                await RNTrackPlayer.add(ListMusic[index - 1])
+                await RNTrackPlayer.play()
+                const trackId = await RNTrackPlayer.getCurrentTrack();
+                console.log('có lấy dc +++++', trackId)
+                GettrackObject = await RNTrackPlayer.getTrack(trackId);
+                console.log('tuyên của tuyên *****', JSON.stringify(GettrackObject, null, 2))
+            }
+
+        });
+
+        await setTimeout(() => {
+            this.setState({
+                trackObject: GettrackObject
+            })
+        }, 2000);
     }
 
     onShare = async () => {
@@ -109,11 +142,6 @@ export class PlayMusic extends Component<PlayMusicProps> {
         }
     };
     hide() {
-        // this.setState({ visible: false }, () => {
-        //     setTimeout(() => {
-        //         onDone();
-        //     }, 310);
-        // });
         this.props.navigation.goBack()
     }
     async componentDidMount() {
@@ -176,6 +204,7 @@ export class PlayMusic extends Component<PlayMusicProps> {
         })
         const { trackObject, playMusic } = this.state;
         const { styleContainer, navigation } = this.props;
+
         return (
             <LinearGradient colors={[ptColor.black, ptColor.black, ptColor.black, ptColor.black]} style={{
                 flex: 1,
@@ -295,6 +324,7 @@ export class PlayMusic extends Component<PlayMusicProps> {
                                     style={{
                                         alignItems: 'flex-end',
                                     }}
+                                    onPress={() => this.prew()}
                                     name='skip-back'
                                     type='feather'
                                     color={ptColor.white}

@@ -15,7 +15,7 @@ import configureStore from './src/states';
 import { Platform } from 'react-native';
 import { imagePath } from './src/utils/imagePath';
 import { MenuProvider } from 'react-native-popup-menu';
-import { LogBox } from 'react-native';
+import { LogBox, YellowBox } from 'react-native';
 
 const { store, persistor } = configureStore();
 const theme = {
@@ -25,7 +25,7 @@ const theme = {
     },
   },
 };
-console.disableYellowBox = true;
+
 const App = () => {
   useEffect(() => {
     // TrackPlayer.setupPlayer().then(() => {
