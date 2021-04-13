@@ -70,29 +70,34 @@ export class PlayMusic extends Component<PlayMusicProps> {
 
     async nextMusic() {
         var GettrackObject = {}
-        await ListMusic.map(async function (item, index) {
+
+        await ListMusic.forEach(async function (item, index, value) {
             const trackId = await RNTrackPlayer.getCurrentTrack();
             console.log('tren nà', trackId)
+            console.log('index', item)
             const trackObject = await RNTrackPlayer.getTrack(trackId);
             // console.log('item', JSON.stringify(item, null, 2))
-            if (item?.id === parseInt(trackObject?.id)) {
+            if (ListMusic.length + 1 > ListMusic.length) {
+                await RNTrackPlayer.reset()
+                await RNTrackPlayer.add(ListMusic[0])
+                await RNTrackPlayer.play()
+                const trackId = await RNTrackPlayer.getCurrentTrack();
+                GettrackObject = await RNTrackPlayer.getTrack(trackId);
+            } else if (item?.id === parseInt(trackObject?.id)) {
                 await RNTrackPlayer.reset()
                 await RNTrackPlayer.add(ListMusic[index + 1])
                 await RNTrackPlayer.play()
                 const trackId = await RNTrackPlayer.getCurrentTrack();
-                console.log('có lấy dc +++++', trackId)
                 GettrackObject = await RNTrackPlayer.getTrack(trackId);
-                console.log('tuyên của tuyên *****', JSON.stringify(GettrackObject, null, 2))
             }
 
-        });
 
+        });
         await setTimeout(() => {
             this.setState({
                 trackObject: GettrackObject
             })
-        }, 2000);
-
+        }, 3000);
     }
     async prew() {
         var GettrackObject = {}
@@ -101,6 +106,13 @@ export class PlayMusic extends Component<PlayMusicProps> {
             console.log('tren nà', trackId)
             const trackObject = await RNTrackPlayer.getTrack(trackId);
             // console.log('item', JSON.stringify(item, null, 2))
+            if (ListMusic.length - 1 > 0) {
+                await RNTrackPlayer.reset()
+                await RNTrackPlayer.add(ListMusic[0])
+                await RNTrackPlayer.play()
+                const trackId = await RNTrackPlayer.getCurrentTrack();
+                GettrackObject = await RNTrackPlayer.getTrack(trackId);
+            } else
             if (item?.id === parseInt(trackObject?.id)) {
                 await RNTrackPlayer.reset()
                 await RNTrackPlayer.add(ListMusic[index - 1])
@@ -117,7 +129,7 @@ export class PlayMusic extends Component<PlayMusicProps> {
             this.setState({
                 trackObject: GettrackObject
             })
-        }, 2000);
+        }, 3000);
     }
 
     onShare = async () => {

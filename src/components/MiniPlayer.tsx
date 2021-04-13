@@ -58,7 +58,7 @@ const MiniPlayer = (props: Props) => {
 
 
     if (playerContext.isEmpty || playerContext?.currentTrack) {
-        // console.log('playerContext', JSON.stringify(playerContext, null, 2))
+        console.log('playerContext', JSON.stringify(playerContext, null, 2))
         return (
             <LinearGradient
                 colors={['#282828', '#282828', '#282828']} style={{
@@ -71,7 +71,7 @@ const MiniPlayer = (props: Props) => {
                     justifyContent: 'space-between'
                 }}>
                 <MyTouchableOpacity
-                    onPress={() => navigation.navigate(ROUTE_KEY.PlayMusic) }
+                    onPress={() => navigation.navigate(ROUTE_KEY.PlayMusic)}
                     style={{
                         flexDirection: 'row',
                     }}>
