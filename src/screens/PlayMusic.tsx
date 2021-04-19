@@ -67,7 +67,7 @@ export class PlayMusic extends Component<PlayMusicProps> {
 
     }
 
-
+   // code của Tuyen Internship
     async nextMusic() {
         var GettrackObject = {}
 
@@ -76,8 +76,15 @@ export class PlayMusic extends Component<PlayMusicProps> {
             console.log('tren nà', trackId)
             console.log('index', item)
             const trackObject = await RNTrackPlayer.getTrack(trackId);
-            // console.log('item', JSON.stringify(item, null, 2))
-            if (ListMusic.length + 1 > ListMusic.length) {
+            console.log('item', JSON.stringify(ListMusic[index + 1], null, 2))
+            // if (ListMusic.length + 1 > ListMusic.length) {
+            //     await RNTrackPlayer.reset()
+            //     await RNTrackPlayer.add(ListMusic[0])
+            //     await RNTrackPlayer.play()
+            //     const trackId = await RNTrackPlayer.getCurrentTrack();
+            //     GettrackObject = await RNTrackPlayer.getTrack(trackId);
+            // } else 
+            if (ListMusic[index + 1] === undefined) {
                 await RNTrackPlayer.reset()
                 await RNTrackPlayer.add(ListMusic[0])
                 await RNTrackPlayer.play()
@@ -99,37 +106,63 @@ export class PlayMusic extends Component<PlayMusicProps> {
             })
         }, 3000);
     }
+
+    // code của đại ca tài Senior
     async prew() {
         var GettrackObject = {}
-        await ListMusic.map(async function (item, index) {
-            const trackId = await RNTrackPlayer.getCurrentTrack();
-            console.log('tren nà', trackId)
-            const trackObject = await RNTrackPlayer.getTrack(trackId);
-            // console.log('item', JSON.stringify(item, null, 2))
-            if (ListMusic.length - 1 > 0) {
+
+        const trackId = await RNTrackPlayer.getCurrentTrack();
+        const trackObject = await RNTrackPlayer.getTrack(trackId);
+        const indexTrack = ListMusic.findIndex(m =>  m.id === parseInt(trackObject?.id) )
+
+        console.log(trackId, trackObject, indexTrack);
+        if (indexTrack >= 0) {
+            if (indexTrack === 0) {
                 await RNTrackPlayer.reset()
-                await RNTrackPlayer.add(ListMusic[0])
-                await RNTrackPlayer.play()
+                await RNTrackPlayer.add(ListMusic[indexTrack]);
+                await RNTrackPlayer.play();
                 const trackId = await RNTrackPlayer.getCurrentTrack();
                 GettrackObject = await RNTrackPlayer.getTrack(trackId);
-            } else
-            if (item?.id === parseInt(trackObject?.id)) {
-                await RNTrackPlayer.reset()
-                await RNTrackPlayer.add(ListMusic[index - 1])
-                await RNTrackPlayer.play()
-                const trackId = await RNTrackPlayer.getCurrentTrack();
-                console.log('có lấy dc +++++', trackId)
-                GettrackObject = await RNTrackPlayer.getTrack(trackId);
-                console.log('tuyên của tuyên *****', JSON.stringify(GettrackObject, null, 2))
             }
+            else {
+                await RNTrackPlayer.reset()
+                await RNTrackPlayer.add(ListMusic[indexTrack - 1]);
+                await RNTrackPlayer.play();
+                const trackId = await RNTrackPlayer.getCurrentTrack();
+                GettrackObject = await RNTrackPlayer.getTrack(trackId);
+            }
+            await setTimeout(() => {
+                this.setState({
+                    trackObject: GettrackObject
+                })
+            }, 3000);
+        }
+        // await ListMusic.forEach(async function (item, index) {
+        //     console.log('tren nà', trackId)
+        //     const trackObject = await RNTrackPlayer.getTrack(trackId);
+        //     console.log('item', JSON.stringify(index, null, 2))
+        //     if (ListMusic[index] === undefined) {
+        //         await RNTrackPlayer.reset()
+        //         await RNTrackPlayer.add(ListMusic[0])
+        //         await RNTrackPlayer.play()
+        //         const trackId = await RNTrackPlayer.getCurrentTrack();
+        //         GettrackObject = await RNTrackPlayer.getTrack(trackId);
+        //     } else
+        //         if (item?.id === parseInt(trackObject?.id)) {
+        //             await RNTrackPlayer.reset()
+        //             await RNTrackPlayer.add(ListMusic[index - 1])
+        //             await RNTrackPlayer.play()
+        //             const trackId = await RNTrackPlayer.getCurrentTrack();
+        //             console.log('có lấy dc +++++', trackId)
+        //             GettrackObject = await RNTrackPlayer.getTrack(trackId);
+        //             console.log('tuyên của tuyên *****', JSON.stringify(GettrackObject, null, 2))
+        //         }
 
-        });
 
-        await setTimeout(() => {
-            this.setState({
-                trackObject: GettrackObject
-            })
-        }, 3000);
+        // });
+
+
+
     }
 
     onShare = async () => {

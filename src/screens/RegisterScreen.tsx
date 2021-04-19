@@ -82,28 +82,22 @@ class RegisterScreen extends React.Component<RegisterScreenProps, any> {
     }
 
     UNSAFE_componentWillUpdate(nextProps) {
-        if (nextProps.userData?.userInfo?.isSuccess) {
+        console.log('nextProps.userData', nextProps.userData?.checkUserRegister)
+        if (nextProps.userData?.checkUserRegister?.isSuccess) {
             Myspinner.hide()
             showMessage({
                 message: 'Thông báo',
-                description: nextProps.userData?.userInfo?.message,
+                description: nextProps.userData?.checkUserRegister?.message,
                 duration: 4000,
                 type: 'success',
             });
-        } else if (nextProps.userData?.userInfo?.isSuccess === false) {
+            this.props.resetregisterUser()
+            this.props.navigation.goBack()
+        } else if (nextProps.userData?.checkUserRegister?.isSuccess === false) {
             Myspinner.hide()
             showMessage({
                 message: 'Thông báo',
-                description: nextProps.userData?.userInfo?.message,
-                duration: 4000,
-                type: 'danger',
-            });
-            this.props.logOut()
-        } else if (nextProps.userData?.err) {
-            Myspinner.hide()
-            showMessage({
-                message: 'Thông báo',
-                description: 'Có lỗi xẫy ra vui lòng thử lại sau',
+                description: nextProps.userData?.checkUserRegister?.message,
                 duration: 4000,
                 type: 'danger',
             });
@@ -194,7 +188,7 @@ class RegisterScreen extends React.Component<RegisterScreenProps, any> {
                                 inputStyle={{
                                     justifyContent: 'center',
                                     fontSize: FS(12),
-                                    color:ptColor.white
+                                    color: ptColor.white
                                 }}
                                 placeholderTextColor={ptColor.gray7}
                                 underlineColorAndroid="transparent"
@@ -278,7 +272,7 @@ class RegisterScreen extends React.Component<RegisterScreenProps, any> {
                                     <Icon
                                         name={this.state.isShowPassword ? 'eye-off' : 'eye'}
                                         size={24}
-                                        color={ptColor.greenSuccess}
+                                        color={ptColor.gray7}
                                         type='feather'
                                         onPress={() => this.showPass()}
                                     />
@@ -317,7 +311,7 @@ class RegisterScreen extends React.Component<RegisterScreenProps, any> {
                                     <Icon
                                         name={this.state.isShowPassword ? 'eye-off' : 'eye'}
                                         size={24}
-                                        color={ptColor.greenSuccess}
+                                        color={ptColor.gray7}
                                         type='feather'
                                         onPress={() => this.showPass()}
                                     />
