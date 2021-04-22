@@ -258,11 +258,13 @@ const HomeScreen = (props: Props,) => {
                     alignItems: 'center',
                     marginTop: 20 * HEIGHT_SCALE_RATIO
                 }}>
-                    <Text style={[style.textCaption, {
-                        color: ptColor.white,
-                        fontWeight: 'bold',
-                        fontSize: FS(15)
-                    }]}>Nhạc Việt</Text>
+                    <MyTouchableOpacity onPress={() => navigation.push(ROUTE_KEY.CategoryMusic)}>
+                        <Text style={[style.textCaption, {
+                            color: ptColor.white,
+                            fontWeight: 'bold',
+                            fontSize: FS(15)
+                        }]}>Nhạc Việt</Text>
+                    </MyTouchableOpacity>
                     <Icon
                         name="chevron-right"
                         size={18 * HEIGHT_SCALE_RATIO}

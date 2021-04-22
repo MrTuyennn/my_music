@@ -77,6 +77,34 @@ export const dataListMusic = [
         title: 'Những bản Hits quốc quân',
         image: imagePath.mtp09
     },
+    {
+        title: 'Những bản Hits quốc quân',
+        image: imagePath.mtp09
+    },
+    {
+        title: 'Những bản Hits quốc quân',
+        image: imagePath.mtp09
+    },
+    {
+        title: 'Những bản Hits quốc quân',
+        image: imagePath.mtp09
+    },
+    {
+        title: 'Những bản Hits quốc quân',
+        image: imagePath.mtp09
+    },
+    {
+        title: 'Những bản Hits quốc quân',
+        image: imagePath.mtp09
+    },
+    {
+        title: 'Những bản Hits quốc quân',
+        image: imagePath.mtp09
+    },
+    {
+        title: 'Những bản Hits quốc quân',
+        image: imagePath.mtp09
+    },
 ]
 
 export const ListMusic = [

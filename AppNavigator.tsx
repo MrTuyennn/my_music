@@ -22,6 +22,7 @@ import { imagePath } from './src/utils/imagePath';
 import Broswer from './src/screens/Broswer';
 import ProfileArtist from './src/screens/ProfileArtist'
 import MusicDetail from './src/screens/MusicDetail'
+import ListMusics from './src/screens/ListMusics'
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator()
 
@@ -67,6 +68,7 @@ function StackMusic() {
       <Stack.Screen name={ROUTE_KEY.Broswer} component={Broswer} />
       <Stack.Screen name={ROUTE_KEY.ProfileArtist} component={ProfileArtist} />
       <Stack.Screen name={ROUTE_KEY.MusicDetail} component={MusicDetail} />
+      <Stack.Screen name={ROUTE_KEY.ListMusics} component={ListMusics} />
       <Stack.Screen name={ROUTE_KEY.TabNavigator} component={TabNavigator} />
     </Stack.Navigator>
   )

@@ -9,6 +9,9 @@ import { FS, HEIGHT_SCALE_RATIO, ptColor, style, WIDTH_SCALE_RATIO } from '../ut
 import LinearGradient from 'react-native-linear-gradient';
 import { myAlert } from '../components/MyAlert';
 import { Data, DataItem } from '../services/data'
+import { ROUTE_KEY } from '../utils/contains';
+import { useNavigation } from '@react-navigation/native';
+
 interface Props {
 
 }
@@ -17,6 +20,7 @@ interface Props {
 const ProfileUser = (props: Props) => {
     const disPatch = useDispatch()
     const [user, setuser] = useState('')
+    const navigation = useNavigation()
     const renderItem = ({ item }) => (
         <MyTouchableOpacity style={{
             flex: 1 / 3,
@@ -139,19 +143,22 @@ const ProfileUser = (props: Props) => {
             <View style={{
                 flex: 5,
             }}>
-                {DataItem?.map(result => {
+                {DataItem?.map((result,key) => {
                     return (
                         <MyTouchableOpacity 
-                           
+                           key={key}
                             onPress={() => {
                                 switch (result.type) {
                                     case 1:
                                         console.log('Điều khoản')
                                         break;
                                     case 2:
-                                        console.log('Giới thiệu')
+                                        navigation.navigate(ROUTE_KEY.Broswer, {
+                                            title: result?.title,
+                                            url: 'https://www.nhaccuatui.com/thoa-thuan-su-dung'
+                                        })
                                         break;
-                                    case 3:
+                                    case 6:
                                         // console.log('disPatch(logOut())', disPatch(logOut()))
                                         // 
                                         myAlert(
@@ -163,6 +170,12 @@ const ProfileUser = (props: Props) => {
                                             () => disPatch(logOut())
                                         )
                                         break;
+                                    case 5 :
+                                        navigation.navigate(ROUTE_KEY.Broswer, {
+                                            title: result?.title,
+                                            url: 'https://www.nhaccuatui.com/chinh-sach-bao-mat'
+                                        })
+                                        break;    
                                     default:
                                         break;
                                 }
