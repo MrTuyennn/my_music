@@ -51,7 +51,7 @@ const ProfileUser = (props: Props) => {
                 // borderColor: ptColor.white,
                 justifyContent: 'center',
                 alignItems: 'center',
-                backgroundColor:ptColor.greenSuccess
+                backgroundColor: ptColor.greenSuccess
             }]}>
                 <Image style={{ height: 50, width: 50, tintColor: ptColor.white, }} source={item.icon}></Image>
                 <Text
@@ -143,19 +143,28 @@ const ProfileUser = (props: Props) => {
             <View style={{
                 flex: 5,
             }}>
-                {DataItem?.map((result,key) => {
+                {DataItem?.map((result, key) => {
                     return (
-                        <MyTouchableOpacity 
-                           key={key}
+                        <MyTouchableOpacity
+                            key={key}
                             onPress={() => {
                                 switch (result.type) {
+                                    case 0:
+                                        navigation.navigate(ROUTE_KEY.Details, {
+                                            title: result?.title,
+                                            type: result?.type
+                                        })
+                                        break;
                                     case 1:
-                                        console.log('Điều khoản')
+                                        navigation.navigate(ROUTE_KEY.Details, {
+                                            title: result?.title,
+                                            type: result?.type
+                                        })
                                         break;
                                     case 2:
-                                        navigation.navigate(ROUTE_KEY.Broswer, {
+                                        navigation.navigate(ROUTE_KEY.Details, {
                                             title: result?.title,
-                                            url: 'https://www.nhaccuatui.com/thoa-thuan-su-dung'
+                                            type: result?.type
                                         })
                                         break;
                                     case 6:
@@ -170,12 +179,18 @@ const ProfileUser = (props: Props) => {
                                             () => disPatch(logOut())
                                         )
                                         break;
-                                    case 5 :
-                                        navigation.navigate(ROUTE_KEY.Broswer, {
-                                            title: result?.title,
-                                            url: 'https://www.nhaccuatui.com/chinh-sach-bao-mat'
-                                        })
-                                        break;    
+                                    case 5:
+                                        myAlert(
+                                            'Thông báo',
+                                            `Giấy phép mạng xã hội: 314/GP-BTTTT do Bộ Thông tin và Truyền thông cấp ngày 17/7/2015
+                                             Chủ quản: Công Ty Cổ Phần VNG
+                                             Z06 Đường số 13, phường Tân Thuận Đông, quận 7, thành phố Hồ Chí Minh, Việt Nam`,
+                                            'Trở về',
+                                            () => { },
+                                            'Đồng ý',
+                                            () => { }
+                                        )
+                                        break;
                                     default:
                                         break;
                                 }

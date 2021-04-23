@@ -23,6 +23,7 @@ import Broswer from './src/screens/Broswer';
 import ProfileArtist from './src/screens/ProfileArtist'
 import MusicDetail from './src/screens/MusicDetail'
 import ListMusics from './src/screens/ListMusics'
+import Details from './src/screens/Details'
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator()
 
@@ -70,6 +71,7 @@ function StackMusic() {
       <Stack.Screen name={ROUTE_KEY.MusicDetail} component={MusicDetail} />
       <Stack.Screen name={ROUTE_KEY.ListMusics} component={ListMusics} />
       <Stack.Screen name={ROUTE_KEY.TabNavigator} component={TabNavigator} />
+      <Stack.Screen name={ROUTE_KEY.Details} component={Details} />
     </Stack.Navigator>
   )
 }
