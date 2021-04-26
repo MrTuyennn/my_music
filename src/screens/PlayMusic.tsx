@@ -307,7 +307,7 @@ export class PlayMusic extends Component<PlayMusicProps> {
                                 overflow: 'hidden',
                             }}>
                                 <Animated.Image
-                                    resizeMode='cover' source={{ uri: trackObject?.artwork?.uri }}
+                                    resizeMode='cover' source={{ uri: trackObject?.artwork }}
                                     style={{
                                         height: '100%',
                                         width: '100%',

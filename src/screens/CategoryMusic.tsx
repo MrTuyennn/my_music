@@ -3,24 +3,44 @@ import { Image, Text, View } from 'react-native';
 import { Icon } from 'react-native-elements';
 import LinearGradient from 'react-native-linear-gradient';
 import { connect } from 'react-redux';
-import { ROUTE_KEY } from '../utils/contains';
 import MyTouchableOpacity from '../components/MyTouchableOpacity';
 import PFlatList from '../components/PFlatList';
 import PRow from '../components/PRow';
-import { dataListMusic } from '../services/data';
-import { FS, HEIGHT_SCALE_RATIO, ptColor, style, WIDTH_SCALE_RATIO } from '../utils/styles';
+import {
+    dataListMusicTopMusicFourites,
+    dataListMusicTopMusicSooDepp,
+    dataListMusicTopMusicUSUK,
+    dataListMusicTopMusicViet
+} from '../services/data';
+import { ROUTE_KEY } from '../utils/contains';
+import {
+    FS,
+    HEIGHT_SCALE_RATIO,
+    ptColor,
+    style,
+    WIDTH_SCALE_RATIO
+} from '../utils/styles';
 export interface CategoryMusicProps {
     navigation?: any
+    route?: any
 }
 
 class CategoryMusic extends React.Component<CategoryMusicProps, any> {
     navigation?: any
+    route?: any
     constructor(props) {
         super(props);
+        this.state = {
+            data: []
+        }
     }
     renderItemDataListMusic = ({ item }) => {
         return <MyTouchableOpacity
-            onPress={() => this.props.navigation.push(ROUTE_KEY.ListMusics)}
+            onPress={() =>
+                this.props.navigation.push(ROUTE_KEY.ListMusics, {
+                    item: item
+                })
+            }
             style={{
                 width: 150 * WIDTH_SCALE_RATIO,
                 marginRight: 50 * HEIGHT_SCALE_RATIO,
@@ -34,7 +54,7 @@ class CategoryMusic extends React.Component<CategoryMusicProps, any> {
                     height: 170 * HEIGHT_SCALE_RATIO,
                     width: 170 * WIDTH_SCALE_RATIO,
                     borderRadius: 15 * HEIGHT_SCALE_RATIO,
-                }} source={item?.image}></Image>
+                }} source={{ uri: item?.image }}></Image>
                 <LinearGradient colors={['rgba(225, 225, 225, 0.03)', 'rgba(0, 0, 0, 0.8)']}
                     start={{ x: 1, y: 0 }}
                     end={{ x: 1, y: 1 }}
@@ -80,6 +100,36 @@ class CategoryMusic extends React.Component<CategoryMusicProps, any> {
             }]}>{item?.title}</Text>
         </MyTouchableOpacity>
     }
+    componentDidMount() {
+        switch (this.props.route?.params.type) {
+            case 0:
+                this.setState({
+                    data: dataListMusicTopMusicViet
+                })
+                break;
+            case 1:
+                this.setState({
+                    data: dataListMusicTopMusicUSUK
+                })
+                break;
+            case 2:
+                this.setState({
+                    data: dataListMusicTopMusicSooDepp
+                })
+                break;
+            case 3:
+                this.setState({
+                    data: dataListMusicTopMusicFourites
+                })
+                break;
+            default:
+                this.setState({
+                    data: []
+                })
+                break;
+        }
+
+    }
     render() {
         const { navigation } = this.props
         return (
@@ -115,7 +165,7 @@ class CategoryMusic extends React.Component<CategoryMusicProps, any> {
                 </PRow>
                 <PFlatList
                     numColumns={2}
-                    data={dataListMusic}
+                    data={this.state.data ?? []}
                     renderItem={this.renderItemDataListMusic}></PFlatList>
             </LinearGradient>
         );

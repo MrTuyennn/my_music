@@ -61,17 +61,20 @@ const HistoryScreen = (props: Props) => {
                         position: 'absolute',
                         bottom: -1,
                         width: '100%',
-                        height: 40 * HEIGHT_SCALE_RATIO,
+                        height: '100%',
                     }}>
-                    <Text style={[style.textCaption, {
-                        color: ptColor.white,
-                        textAlign: 'center',
-                        flex: 1,
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        top: 10 * HEIGHT_SCALE_RATIO
-                    }]}>{item?.name}</Text>
+
                 </LinearGradient>
+                <Text style={[style.textCaption, {
+                    position: 'absolute',
+                    color: ptColor.white,
+                    textAlign: 'left',
+                    flex: 1,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    top: 10 * HEIGHT_SCALE_RATIO,
+                    left: 10 * HEIGHT_SCALE_RATIO
+                }]}>{item?.name}</Text>
             </View>
 
 

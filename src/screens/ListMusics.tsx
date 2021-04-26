@@ -12,7 +12,7 @@ import { FS, HEIGHT_SCALE_RATIO, ptColor, style, WIDTH_SCALE_RATIO } from '../ut
 import { usePlayerContext } from '../contexts/PlayerContext'
 import { ROUTE_KEY } from '../utils/contains'
 interface Props {
-
+    route?: any
 }
 
 const ListMusics = (props: Props) => {
@@ -85,7 +85,7 @@ const ListMusics = (props: Props) => {
             }}>
                 <Image
                     resizeMode='center'
-                    source={imagePath.mtp01}
+                    source={{ uri: props?.route?.params?.item?.image }}
                     style={{
                         height: '100%',
                         width: '100%',
@@ -102,7 +102,7 @@ const ListMusics = (props: Props) => {
                     textAlign: 'center',
                     fontWeight: 'bold',
                     fontSize: FS(18)
-                }}>Danh sách bài hát</Text>
+                }}>{props?.route?.params?.item?.title}</Text>
                 <Text style={[style.textCaption, { color: ptColor.white, textAlign: 'center' }]}>của <Text style={[style.textCaption, { color: ptColor.greenSuccess }]}>Messica</Text></Text>
             </View>
             <PFlatList

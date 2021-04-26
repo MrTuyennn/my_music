@@ -6,7 +6,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import Swiper from 'react-native-swiper';
 import MyTouchableOpacity from '../components/MyTouchableOpacity';
 import PFlatList from '../components/PFlatList';
-import { dataListMusicTopMusicUSUK, dataListMusicTopMusicViet, dataSwipper, funcData } from '../services/data';
+import { dataListMusicTopMusicFourites, dataListMusicTopMusicSooDepp, dataListMusicTopMusicUSUK, dataListMusicTopMusicViet, dataSwipper, funcData } from '../services/data';
 import { ROUTE_KEY } from '../utils/contains';
 import { imagePath } from '../utils/imagePath';
 import { FS, HEIGHT_SCALE_RATIO, ptColor, style, WIDTH_SCALE_RATIO } from '../utils/styles';
@@ -73,14 +73,18 @@ const HomeScreen = (props: Props,) => {
 
 
     const renderItemDataListMusic = ({ item }) => {
-        console.log('item',item)
-        return <View style={{
-            width: 120 * WIDTH_SCALE_RATIO,
-            marginRight: 10 * HEIGHT_SCALE_RATIO,
-            marginTop: 5 * HEIGHT_SCALE_RATIO,
-            // backgroundColor:ptColor.white,
-            height: 170 * HEIGHT_SCALE_RATIO,
-        }}>
+
+        return <MyTouchableOpacity
+            onPress={() => navigation.navigate(ROUTE_KEY.ListMusics, {
+                item: item
+            })}
+            style={{
+                width: 120 * WIDTH_SCALE_RATIO,
+                marginRight: 10 * HEIGHT_SCALE_RATIO,
+                marginTop: 5 * HEIGHT_SCALE_RATIO,
+                // backgroundColor:ptColor.white,
+                height: 170 * HEIGHT_SCALE_RATIO,
+            }}>
             <View>
                 <Image style={{
                     height: 120 * HEIGHT_SCALE_RATIO,
@@ -112,7 +116,7 @@ const HomeScreen = (props: Props,) => {
                 fontFamily: 'bold',
                 fontSize: FS(10)
             }}>{item?.title}</Text>
-        </View>
+        </MyTouchableOpacity>
     }
     return (
         <ScrollView >
@@ -258,7 +262,7 @@ const HomeScreen = (props: Props,) => {
                     alignItems: 'center',
                     marginTop: 20 * HEIGHT_SCALE_RATIO
                 }}>
-                    <MyTouchableOpacity onPress={() => navigation.push(ROUTE_KEY.CategoryMusic)}>
+                    <MyTouchableOpacity onPress={() => navigation.push(ROUTE_KEY.CategoryMusic, { type: 0 })}>
                         <Text style={[style.textCaption, {
                             color: ptColor.white,
                             fontWeight: 'bold',
@@ -283,11 +287,13 @@ const HomeScreen = (props: Props,) => {
                     alignItems: 'center',
                     marginTop: 20 * HEIGHT_SCALE_RATIO
                 }}>
-                    <Text style={[style.textCaption, {
-                        color: ptColor.white,
-                        fontWeight: 'bold',
-                        fontSize: FS(15)
-                    }]}>Nhạc Âu Mỹ</Text>
+                    <MyTouchableOpacity onPress={() => navigation.push(ROUTE_KEY.CategoryMusic, { type: 1 })}>
+                        <Text style={[style.textCaption, {
+                            color: ptColor.white,
+                            fontWeight: 'bold',
+                            fontSize: FS(15)
+                        }]}>Nhạc Âu Mỹ</Text>
+                    </MyTouchableOpacity>
                     <Icon
                         name="chevron-right"
                         size={18 * HEIGHT_SCALE_RATIO}
@@ -299,6 +305,56 @@ const HomeScreen = (props: Props,) => {
                     <PFlatList
                         horizontal={true}
                         data={dataListMusicTopMusicUSUK}
+                        renderItem={renderItemDataListMusic}></PFlatList>
+                </View>
+                <View style={{
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    marginTop: 20 * HEIGHT_SCALE_RATIO
+                }}>
+                    <MyTouchableOpacity onPress={() => navigation.push(ROUTE_KEY.CategoryMusic, { type: 2 })}>
+                        <Text style={[style.textCaption, {
+                            color: ptColor.white,
+                            fontWeight: 'bold',
+                            fontSize: FS(15)
+                        }]}>Nhạc Tâm Trạng Hôm Nay</Text>
+                    </MyTouchableOpacity>
+                    <Icon
+                        name="chevron-right"
+                        size={18 * HEIGHT_SCALE_RATIO}
+                        color={ptColor.white}
+                        type="feather"
+                    />
+                </View>
+                <View>
+                    <PFlatList
+                        horizontal={true}
+                        data={dataListMusicTopMusicSooDepp}
+                        renderItem={renderItemDataListMusic}></PFlatList>
+                </View>
+                <View style={{
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    marginTop: 20 * HEIGHT_SCALE_RATIO
+                }}>
+                    <MyTouchableOpacity onPress={() => navigation.push(ROUTE_KEY.CategoryMusic, { type: 3 })}>
+                        <Text style={[style.textCaption, {
+                            color: ptColor.white,
+                            fontWeight: 'bold',
+                            fontSize: FS(15)
+                        }]}>Có thể bạn muốn nghe</Text>
+                    </MyTouchableOpacity>
+                    <Icon
+                        name="chevron-right"
+                        size={18 * HEIGHT_SCALE_RATIO}
+                        color={ptColor.white}
+                        type="feather"
+                    />
+                </View>
+                <View>
+                    <PFlatList
+                        horizontal={true}
+                        data={dataListMusicTopMusicFourites}
                         renderItem={renderItemDataListMusic}></PFlatList>
                 </View>
             </LinearGradient>

@@ -12,6 +12,7 @@ import MyTouchableOpacity from './MyTouchableOpacity';
 import PRow from './PRow';
 import { useNavigation } from '@react-navigation/native';
 import { ROUTE_KEY } from '../utils/contains';
+import { ListMusic } from '../services/data'
 
 
 interface Props {
@@ -56,6 +57,33 @@ const MiniPlayer = (props: Props) => {
         )
     }
 
+    const nextMusic = async () => {
+        // var GettrackObject = {}
+
+        // await ListMusic.forEach(async function (item, index, value) {
+        //     const trackId = await RNTrackPlayer.getCurrentTrack();
+        //     const trackObject = await RNTrackPlayer.getTrack(trackId);
+        //     if (ListMusic[index + 1] === undefined) {
+        //         await RNTrackPlayer.reset()
+        //         await RNTrackPlayer.add(ListMusic[0])
+        //         await RNTrackPlayer.play()
+        //         const trackId = await RNTrackPlayer.getCurrentTrack();
+        //         GettrackObject = await RNTrackPlayer.getTrack(trackId);
+        //     } else if (item?.id === parseInt(trackObject?.id)) {
+        //         await RNTrackPlayer.reset()
+        //         await RNTrackPlayer.add(ListMusic[index + 1])
+        //         await RNTrackPlayer.play()
+        //         const trackId = await RNTrackPlayer.getCurrentTrack();
+        //         GettrackObject = await RNTrackPlayer.getTrack(trackId);
+        //     }
+        // });
+        // await setTimeout(() => {
+        //     this.setState({
+        //         trackObject: GettrackObject
+        //     })
+        // }, 3000);
+    }
+
 
     if (playerContext.isEmpty || playerContext?.currentTrack) {
         console.log('playerContext', JSON.stringify(playerContext, null, 2))
@@ -75,7 +103,7 @@ const MiniPlayer = (props: Props) => {
                     style={{
                         flexDirection: 'row',
                     }}>
-                    <Animated.Image source={imagePath.mtp01}
+                    <Animated.Image source={{ uri: playerContext?.currentTrack?.artwork }}
                         style={{
                             height: 45 * HEIGHT_SCALE_RATIO,
                             width: 45 * WIDTH_SCALE_RATIO,
@@ -127,7 +155,7 @@ const MiniPlayer = (props: Props) => {
                         style={{
                             marginHorizontal: 7 * WIDTH_SCALE_RATIO
                         }}
-                        onPress={() => playerContext.isPlaying ? playerContext.pause() : RNTrackPlayer.play()}>
+                        onPress={() => nextMusic()}>
                         <Icon
                             name='skip-forward'
                             type='feather'
