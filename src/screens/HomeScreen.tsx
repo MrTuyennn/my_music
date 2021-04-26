@@ -11,7 +11,7 @@ import { ROUTE_KEY } from '../utils/contains';
 import { imagePath } from '../utils/imagePath';
 import { FS, HEIGHT_SCALE_RATIO, ptColor, style, WIDTH_SCALE_RATIO } from '../utils/styles';
 interface Props {
-
+  navigation?: any
 }
 
 
@@ -25,7 +25,7 @@ const HomeScreen = (props: Props,) => {
                 console.log('item', item)
                 break;
             case 1:
-                navigation.navigate(ROUTE_KEY.CategoryMusic)
+                props.navigation?.jumpTo(ROUTE_KEY.OderScreen)
                 break;
             case 2:
                 navigation.navigate(ROUTE_KEY.Broswer, {

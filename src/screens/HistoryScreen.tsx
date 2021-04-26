@@ -14,7 +14,8 @@ import { getCataMusic } from '../states/ducks/cate/action'
 import { removeAscent } from '../utils/func';
 
 interface Props {
-
+    navigation?: any,
+    route?: any
 }
 
 const HistoryScreen = (props: Props) => {
@@ -40,12 +41,16 @@ const HistoryScreen = (props: Props) => {
     const renderitem = ({ item }) => {
         // console.log('item', item)
         return (
-            <View style={{
-                height: 100 * HEIGHT_SCALE_RATIO,
-                width: 180 * WIDTH_SCALE_RATIO,
-                margin: 5 * HEIGHT_SCALE_RATIO,
-                borderRadius: 10 * HEIGHT_SCALE_RATIO
-            }}>
+            <MyTouchableOpacity
+                onPress={() => props.navigation.push(ROUTE_KEY.ListMusics, {
+                    item: item,
+                })}
+                style={{
+                    height: 100 * HEIGHT_SCALE_RATIO,
+                    width: 180 * WIDTH_SCALE_RATIO,
+                    margin: 5 * HEIGHT_SCALE_RATIO,
+                    borderRadius: 10 * HEIGHT_SCALE_RATIO
+                }}>
                 <Image
                     resizeMode='cover'
                     style={{
@@ -75,7 +80,7 @@ const HistoryScreen = (props: Props) => {
                     top: 10 * HEIGHT_SCALE_RATIO,
                     left: 10 * HEIGHT_SCALE_RATIO
                 }]}>{item?.name}</Text>
-            </View>
+            </MyTouchableOpacity>
 
 
         )

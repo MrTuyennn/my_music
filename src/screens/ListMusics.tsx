@@ -40,7 +40,7 @@ const ListMusics = (props: Props) => {
                         height: 50 * HEIGHT_SCALE_RATIO,
                         width: 50 * WIDTH_SCALE_RATIO,
                         borderRadius: 15 * HEIGHT_SCALE_RATIO
-                    }} source={item?.artwork}></Image>
+                    }} source={{ uri: item?.artwork}}></Image>
                     <View>
                         <Text style={[style.textCaption, { color: ptColor.white, fontSize: FS(15) }]}>{item?.title}</Text>
                         <Text style={[style.textCaption, { color: ptColor.gray3, fontSize: FS(10) }]}>{item?.artist}</Text>
@@ -85,7 +85,7 @@ const ListMusics = (props: Props) => {
             }}>
                 <Image
                     resizeMode='center'
-                    source={{ uri: props?.route?.params?.item?.image }}
+                    source={{ uri: props?.route?.params?.item?.image || props?.route?.params?.item?.thumbnail }}
                     style={{
                         height: '100%',
                         width: '100%',
@@ -102,7 +102,7 @@ const ListMusics = (props: Props) => {
                     textAlign: 'center',
                     fontWeight: 'bold',
                     fontSize: FS(18)
-                }}>{props?.route?.params?.item?.title}</Text>
+                }}>{props?.route?.params?.item?.title || props?.route?.params?.item?.name}</Text>
                 <Text style={[style.textCaption, { color: ptColor.white, textAlign: 'center' }]}>của <Text style={[style.textCaption, { color: ptColor.greenSuccess }]}>Messica</Text></Text>
             </View>
             <PFlatList

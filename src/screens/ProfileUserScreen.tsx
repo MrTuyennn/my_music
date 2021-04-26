@@ -13,7 +13,7 @@ import { ROUTE_KEY } from '../utils/contains';
 import { useNavigation } from '@react-navigation/native';
 
 interface Props {
-
+    navigation?: any
 }
 
 
@@ -31,10 +31,10 @@ const ProfileUser = (props: Props) => {
             onPress={() => {
                 switch (item.type) {
                     case 1:
-                        ToastAndroid.show('Danh sách ưa thích', ToastAndroid.SHORT)
+                        props.navigation.jumpTo(ROUTE_KEY.HistoryScreen)
                         break;
                     case 2:
-                        ToastAndroid.show('Lịch sử thanh toán', ToastAndroid.SHORT)
+                        props.navigation.navigate(ROUTE_KEY.CategoryMusic, { type: 3 })
                         break;
                     case 3:
                         ToastAndroid.show('Danh sách tiện ích', ToastAndroid.SHORT)
