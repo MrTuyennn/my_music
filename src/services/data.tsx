@@ -106,6 +106,60 @@ export const dataListMusic = [
     },
 ]
 
+export const dataListMusicTopMusicViet = [
+    {
+        title: 'Những bản Hits của V-POP',
+        image:'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/IMAGE_HOME_CATEGORY%2FTopNhacViet%2FTopNhacViet.jpg?alt=media&token=0640e323-4ca8-4d91-90c5-94bc562e5242'
+    },
+    {
+        title: 'Những bản Hits Nhạc RAP',
+        image: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/IMAGE_HOME_CATEGORY%2FTopNhacViet%2FTopRapViet.jpg?alt=media&token=33298d06-98c7-4ed2-b45d-ccae17336a3b'
+    },
+    {
+        title: 'Những bản nhạc tâm trạng',
+        image: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/IMAGE_HOME_CATEGORY%2FTopNhacViet%2FTopNhacTamTrang.jpg?alt=media&token=d79b041a-57e8-415e-8872-1446ce1cd159'
+    },
+    {
+        title: 'Những bản Hits trữ tình',
+        image: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/IMAGE_HOME_CATEGORY%2FTopNhacViet%2FTopNhacTruTinh.jpg?alt=media&token=c91e945f-26cf-46a8-bbc7-2378c06a3767'
+    },
+    {
+        title: 'Những bản Hits HipHip v-pop',
+        image: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/IMAGE_HOME_CATEGORY%2FTopNhacViet%2FTopNhacHipHop.jpg?alt=media&token=cce9bced-3d85-47b3-8af8-f0e952f0c2b7'
+    },
+    {
+        title: 'Nghe gì hôm nay',
+        image: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/IMAGE_HOME_CATEGORY%2FTopNhacViet%2FNgheGiHomeNay.jpg?alt=media&token=b19bf1b5-ccfa-422f-ab76-d9b8c2baeecd'
+    },
+]
+
+export const dataListMusicTopMusicUSUK = [
+    {
+        title: 'Những bản Hits của V-POP',
+        image: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/IMAGE_HOME_CATEGORY%2FTopNhacUsUk%2Falanwalker.jpg?alt=media&token=30d5ff45-6384-44a1-829a-2c7218edf860'
+    },
+    {
+        title: 'Những bản Hits Nhạc RAP',
+        image: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/IMAGE_HOME_CATEGORY%2FTopNhacViet%2FTopRapViet.jpg?alt=media&token=33298d06-98c7-4ed2-b45d-ccae17336a3b'
+    },
+    {
+        title: 'Những bản nhạc tâm trạng',
+        image: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/IMAGE_HOME_CATEGORY%2FTopNhacViet%2FTopNhacTamTrang.jpg?alt=media&token=d79b041a-57e8-415e-8872-1446ce1cd159'
+    },
+    {
+        title: 'Những bản Hits trữ tình',
+        image: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/IMAGE_HOME_CATEGORY%2FTopNhacViet%2FTopNhacTruTinh.jpg?alt=media&token=c91e945f-26cf-46a8-bbc7-2378c06a3767'
+    },
+    {
+        title: 'Những bản Hits HipHip v-pop',
+        image: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/IMAGE_HOME_CATEGORY%2FTopNhacViet%2FTopNhacHipHop.jpg?alt=media&token=cce9bced-3d85-47b3-8af8-f0e952f0c2b7'
+    },
+    {
+        title: 'Nghe gì hôm nay',
+        image: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/IMAGE_HOME_CATEGORY%2FTopNhacViet%2FNgheGiHomeNay.jpg?alt=media&token=b19bf1b5-ccfa-422f-ab76-d9b8c2baeecd'
+    },
+]
+
 export const ListMusic = [
     {
         id: 1,

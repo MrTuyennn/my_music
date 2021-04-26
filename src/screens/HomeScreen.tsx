@@ -1,16 +1,15 @@
-import React, { useEffect } from 'react'
-import { View, Text, Image, ScrollView } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
-import { Input, Icon } from 'react-native-elements';
-import { ptColor, WIDTH_SCALE_RATIO, HEIGHT_SCALE_RATIO, FS, style } from '../utils/styles';
-import { imagePath } from '../utils/imagePath';
-import Swiper from 'react-native-swiper'
-import PFlatList from '../components/PFlatList';
-import MyTouchableOpacity from '../components/MyTouchableOpacity';
-import TrackPlayer from 'react-native-track-player';
-import { dataListMusic, dataSwipper, funcData } from '../services/data'
-import { ROUTE_KEY } from '../utils/contains';
 import { useNavigation } from '@react-navigation/native';
+import React from 'react';
+import { Image, ScrollView, Text, View } from 'react-native';
+import { Icon, Input } from 'react-native-elements';
+import LinearGradient from 'react-native-linear-gradient';
+import Swiper from 'react-native-swiper';
+import MyTouchableOpacity from '../components/MyTouchableOpacity';
+import PFlatList from '../components/PFlatList';
+import { dataListMusicTopMusicUSUK, dataListMusicTopMusicViet, dataSwipper, funcData } from '../services/data';
+import { ROUTE_KEY } from '../utils/contains';
+import { imagePath } from '../utils/imagePath';
+import { FS, HEIGHT_SCALE_RATIO, ptColor, style, WIDTH_SCALE_RATIO } from '../utils/styles';
 interface Props {
 
 }
@@ -74,6 +73,7 @@ const HomeScreen = (props: Props,) => {
 
 
     const renderItemDataListMusic = ({ item }) => {
+        console.log('item',item)
         return <View style={{
             width: 120 * WIDTH_SCALE_RATIO,
             marginRight: 10 * HEIGHT_SCALE_RATIO,
@@ -86,7 +86,7 @@ const HomeScreen = (props: Props,) => {
                     height: 120 * HEIGHT_SCALE_RATIO,
                     width: 120 * WIDTH_SCALE_RATIO,
                     borderRadius: 15 * HEIGHT_SCALE_RATIO,
-                }} source={item?.image}></Image>
+                }} source={{ uri: item?.image || undefined }}></Image>
                 <View style={{
                     height: 20 * HEIGHT_SCALE_RATIO,
                     width: 20 * WIDTH_SCALE_RATIO,
@@ -247,12 +247,12 @@ const HomeScreen = (props: Props,) => {
                         type="feather"
                     />
                 </View>
-                <View>
+                {/* <View>
                     <PFlatList
                         horizontal={true}
                         data={dataListMusic}
                         renderItem={renderItemDataListMusic}></PFlatList>
-                </View>
+                </View> */}
                 <View style={{
                     flexDirection: 'row',
                     alignItems: 'center',
@@ -275,7 +275,7 @@ const HomeScreen = (props: Props,) => {
                 <View>
                     <PFlatList
                         horizontal={true}
-                        data={dataListMusic}
+                        data={dataListMusicTopMusicViet || []}
                         renderItem={renderItemDataListMusic}></PFlatList>
                 </View>
                 <View style={{
@@ -298,7 +298,7 @@ const HomeScreen = (props: Props,) => {
                 <View>
                     <PFlatList
                         horizontal={true}
-                        data={dataListMusic}
+                        data={dataListMusicTopMusicUSUK}
                         renderItem={renderItemDataListMusic}></PFlatList>
                 </View>
             </LinearGradient>
