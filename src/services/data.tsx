@@ -28,6 +28,654 @@ export const dataSwipper = [
 ]
 
 
+export const SonTungMTP = [
+    {
+        artist: 'Sơn Tùng M-TP',
+        artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Artist%2Fmtp.jpg?alt=media&token=cb55d0c8-f8a5-48f3-8efc-4f3841ed4559',
+        alBums: [
+            {
+                id: 0,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'Sơn Tùng M-TP',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 1,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'Sơn Tùng M-TP',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 2,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'Sơn Tùng M-TP',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+            {
+                id: 3,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'Sơn Tùng M-TP',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 4,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'Sơn Tùng M-TP',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+            {
+                id: 5,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'Sơn Tùng M-TP',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 6,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'Sơn Tùng M-TP',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+            {
+                id: 7,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'Sơn Tùng M-TP',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 8,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'Sơn Tùng M-TP',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+        ]
+    }
+]
+
+export const DEN = [
+    {
+        artist: 'Đen',
+        artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Artist%2Fdenvau.jpg?alt=media&token=9cb4a923-3049-4fed-b27e-588b04c1bb66',
+        alBums: [
+            {
+                id: 0,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'Đen',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 1,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'Đen',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 2,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'Đen',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+            {
+                id: 3,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'Đen',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 4,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'Đen',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+            {
+                id: 5,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'Đen',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 6,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'Đen',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+            {
+                id: 7,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'Đen',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 8,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'Đen',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+        ]
+    }
+]
+
+export const GDragon = [
+    {
+        artist: 'G-Dragon',
+        artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Artist%2Fgb.jpg?alt=media&token=f8d12ec0-f1b6-4bc0-968c-870a8e418434',
+        alBums: [
+            {
+                id: 0,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'G-Dragon',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 1,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'G-Dragon',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 2,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'G-Dragon',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+            {
+                id: 3,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'G-Dragon',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 4,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'G-Dragon',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+            {
+                id: 5,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'G-Dragon',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 6,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'G-Dragon',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+            {
+                id: 7,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'G-Dragon',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 8,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'G-Dragon',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+        ]
+    }
+]
+
+export const JACK = [
+    {
+        artist: 'JACK',
+        artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Artist%2Fjack.jpg?alt=media&token=cc03ba95-ea18-4a29-a9be-6bc0a36653f3',
+        alBums: [
+            {
+                id: 0,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'JACK',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 1,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'JACK',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 2,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'JACK',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+            {
+                id: 3,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'JACK',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 4,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'JACK',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+            {
+                id: 5,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'JACK',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 6,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'JACK',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+            {
+                id: 7,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'JACK',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 8,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'JACK',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+        ]
+    }
+]
+export const JustaTee = [
+    {
+        artist: 'JustaTee',
+        artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Artist%2Fjack.jpg?alt=media&token=cc03ba95-ea18-4a29-a9be-6bc0a36653f3',
+        alBums: [
+            {
+                id: 0,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'JustaTee',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 1,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'JustaTee',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 2,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'JustaTee',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+            {
+                id: 3,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'JustaTee',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 4,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'JustaTee',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+            {
+                id: 5,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'JustaTee',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 6,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'JustaTee',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+            {
+                id: 7,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'JustaTee',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 8,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'JustaTee',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+        ]
+    }
+]
+
+export const MIN = [
+    {
+        artist: 'MIN',
+        artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Artist%2Fmin.jpg?alt=media&token=2ece39b9-98eb-486c-acbd-0724e3610d75',
+        alBums: [
+            {
+                id: 0,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'MIN',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 1,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'MIN',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 2,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'MIN',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+            {
+                id: 3,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'MIN',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 4,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'MIN',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+            {
+                id: 5,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'MIN',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 6,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'MIN',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+            {
+                id: 7,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'MIN',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 8,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'MIN',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+        ]
+    }
+]
+
+export const NooPhuocThinh = [
+    {
+        artist: 'Noo Phước Thịnh',
+        artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Artist%2Fnoophuocthinh.jpg?alt=media&token=fdd16969-9c99-4c87-bac3-4177bd79bff2',
+        alBums: [
+            {
+                id: 0,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'Noo Phước Thịnh',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 1,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'Noo Phước Thịnh',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 2,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'Noo Phước Thịnh',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+            {
+                id: 3,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'Noo Phước Thịnh',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 4,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'Noo Phước Thịnh',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+            {
+                id: 5,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'Noo Phước Thịnh',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 6,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'Noo Phước Thịnh',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+            {
+                id: 7,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'Noo Phước Thịnh',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 8,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'Noo Phước Thịnh',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+        ]
+    }
+]
+
+export const PhuongLy = [
+    {
+        artist: 'Phương Ly',
+        artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Artist%2Fphuonglee.jpg?alt=media&token=85ca5b24-8c6b-433c-ac4b-1bc1ac7ce061',
+        alBums: [
+            {
+                id: 0,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'Phương Ly',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 1,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'Phương Ly',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 2,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'Phương Ly',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+            {
+                id: 3,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'Phương Ly',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 4,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'Phương Ly',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+            {
+                id: 5,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'Phương Ly',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 6,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'Phương Ly',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+            {
+                id: 7,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'Phương Ly',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 8,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'Phương Ly',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+        ]
+    }
+]
+
+
+export const VU = [
+    {
+        artist: 'Vũ',
+        artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Artist%2Fvu.jpg?alt=media&token=b695411f-2655-43d2-8eb5-58bff8a50a31',
+        alBums: [
+            {
+                id: 0,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'Vũ',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 1,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'Vũ',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 2,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'Vũ',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+            {
+                id: 3,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'Vũ',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 4,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'Vũ',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+            {
+                id: 5,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'Vũ',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 6,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'Vũ',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+            {
+                id: 7,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FKh%C3%B4ng%20Ph%E1%BA%A3i%20D%E1%BA%A1ng%20V%E1%BB%ABa%20%C4%90%C3%A2u%20%20%20S%C6%A1n%20T%C3%B9ng%20M%20TP%20Official%20MV.mp3?alt=media&token=d1903f41-3b73-4b89-a787-52b2d8d9aad6',
+                title: 'Không phải dạng vừa đâu',
+                artist: 'Vũ',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Fkhongphaidangvuadau.jpg?alt=media&token=242b70c0-3eb6-45e3-b912-b67abb63af19'
+            },
+            {
+                id: 8,
+                url: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/Music%2FMTP%2FL%E1%BA%A0C%20TR%C3%94I%20_%20OFFICIAL%20MUSIC%20VIDEO%20_%20S%C6%A0N%20T%C3%99NG%20M-TP.mp3?alt=media&token=da5c4df8-ed0e-44d7-b98d-7b758df696f4',
+                title: 'Lạc trôi',
+                artist: 'Vũ',
+                artwork: 'https://firebasestorage.googleapis.com/v0/b/music-13c15.appspot.com/o/imageArtist%2FIMAGE_MTP%2Flactroi.jpg?alt=media&token=6dd3b57f-f30b-4798-8a59-b29bf80ecfac'
+            },
+        ]
+    }
+]
+
 export const funcData = [
     {
         type: 0,

@@ -61,7 +61,7 @@ class ProfileArtist extends React.Component<ProfileArtistProps, any> {
                         height: 50 * HEIGHT_SCALE_RATIO,
                         width: 50 * WIDTH_SCALE_RATIO,
                         borderRadius: 15 * HEIGHT_SCALE_RATIO
-                    }} source={item?.artwork}></Image>
+                    }} source={{ uri: item?.artwork }}></Image>
                     <View>
                         <Text style={[style.textCaption, { color: ptColor.white, fontSize: FS(13), flex: 1 }]}>{item?.title}</Text>
                         <Text style={[style.textCaption, { color: ptColor.gray3, fontSize: FS(10), flex: 1 }]}>{item?.artist}</Text>
@@ -353,7 +353,7 @@ class ProfileArtist extends React.Component<ProfileArtistProps, any> {
                             }
                         </View>
                     </View>
-                    
+
                 </View>
             </LinearGradient>
         );
