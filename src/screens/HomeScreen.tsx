@@ -11,7 +11,7 @@ import { ROUTE_KEY } from '../utils/contains';
 import { imagePath } from '../utils/imagePath';
 import { FS, HEIGHT_SCALE_RATIO, ptColor, style, WIDTH_SCALE_RATIO } from '../utils/styles';
 interface Props {
-  navigation?: any
+    navigation?: any
 }
 
 
@@ -199,16 +199,34 @@ const HomeScreen = (props: Props,) => {
                         autoplayDirection={true}
                         // height={HEIGHT_SCALE_RATIO * 0.8}
                         containerStyle={{
-                            height: 0.1
+                            height: 0.1 * HEIGHT_SCALE_RATIO
                         }}
                         style={{
 
                         }}
                         dot={
-                            <View style={{ backgroundColor: ptColor.white, width: 8, height: 8, borderRadius: 4, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3, }} />
+                            <View style={{
+                                backgroundColor: ptColor.white,
+                                width: 8 * WIDTH_SCALE_RATIO,
+                                height: 8 * HEIGHT_SCALE_RATIO,
+                                borderRadius: 4,
+                                marginLeft: 3 * WIDTH_SCALE_RATIO,
+                                marginRight: 3 * WIDTH_SCALE_RATIO,
+                                marginTop: 3 * HEIGHT_SCALE_RATIO,
+                                marginBottom: -20 * HEIGHT_SCALE_RATIO,
+                            }} />
                         }
                         activeDot={
-                            <View style={{ backgroundColor: ptColor.white, width: 15, height: 8, borderRadius: 4, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3, }} />
+                            <View style={{
+                                backgroundColor: ptColor.white,
+                                width: 15 * WIDTH_SCALE_RATIO,
+                                height: 8 * HEIGHT_SCALE_RATIO,
+                                borderRadius: 4,
+                                marginLeft: 3 * WIDTH_SCALE_RATIO,
+                                marginRight: 3 * WIDTH_SCALE_RATIO,
+                                marginTop: 3 * HEIGHT_SCALE_RATIO,
+                                marginBottom: -20 * HEIGHT_SCALE_RATIO,
+                            }} />
 
                         }
                         showsButtons={false}

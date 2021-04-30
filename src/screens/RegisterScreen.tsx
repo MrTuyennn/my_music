@@ -271,8 +271,8 @@ class RegisterScreen extends React.Component<RegisterScreenProps, any> {
                                 rightIcon={
                                     <Icon
                                         name={this.state.isShowPassword ? 'eye-off' : 'eye'}
-                                        size={24}
-                                        color={ptColor.gray7}
+                                        size={20}
+                                        color={ptColor.textPlaceholderColor}
                                         type='feather'
                                         onPress={() => this.showPass()}
                                     />
@@ -310,8 +310,8 @@ class RegisterScreen extends React.Component<RegisterScreenProps, any> {
                                 rightIcon={
                                     <Icon
                                         name={this.state.isShowPassword ? 'eye-off' : 'eye'}
-                                        size={24}
-                                        color={ptColor.gray7}
+                                        size={20}
+                                        color={ptColor.textPlaceholderColor}
                                         type='feather'
                                         onPress={() => this.showPass()}
                                     />

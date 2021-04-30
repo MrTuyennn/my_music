@@ -118,7 +118,7 @@ function TabNavigator() {
               source={imagePath.Logo}
               style={{
                 tintColor: focused ? ptColor.greenSuccess : ptColor.gray6,
-                height: focused ? 22 * HEIGHT_SCALE_RATIO : 17 * HEIGHT_SCALE_RATIO,
+                height: focused ? 22 * HEIGHT_SCALE_RATIO : 18 * HEIGHT_SCALE_RATIO,
                 width: focused ? 25 * HEIGHT_SCALE_RATIO : 20 * HEIGHT_SCALE_RATIO
               }}
             />)
@@ -138,13 +138,14 @@ function TabNavigator() {
           justifyContent: 'center',
           padding: FS(10),
           backgroundColor: ptColor.colorTabar,
-          height: 60
+          height: 50 * HEIGHT_SCALE_RATIO
         },
       }}
     >
       <Tab.Screen options={{
-        tabBarLabel: 'Trang chủ'
-      }} name={ROUTE_KEY.HomeScreen} component={HomeScreen} />
+        tabBarLabel: 'Trang chủ',
+      }}
+        name={ROUTE_KEY.HomeScreen} component={HomeScreen} />
       <Tab.Screen options={{
         tabBarLabel: 'Tìm kiếm'
       }} name={ROUTE_KEY.OderScreen} component={HistoryScreen} />

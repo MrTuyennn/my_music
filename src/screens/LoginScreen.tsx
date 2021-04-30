@@ -162,7 +162,9 @@ class LoginScreen extends React.Component<LoginScreenProps, any> {
                         width: '100%',
                         borderRadius: 10,
                         backgroundColor: ptColor.gray5,
-                        marginVertical: 13 * HEIGHT_SCALE_RATIO
+                        marginVertical: 13 * HEIGHT_SCALE_RATIO,
+                        justifyContent: 'center',
+                        alignItems: 'center',
                     }}>
                         <Input
                             containerStyle={{
@@ -178,7 +180,9 @@ class LoginScreen extends React.Component<LoginScreenProps, any> {
                             inputStyle={{
                                 justifyContent: 'center',
                                 color: ptColor.white,
-                                fontSize: FS(12)
+                                fontSize: FS(12),
+                                alignItems: 'center',
+                               
                             }}
                             underlineColorAndroid="transparent"
                             placeholder='Nhập mật khẩu'
@@ -187,8 +191,8 @@ class LoginScreen extends React.Component<LoginScreenProps, any> {
                             rightIcon={
                                 <Icon
                                     name={isShowPassword ? 'eye-off' : 'eye'}
-                                    size={24}
-                                    color={ptColor.white}
+                                    size={20}
+                                    color={ptColor.textPlaceholderColor}
                                     type='feather'
                                     onPress={() => this.showPass()}
                                 />

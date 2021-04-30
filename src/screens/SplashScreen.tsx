@@ -9,7 +9,6 @@ import { HEIGHT, HEIGHT_SCALE_RATIO, ptColor, style, WIDTH, WIDTH_SCALE_RATIO } 
 
 
 const SplashScreen = ({ navigation }) => {
-    // Myloading.show()
     useEffect(() => {
         const timer = setTimeout(() => {
             navigation.replace(ROUTE_KEY.MainNavigator)
@@ -28,9 +27,10 @@ const SplashScreen = ({ navigation }) => {
                 alignItems: 'center',
             }}>
                 <Image source={imagePath.Logo}
+                    resizeMode='center'
                     style={{
                         height: 120 * HEIGHT_SCALE_RATIO,
-                        width: 132 * WIDTH_SCALE_RATIO,
+                        width: 140 * WIDTH_SCALE_RATIO,
                         tintColor: ptColor.greenSuccess,
                         marginTop: 150 * HEIGHT_SCALE_RATIO,
                     }} />
