@@ -32,3 +32,15 @@ export const logOut = () => {
         type: types.LOG_OUT,
     }
 }
+export const changePassword = (payload) => {
+    return {
+        type: types.CHANGE_PASSWORD,
+        payload
+    }
+}
+
+export const resetChangePassword = () => {
+    return {
+        type: types.CHANGE_PASSWORD_RESET
+    }
+}

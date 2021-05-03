@@ -22,7 +22,7 @@ const HomeScreen = (props: Props,) => {
     const funC = (item) => {
         switch (item.type) {
             case 0:
-                console.log('item', item)
+                props.navigation?.jumpTo(ROUTE_KEY.HistoryScreen)
                 break;
             case 1:
                 props.navigation?.jumpTo(ROUTE_KEY.OderScreen)

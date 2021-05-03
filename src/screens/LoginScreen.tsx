@@ -227,7 +227,7 @@ class LoginScreen extends React.Component<LoginScreenProps, any> {
                         color: ptColor.greenSuccess,
                         fontSize: FS(12)
                     }]}>Đăng kí ngay</Text></Text>
-                    <Text style={[style.textCaption, {
+                    {/* <Text style={[style.textCaption, {
                         textAlign: 'center',
                         color: ptColor.gray7,
                         paddingVertical: 10,
@@ -265,7 +265,7 @@ class LoginScreen extends React.Component<LoginScreenProps, any> {
                                 height: 50,
                                 width: 50
                             }}></Image>
-                    </View>
+                    </View> */}
                 </View>
             </KeyboardAvoidingView>
         );

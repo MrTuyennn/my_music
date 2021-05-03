@@ -11,6 +11,7 @@ import { myAlert } from '../components/MyAlert';
 import { Data, DataItem } from '../services/data'
 import { ROUTE_KEY } from '../utils/contains';
 import { useNavigation } from '@react-navigation/native';
+import PRow from '../components/PRow';
 
 interface Props {
     navigation?: any
@@ -37,10 +38,10 @@ const ProfileUser = (props: Props) => {
                         props.navigation.navigate(ROUTE_KEY.CategoryMusic, { type: 3 })
                         break;
                     case 3:
-                        ToastAndroid.show('Danh sách tiện ích', ToastAndroid.SHORT)
+                        props.navigation.navigate(ROUTE_KEY.ListMusics)
                         break;
                     default:
-                        ToastAndroid.show('Tính năng đang phát triển', ToastAndroid.SHORT)
+                        myAlert('Thông Báo','Tính năng đang phát triển')
                         break;
                 }
             }}>
@@ -91,11 +92,31 @@ const ProfileUser = (props: Props) => {
                     flex: 3,
                     paddingHorizontal: 10 * WIDTH_SCALE_RATIO,
                 }}>
-                <Text style={[style.textCaption, {
-                    color: ptColor.white,
-                    margin: 15 * HEIGHT_SCALE_RATIO,
-                    fontSize: FS(25)
-                }]}>Trang cá nhân</Text>
+                <PRow style={{
+                    width: '100%',
+                }}>
+                    <Text style={[style.textCaption, {
+                        color: ptColor.white,
+                        margin: 15 * HEIGHT_SCALE_RATIO,
+                        fontSize: FS(25)
+                    }]}>Trang cá nhân</Text>
+                    <MyTouchableOpacity
+                        onPress={() => navigation.navigate(ROUTE_KEY.ChangePassWord)}
+                        style={{
+                            flex: 1,
+                            alignItems: 'flex-end',
+                        }}>
+
+                        <Icon
+                            // reverse
+                            name='settings'
+                            type='feather'
+                            color={ptColor.white}
+                            size={20}
+                        />
+                    </MyTouchableOpacity>
+                </PRow>
+
                 <View style={{
                     flexDirection: 'row',
                     width: '100%',
@@ -118,6 +139,7 @@ const ProfileUser = (props: Props) => {
                         <Text style={[style.textAdvance, { color: ptColor.white }]}>Hello,</Text>
                         <Text style={[style.textAdvance, { color: ptColor.white }]}>{user?.data?.username || user?.data?.numberPhone}</Text>
                     </View>
+
                 </View>
             </View>
 
@@ -130,7 +152,7 @@ const ProfileUser = (props: Props) => {
                     <FlatList
                         numColumns={3}
                         scrollEnabled={false}
-                        data={Data}
+                        data={Data || []}
                         renderItem={renderItem}
                         keyExtractor={(item, index) =>
                             item ? `${item?.toString()}` : index?.toString()

@@ -8,7 +8,8 @@ export default function* watchSagas() {
 function* watchRequestUser() {
     yield all([
         takeLatest(types.LOGIN_USER, loginUser),
-        takeLatest(types.REGISTER_USER, registerUser)
+        takeLatest(types.REGISTER_USER, registerUser),
+        takeLatest(types.CHANGE_PASSWORD, changePassword)
     ])
 }
 
@@ -39,5 +40,23 @@ function* registerUser({ payload }) {
     } catch (error) {
         console.log('đăng kí thất bại', error)
         yield put({ type: types.REGISTER_USER_FAIL, payload: error })
+    }
+}
+
+function* changePassword({ payload }) {
+    console.log('payload', payload)
+    const user = yield select((state) => state.user?.userInfo?.data?.accessToken);
+
+    try {
+        const { data } = yield call(api.changePassword, {
+            accessToken: user,
+            oldPassword: payload?.oldPassword,
+            newPassword: payload?.newPassword,
+            confirmPassword: payload?.confirmPassword
+        })
+        console.log('dataaa password',JSON.stringify(data, null, 2))
+      yield  put({ type: types.CHANGE_PASSWORD_SUCCESS, payload: data })
+    } catch (error) {
+        console.log('error', error)
     }
 }

@@ -340,7 +340,7 @@ class RegisterScreen extends React.Component<RegisterScreenProps, any> {
                             color: ptColor.greenSuccess,
                             fontSize: FS(12)
                         }}>Đăng nhập ngay</Text></Text>
-                        <Text style={[style.textCaption, {
+                        {/* <Text style={[style.textCaption, {
                             textAlign: 'center',
                             color: ptColor.gray7,
                             paddingVertical: 10,
@@ -378,7 +378,7 @@ class RegisterScreen extends React.Component<RegisterScreenProps, any> {
                                     height: 50,
                                     width: 50
                                 }}></Image>
-                        </View>
+                        </View> */}
                     </View>
 
                 </KeyboardAvoidingView>

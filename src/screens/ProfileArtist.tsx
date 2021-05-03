@@ -13,7 +13,15 @@ import PFlatList from '../components/PFlatList';
 import PRow from '../components/PRow';
 import { usePlayerContext } from '../contexts/PlayerContext';
 import {
-    DataAlBums,
+    DataAlBumsSonTung,
+    DataAlBumsDen,
+    DataAlBumsG_Dragon,
+    DataAlBumsJack,
+    DataAlBumsJustaTee,
+    DataAlBumsMin,
+    DataAlBumsNooPhuocThinh,
+    DataAlBumsPhuongLy,
+    DataAlBumsVu,
     DEN,
     GDragon,
     JACK,
@@ -32,6 +40,9 @@ import {
     style,
     WIDTH_SCALE_RATIO
 } from '../utils/styles';
+import { setDataMusic } from '../states/ducks/musics/actions'
+import { useDispatch } from 'react-redux'
+import MySpinner from '../components/MySpinner';
 
 interface Props {
     navigation?: any,
@@ -45,7 +56,13 @@ const ProfileArtist = (props: Props) => {
     const [followers, setfollowers] = useState('');
     const [artwork, setartwork] = useState('');
     const [listMusic, setlistMusic] = useState(Array);
+    const [album, setalbum] = useState(Number)
+    const [listAlBum, setlistAlbum] = useState(Array);
     const playerContext = usePlayerContext();
+    const dispatch = useDispatch()
+    
+
+
 
     useEffect(() => {
         console.log('item router', JSON.stringify(props.route?.params?.item))
@@ -55,54 +72,72 @@ const ProfileArtist = (props: Props) => {
                 setfollowers(PhuongLy?.followers)
                 setartwork(PhuongLy?.artwork)
                 setlistMusic(PhuongLy?.alBums)
+                setalbum(DataAlBumsPhuongLy?.length)
+                setlistAlbum(DataAlBumsPhuongLy)
                 break;
             case 'JACK':
                 setartist(JACK?.artist)
                 setfollowers(JACK?.followers)
                 setartwork(JACK?.artwork)
                 setlistMusic(JACK?.alBums)
+                setalbum(DataAlBumsJack?.length)
+                setlistAlbum(DataAlBumsJack)
                 break;
             case 'Sơn Tùng M-TP':
                 setartist(SonTungMTP?.artist)
                 setfollowers(SonTungMTP?.followers)
                 setartwork(SonTungMTP?.artwork)
                 setlistMusic(SonTungMTP?.alBums)
+                setalbum(DataAlBumsSonTung?.length)
+                setlistAlbum(DataAlBumsSonTung)
                 break;
-            case 'Đen Vâu':
+            case 'Đen':
                 setartist(DEN?.artist)
                 setfollowers(DEN?.followers)
                 setartwork(DEN?.artwork)
                 setlistMusic(DEN?.alBums)
+                setalbum(DataAlBumsDen?.length)
+                setlistAlbum(DataAlBumsDen)
                 break;
             case 'MIN':
                 setartist(MIN?.artist)
                 setfollowers(MIN?.followers)
                 setartwork(MIN?.artwork)
                 setlistMusic(MIN?.alBums)
+                setalbum(DataAlBumsMin?.length)
+                setlistAlbum(DataAlBumsMin)
                 break;
             case 'Vũ':
                 setartist(VU?.artist)
                 setfollowers(VU?.followers)
                 setartwork(VU?.artwork)
                 setlistMusic(VU?.alBums)
+                setalbum(DataAlBumsVu?.length)
+                setlistAlbum(DataAlBumsVu)
                 break;
             case 'JustaTee':
                 setartist(JustaTee?.artist)
                 setfollowers(JustaTee?.followers)
                 setartwork(JustaTee?.artwork)
                 setlistMusic(JustaTee?.alBums)
+                setalbum(DataAlBumsJustaTee?.length)
+                setlistAlbum(DataAlBumsJustaTee)
                 break;
             case 'Noo Phước Thịnh':
                 setartist(NooPhuocThinh?.artist)
                 setfollowers(NooPhuocThinh?.followers)
                 setartwork(NooPhuocThinh?.artwork)
                 setlistMusic(NooPhuocThinh?.alBums)
+                setalbum(DataAlBumsNooPhuocThinh?.length)
+                setlistAlbum(DataAlBumsNooPhuocThinh)
                 break;
             case 'G-Dragon':
                 setartist(GDragon?.artist)
                 setfollowers(GDragon?.followers)
                 setartwork(GDragon?.artwork)
                 setlistMusic(GDragon?.alBums)
+                setalbum(DataAlBumsG_Dragon?.length)
+                setlistAlbum(DataAlBumsG_Dragon)
                 break;
 
             default:
@@ -112,6 +147,17 @@ const ProfileArtist = (props: Props) => {
         console.log('listMusic', JSON.stringify(listMusic, null, 2))
     }, [])
 
+
+    const setTimeAddFavorite = () => {
+        MySpinner.show()
+        setTimeout(() => {
+            MySpinner.hide()
+            myAlert('Thông báo',
+                'Thêm bài hát vào danh sách yêu thích thành công',
+                'Đóng'
+            )
+        }, 3000);
+    }
     const addFavoriteMusic = () => {
         myAlert(
             '',
@@ -119,9 +165,14 @@ const ProfileArtist = (props: Props) => {
             'Trở lại',
             () => { },
             'Đồng ý',
-            () => console.log('Thêm')
+            () => setTimeAddFavorite()
         )
     }
+
+    const handleInfo = () => {
+        myAlert('Thông báo',`Thông tin ca sĩ ${artist} đang được cập nhập`,'Đồng ý')
+    }
+
     const Tab1 = () => {
         settab(!tab)
     }
@@ -138,6 +189,7 @@ const ProfileArtist = (props: Props) => {
         props?.navigation.navigate(ROUTE_KEY.PlayMusic, {
             listMusic: listMusic
         })
+        dispatch(setDataMusic(listMusic))
 
     }
     const renderItemMusic = ({ item }) => {
@@ -188,41 +240,41 @@ const ProfileArtist = (props: Props) => {
         )
     }
 
+    const handleAlbums = () => {
+        myAlert('Thông báo',`Albums sẽ cập nhập bài hát sớm nhất`)
+    }
+
     const renderItemAlbum = ({ item }) => {
         return (
             <PRow
-                onPress={() => playMusic(item)}
+                onPress={() => handleAlbums()}
                 style={{
                     justifyContent: 'space-between',
                     alignItems: 'center',
                     marginVertical: 10 * HEIGHT_SCALE_RATIO,
+                    flex: 1,
                 }}>
-                <PRow>
+                <PRow style={{
+                    flex: 1,
+                }}>
                     <Text style={{ color: ptColor.white, marginRight: 10 * WIDTH_SCALE_RATIO }}>{item?.idAlbums}</Text>
                     <Image style={{
                         marginRight: 10 * WIDTH_SCALE_RATIO,
                         height: 50 * HEIGHT_SCALE_RATIO,
                         width: 50 * WIDTH_SCALE_RATIO,
                         borderRadius: 15 * HEIGHT_SCALE_RATIO
-                    }} source={item?.imageAlbums}></Image>
-                    <View>
+                    }} source={{ uri: item?.imageAlbums }}></Image>
+                    <View style={{
+                        flex: 1,
+                    }}>
                         <Text style={[style.textCaption, { color: ptColor.white, fontSize: FS(13), flex: 1 }]}>{item?.titleAlbums}</Text>
-                        <Text style={[style.textCaption, { color: ptColor.gray3, fontSize: FS(10), flex: 1 }]}>Nguyễn Ngọc Tuyên</Text>
+                        <Text style={[style.textCaption, { color: ptColor.gray3, fontSize: FS(10), flex: 1 }]}>{artist}</Text>
                     </View>
                 </PRow>
                 <PRow style={{
-                    justifyContent: 'space-between'
+                    justifyContent: 'space-between',
+                    // flex: 1,
                 }}>
-                    <MyTouchableOpacity>
-                        <Icon
-                            style={{
-                                marginHorizontal: 10 * HEIGHT_SCALE_RATIO
-                            }}
-                            name='heart'
-                            type='feather'
-                            color={ptColor.white}
-                        />
-                    </MyTouchableOpacity>
                     <Icon
                         name='play-circle'
                         type='feather'
@@ -324,7 +376,7 @@ const ProfileArtist = (props: Props) => {
                                     color: ptColor.white,
                                     textAlign: 'center',
                                     fontWeight: 'bold'
-                                }}>{numBerAlbums}</Text>
+                                }}>{album}</Text>
                                 <Text style={{
                                     color: ptColor.white,
                                 }}>Albums</Text>
@@ -376,6 +428,7 @@ const ProfileArtist = (props: Props) => {
                         iconRight
                     ></PButton>
                     <PButton
+                        onPress={() => handleInfo()}
                         title='Thông tin chi tiết'
                         titleStyle={[style.textCaption,
                         {
@@ -441,7 +494,7 @@ const ProfileArtist = (props: Props) => {
                                     data={listMusic}
                                     renderItem={renderItemMusic}></PFlatList>
                                 : <PFlatList
-                                    data={DataAlBums}
+                                    data={listAlBum || []}
                                     renderItem={renderItemAlbum}></PFlatList>
                         }
                     </View>

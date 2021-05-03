@@ -11,6 +11,10 @@ import userSaga from './user/saga'
 import cateReducer from './cate/reducer'
 import cateSaga from './cate/saga'
 
+// DataMusic
+import musicReducer from './musics/reducers'
+
+
 export function* rootSaga() {
     yield all([
       fork(userSaga),
@@ -20,5 +24,6 @@ export function* rootSaga() {
   
   export const rootReducer = combineReducers({
     user: userReducer,
-    cate : cateReducer
+    cate : cateReducer,
+    musics: musicReducer
   });

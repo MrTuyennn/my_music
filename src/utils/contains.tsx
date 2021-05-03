@@ -12,6 +12,7 @@ const StackMusic = 'StackMusic'
 const MusicDetail = 'MusicDetail'
 const ListMusics = 'ListMusics'
 const Details = 'Details'
+const ChangePassWord = 'ChangePassWord'
 
 // TabNavigator
 const TabNavigator = 'TabNavigator'
@@ -21,6 +22,7 @@ const OderScreen = 'OderScreen'
 const ProfileUserScreen = 'ProfileUserScreen'
 const MainNavigator = 'MainNavigator'
 export const ROUTE_KEY = {
+    ChangePassWord,
     Details,
     ListMusics,
     MusicDetail,

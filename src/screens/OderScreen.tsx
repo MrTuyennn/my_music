@@ -7,10 +7,13 @@ import MyTouchableOpacity from '../components/MyTouchableOpacity';
 import PFlatList from '../components/PFlatList';
 import PRow from '../components/PRow';
 import { usePlayerContext } from '../contexts/PlayerContext';
-import { ListMusic } from '../services/data';
+import { ListMusic, ListFavorite } from '../services/data';
 import { ROUTE_KEY } from '../utils/contains';
 import { imagePath } from '../utils/imagePath';
 import { FS, HEIGHT_SCALE_RATIO, ptColor, style, WIDTH_SCALE_RATIO } from '../utils/styles';
+import { useDispatch } from 'react-redux'
+import { setDataMusic } from '../states/ducks/musics/actions'
+import { removeAscent } from '../utils/func';
 interface Props {
     isModal?: any
 }
@@ -18,16 +21,19 @@ interface Props {
 const OderScreen = (props: Props) => {
     const [DataArtist, setDataArtist] = useState(Array)
     const [search, setsearch] = useState(String)
+    const [listMusic, setlistMusic] = useState(ListFavorite)
     const playerContext = usePlayerContext()
     const track = playerContext.currentTrack;
     const navigation = useNavigation()
     const isModal = React.createRef()
+    const dispatch = useDispatch()
+    var dataListMusic = ListFavorite
 
 
 
 
     useEffect(() => {
-        const data = ListMusic.map(result => { return result?.artist })
+        const data = listMusic.map(result => { return result?.artist })
         const arr = [...new Set(data)]
         console.log('object', arr);
         setDataArtist(arr)
@@ -53,7 +59,16 @@ const OderScreen = (props: Props) => {
         console.log(item)
         playerContext.play(item)
         navigation.navigate(ROUTE_KEY.PlayMusic)
+        dispatch(setDataMusic(listMusic))
 
+    }
+    if (search?.length > 0) {
+
+        dataListMusic = listMusic.filter((m) =>
+            removeAscent(m?.title.toLowerCase()).includes(
+                removeAscent(search?.toLowerCase()),
+            ),
+        );
     }
 
     const renderItemMusic = ({ item }) => {
@@ -175,7 +190,7 @@ const OderScreen = (props: Props) => {
             ]}>Danh sách bài hát của bạn</Text>
 
             <PFlatList
-                data={ListMusic}
+                data={dataListMusic || []}
                 renderItem={renderItemMusic}></PFlatList>
         </LinearGradient>
     )

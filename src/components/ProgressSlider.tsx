@@ -22,14 +22,15 @@ function buildTime(totalSeconds: number): string {
   const skip = async () => {
     `${'00'}:${'00'}`
     const tracks = await RNTrackPlayer.getQueue();
-  
+    console.log('tracks -->', JSON.stringify(tracks[0], null, 2))
     await RNTrackPlayer.skip(tracks[0]?.id);
 
     // await RNTrackPlayer.skipToNext();
   }
   if (hours > 0) {
     return `${hours}:${minutesStr}:${secondsStr}`;
-  } else if (hours < 0) {
+  } 
+  else if (hours < 0) {
     skip()
   }
 

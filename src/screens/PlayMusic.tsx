@@ -17,21 +17,44 @@ import {
     HEIGHT_SCALE_RATIO,
     ptColor,
     style,
-
     WIDTH_SCALE_RATIO
 } from '../utils/styles';
 import { ListMusic } from '../services/data'
+import { useSelector } from 'react-redux'
+import MySpinner from '../components/MySpinner';
 interface Props {
     navigation?: any
 }
 
 const PlayMusic = (props: Props) => {
+    const counter = useSelector(state => state.musics?.dataMusic)
     const spinValue = useRef(new Animated.Value(0)).current;
     const [visible, setvisible] = useState(false)
     const [trackObject, settrackObject] = useState(Object)
     const [playMusic, setplayMusic] = useState(true)
     const playerContext = usePlayerContext()
-
+    const [listMusic, setlistMusic] = useState(counter)
+    console.log('listMusic', listMusic)
+    const spin = () => {
+        spinValue.setValue(0)
+        Animated.timing(
+            spinValue,
+            {
+                toValue: 1,
+                duration: 30000,
+                easing: Easing.linear,
+                useNativeDriver: true
+            }
+        ).start(() => spin())
+    }
+    const spinM = spinValue.interpolate({
+        inputRange: [0, 1],
+        outputRange: ['0deg', '360deg']
+    })
+    useEffect(() => {
+        spin();
+        show();
+    }, [counter])
     const seekTo = async (amount = 30) => {
         const position = await RNTrackPlayer.getPosition();
         await RNTrackPlayer.seekTo(position + amount);
@@ -60,50 +83,56 @@ const PlayMusic = (props: Props) => {
     const nextMusic = async () => {
         var GettrackObject = {}
 
-        await ListMusic.forEach(async function (item, index, value) {
+        await listMusic.forEach(async function (item, index, value) {
             const trackId = await RNTrackPlayer.getCurrentTrack();
             const trackObject = await RNTrackPlayer.getTrack(trackId);
-            if (ListMusic[index + 1] === undefined) {
+            if (listMusic[index + 1] === undefined) {
                 await RNTrackPlayer.reset()
-                // await RNTrackPlayer.add(ListMusic[0])
-                // await RNTrackPlayer.play()
-                playerContext.play(ListMusic[0])
+                await RNTrackPlayer.add(listMusic[0])
+                await RNTrackPlayer.play()
+                // playerContext.play(ListMusic[0])
                 const trackId = await RNTrackPlayer.getCurrentTrack();
                 GettrackObject = await RNTrackPlayer.getTrack(trackId);
             } else if (item?.id === parseInt(trackObject?.id)) {
-                await RNTrackPlayer.reset()
-                // await RNTrackPlayer.add(ListMusic[index + 1])
+                // await RNTrackPlayer.reset()
+                // await RNTrackPlayer.add(listMusic[index + 1])
                 // await RNTrackPlayer.play()
-                playerContext.play(ListMusic[index + 1])
+                await playerContext.play(listMusic[index + 1])
                 const trackId = await RNTrackPlayer.getCurrentTrack();
                 GettrackObject = await RNTrackPlayer.getTrack(trackId);
                 console.log('GettrackObject', GettrackObject)
             }
+            await setTimeout(() => {
+                settrackObject(GettrackObject)
+            }, 4000);
         });
-        await setTimeout(() => {
-            settrackObject(GettrackObject)
-        }, 6000);
+
     }
 
     const prew = async () => {
         var GettrackObject = {}
         const trackId = await RNTrackPlayer.getCurrentTrack();
         const trackObject = await RNTrackPlayer.getTrack(trackId);
-        const indexTrack = ListMusic.findIndex(m => m.id === parseInt(trackObject?.id))
+        console.log('trackObject ------------>', JSON.stringify(trackObject, null, 2))
+        const indexTrack = await listMusic.findIndex(m => m.id === parseInt(trackObject?.id))
         if (indexTrack >= 0) {
             if (indexTrack === 0) {
                 await RNTrackPlayer.reset()
-                await RNTrackPlayer.add(ListMusic[indexTrack]);
+                await RNTrackPlayer.add(listMusic[indexTrack]);
                 await RNTrackPlayer.play();
+                // playerContext.play(listMusic[indexTrack])
                 const trackId = await RNTrackPlayer.getCurrentTrack();
                 GettrackObject = await RNTrackPlayer.getTrack(trackId);
             }
             else {
-                await RNTrackPlayer.reset()
-                await RNTrackPlayer.add(ListMusic[indexTrack - 1]);
-                await RNTrackPlayer.play();
+                // await RNTrackPlayer.reset()
+                // await RNTrackPlayer.add(listMusic[indexTrack - 1]);
+                // await RNTrackPlayer.play();
+                console.log('indexTrack - 1', indexTrack - 1)
+                await playerContext.play(listMusic[indexTrack - 1])
                 const trackId = await RNTrackPlayer.getCurrentTrack();
                 GettrackObject = await RNTrackPlayer.getTrack(trackId);
+
             }
             await setTimeout(() => {
                 settrackObject(GettrackObject)
@@ -118,7 +147,7 @@ const PlayMusic = (props: Props) => {
         try {
             const result = await Share.share({
                 message:
-                    'Bạn có muốn chia sẽ bài hát này không?',
+                    `Bạn có muốn chia sẽ bài hát này không?,\n${trackObject?.url}`
             });
 
             if (result.action === Share.sharedAction) {
@@ -139,26 +168,8 @@ const PlayMusic = (props: Props) => {
         props.navigation.goBack()
     }
 
-    useEffect(() => {
-        spin();
-        show();
-    }, [])
-    const spin = () => {
-        spinValue.setValue(0)
-        Animated.timing(
-            spinValue,
-            {
-                toValue: 1,
-                duration: 50000,
-                easing: Easing.linear,
-                useNativeDriver: true
-            }
-        ).start(() => spin())
-    }
-    const spinM = spinValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: ['0deg', '360deg']
-    })
+
+
 
     const pauseMusic = () => {
         RNTrackPlayer.pause()
@@ -172,6 +183,16 @@ const PlayMusic = (props: Props) => {
 
     }
 
+    const setTimeAddFavorite = () => {
+        MySpinner.show()
+        setTimeout(() => {
+            MySpinner.hide()
+            myAlert('Thông báo',
+                'Thêm bài hát vào danh sách yêu thích thành công',
+                'Đóng'
+            )
+        }, 3000);
+    }
     const addFavoriteMusic = () => {
         myAlert(
             '',
@@ -179,7 +200,7 @@ const PlayMusic = (props: Props) => {
             'Trở lại',
             () => { },
             'Đồng ý',
-            () => console.log('Thêm')
+            () => setTimeAddFavorite()
         )
     }
     const roukey = () => {
@@ -261,6 +282,7 @@ const PlayMusic = (props: Props) => {
                                 style={{
                                     height: '100%',
                                     width: '100%',
+                                    borderRadius: HEIGHT / 2,
                                     transform: [{ rotate: spinM }],
                                 }}></Animated.Image>
                         </View>
@@ -298,14 +320,15 @@ const PlayMusic = (props: Props) => {
                         <ProgressSlider />
                         <PRow style={{
                             justifyContent: 'space-around',
-                            alignItems: 'center'
+                            alignItems: 'center',
+                            marginTop: 30 * HEIGHT_SCALE_RATIO
                         }}>
                             <Icon
                                 style={{
                                     alignItems: 'flex-end',
                                 }}
                                 onPress={() => prew()}
-                                name='skip-back'
+                                name='rewind'
                                 type='feather'
                                 color={ptColor.white}
                                 size={35}></Icon>
@@ -316,7 +339,7 @@ const PlayMusic = (props: Props) => {
                                     marginTop: 10 * HEIGHT_SCALE_RATIO,
                                 }}
                                 onPress={() => goTo(30)}
-                                name='rotate-ccw'
+                                name='chevrons-left'
                                 type='feather'
                                 color={ptColor.white}
                                 size={35}></Icon>
@@ -328,24 +351,22 @@ const PlayMusic = (props: Props) => {
                                             onPress={() => pauseMusic()}
                                             style={{
                                                 alignItems: 'flex-end',
-                                                marginTop: 10 * HEIGHT_SCALE_RATIO,
                                             }}
                                             name='pause'
                                             type='feather'
-                                            color={ptColor.black}
-                                            size={35}></Icon>
+                                            color={ptColor.white}
+                                            size={20}></Icon>
                                     </Circle>
                                     : <Circle style>
                                         <Icon
                                             onPress={() => PlayMusic()}
                                             style={{
                                                 alignItems: 'flex-end',
-                                                marginTop: 10 * HEIGHT_SCALE_RATIO,
                                             }}
                                             name='play'
                                             type='feather'
-                                            color={ptColor.black}
-                                            size={35}></Icon>
+                                            color={ptColor.white}
+                                            size={20}></Icon>
                                     </Circle>
                             }
                             {/* <Circle style> */}
@@ -355,7 +376,7 @@ const PlayMusic = (props: Props) => {
                                     alignItems: 'flex-end',
                                     marginTop: 10 * HEIGHT_SCALE_RATIO,
                                 }}
-                                name='rotate-cw'
+                                name='chevrons-right'
                                 type='feather'
                                 color={ptColor.white}
                                 size={35}></Icon>
@@ -369,7 +390,7 @@ const PlayMusic = (props: Props) => {
                                 onPress={() => {
                                     nextMusic()
                                 }}
-                                name='skip-forward'
+                                name='fast-forward'
                                 type='feather'
                                 color={ptColor.white}
                                 size={35}></Icon>

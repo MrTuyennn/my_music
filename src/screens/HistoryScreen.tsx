@@ -42,9 +42,12 @@ const HistoryScreen = (props: Props) => {
         // console.log('item', item)
         return (
             <MyTouchableOpacity
-                onPress={() => props.navigation.push(ROUTE_KEY.ListMusics, {
-                    item: item,
-                })}
+                onPress={() => {
+                    props.navigation.push(ROUTE_KEY.ListMusics, {
+                        item: item,
+                    })
+                    setsearch('')
+                }}
                 style={{
                     height: 100 * HEIGHT_SCALE_RATIO,
                     width: 180 * WIDTH_SCALE_RATIO,
@@ -118,6 +121,7 @@ const HistoryScreen = (props: Props) => {
                         placeholder="Bài hát, playlist, nghệ sĩ ..."
                         placeholderTextColor={ptColor.textPlaceholderColor}
                         onChangeText={(text) => setsearch(text)}
+                        value={search}
                         inputContainerStyle={{
                             borderRadius: 30,
                             borderColor: ptColor.blue,

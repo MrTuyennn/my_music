@@ -4,7 +4,8 @@ const initialState = {
     userInfo: null,
     err: null,
     succ: null,
-    checkUserRegister : null,
+    checkUserRegister: null,
+    changePassWord: null
 };
 export default (state = initialState, action) => {
     switch (action.type) {
@@ -28,7 +29,7 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 err: null,
-                checkUserRegister : null
+                checkUserRegister: null
             }
         case types.LOGIN_USER_SUCESS:
             return {
@@ -39,12 +40,22 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 err: action.payload,
-                isAuth : false
+                isAuth: false
             }
         case types.LOGIN_USER_RESET:
             return {
                 ...state,
                 arr: null
+            }
+        case types.CHANGE_PASSWORD_SUCCESS:
+            return {
+                ...state,
+                changePassWord: action.payload
+            }
+        case types.CHANGE_PASSWORD_RESET:
+            return {
+                ...state,
+                changePassWord: null
             }
         default:
             return state;

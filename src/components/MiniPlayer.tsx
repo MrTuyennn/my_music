@@ -13,6 +13,7 @@ import PRow from './PRow';
 import { useNavigation } from '@react-navigation/native';
 import { ROUTE_KEY } from '../utils/contains';
 import { ListMusic } from '../services/data'
+import MySpinner from './MySpinner';
 
 
 interface Props {
@@ -21,14 +22,26 @@ interface Props {
 
 const MiniPlayer = (props: Props) => {
     const playerContext = usePlayerContext();
-    const [trackObject, settrackObject] = useState({})
-    const [delay, setdelay] = useState(0)
-    const isModal = React.createRef()
+    // const [trackObject, settrackObject] = useState(Object)
+    // const [delay, setdelay] = useState(0)
+    // const isModal = React.createRef()
     const spinValue = useRef(new Animated.Value(0)).current;
     const navigation = useNavigation()
+    // const data = async () => {
+    //     const trackId = await RNTrackPlayer.getCurrentTrack();
+    //     const GettrackObject = await RNTrackPlayer.getTrack(trackId);
+    //     console.log('MiniPlayer', JSON.stringify(GettrackObject, null, 2))
+    //     settrackObject(GettrackObject)
+    // }
     useEffect(() => {
         spin()
+            // data()
+        // return () => {
+        //   trackObject
+        // }
     }, [])
+
+
     const spin = () => {
         spinValue.setValue(0)
         Animated.timing(
@@ -46,6 +59,16 @@ const MiniPlayer = (props: Props) => {
         outputRange: ['0deg', '360deg']
     })
 
+    const setTimeAddFavorite = () => {
+        MySpinner.show()
+        setTimeout(() => {
+            MySpinner.hide()
+            myAlert('Thông báo',
+                'Thêm bài hát vào danh sách yêu thích thành công',
+                'Đóng'
+            )
+        }, 3000);
+    }
     const addFavoriteMusic = () => {
         myAlert(
             '',
@@ -53,122 +76,84 @@ const MiniPlayer = (props: Props) => {
             'Trở lại',
             () => { },
             'Đồng ý',
-            () => console.log('Thêm')
+            () => setTimeAddFavorite()
         )
     }
 
-    const nextMusic = async () => {
-        // var GettrackObject = {}
 
-        // await ListMusic.forEach(async function (item, index, value) {
-        //     const trackId = await RNTrackPlayer.getCurrentTrack();
-        //     const trackObject = await RNTrackPlayer.getTrack(trackId);
-        //     if (ListMusic[index + 1] === undefined) {
-        //         await RNTrackPlayer.reset()
-        //         await RNTrackPlayer.add(ListMusic[0])
-        //         await RNTrackPlayer.play()
-        //         const trackId = await RNTrackPlayer.getCurrentTrack();
-        //         GettrackObject = await RNTrackPlayer.getTrack(trackId);
-        //     } else if (item?.id === parseInt(trackObject?.id)) {
-        //         await RNTrackPlayer.reset()
-        //         await RNTrackPlayer.add(ListMusic[index + 1])
-        //         await RNTrackPlayer.play()
-        //         const trackId = await RNTrackPlayer.getCurrentTrack();
-        //         GettrackObject = await RNTrackPlayer.getTrack(trackId);
-        //     }
-        // });
-        // await setTimeout(() => {
-        //     this.setState({
-        //         trackObject: GettrackObject
-        //     })
-        // }, 3000);
+    if (playerContext.isEmpty || !playerContext.currentTrack) {
+        return null;
     }
 
-
-    if (playerContext.isEmpty || playerContext?.currentTrack) {
-        console.log('playerContext', JSON.stringify(playerContext, null, 2))
-        return (
-            <LinearGradient
-                colors={['#282828', '#282828', '#282828']} style={{
-                    height: 60 * HEIGHT_SCALE_RATIO,
-                    width: WIDTH,
-                    backgroundColor: ptColor.white,
+    return (
+        <LinearGradient
+            colors={['#282828', '#282828', '#282828']} style={{
+                height: 60 * HEIGHT_SCALE_RATIO,
+                width: WIDTH,
+                backgroundColor: ptColor.white,
+                flexDirection: 'row',
+                padding: 20 * HEIGHT_SCALE_RATIO,
+                alignItems: 'center',
+                justifyContent: 'space-between'
+            }}>
+            <MyTouchableOpacity
+                onPress={() => navigation.navigate(ROUTE_KEY.PlayMusic)}
+                style={{
                     flexDirection: 'row',
-                    padding: 20 * HEIGHT_SCALE_RATIO,
-                    alignItems: 'center',
-                    justifyContent: 'space-between'
                 }}>
-                <MyTouchableOpacity
-                    onPress={() => navigation.navigate(ROUTE_KEY.PlayMusic)}
+                <Animated.Image source={{ uri: playerContext.currentTrack?.artwork }}
                     style={{
-                        flexDirection: 'row',
-                    }}>
-                    <Animated.Image source={{ uri: playerContext?.currentTrack?.artwork }}
-                        style={{
-                            height: 45 * HEIGHT_SCALE_RATIO,
-                            width: 45 * WIDTH_SCALE_RATIO,
-                            borderRadius: 45 * HEIGHT_SCALE_RATIO,
-                            backgroundColor: ptColor.blue,
-                            transform: [{ rotate: spinM }],
-                        }}></Animated.Image>
-                    <View>
-                        <Text style={[style.textCaption,
-                        {
-                            color: ptColor.white,
-                            fontSize: FS(12),
-                            marginLeft: 10 * HEIGHT_SCALE_RATIO
-                        }]}>{playerContext?.currentTrack?.title}</Text>
-                        <Text style={[style.textSubTitle,
-                        {
-                            color: ptColor.white,
-                            fontSize: FS(9),
-                            marginLeft: 10 * HEIGHT_SCALE_RATIO
-                        }]}>{playerContext?.currentTrack?.artist}</Text>
-                    </View>
+                        height: 45 * HEIGHT_SCALE_RATIO,
+                        width: 45 * WIDTH_SCALE_RATIO,
+                        borderRadius: 45 * HEIGHT_SCALE_RATIO,
+                        backgroundColor: ptColor.blue,
+                        transform: [{ rotate: spinM }],
+                    }}></Animated.Image>
+                <View>
+                    <Text style={[style.textCaption,
+                    {
+                        color: ptColor.white,
+                        fontSize: FS(12),
+                        marginLeft: 10 * HEIGHT_SCALE_RATIO
+                    }]}>{playerContext.currentTrack?.title}</Text>
+                    <Text style={[style.textSubTitle,
+                    {
+                        color: ptColor.white,
+                        fontSize: FS(9),
+                        marginLeft: 10 * HEIGHT_SCALE_RATIO
+                    }]}>{playerContext.currentTrack?.artist}</Text>
+                </View>
+            </MyTouchableOpacity>
+            <PRow style={{
+                justifyContent: 'space-around'
+            }}>
+                <MyTouchableOpacity
+                    style={{
+                        marginHorizontal: 7 * WIDTH_SCALE_RATIO
+                    }}
+                    onPress={() => addFavoriteMusic()}>
+                    <Icon
+                        name='heart'
+                        type='feather'
+                        color={ptColor.white}
+                    />
                 </MyTouchableOpacity>
-                <PRow style={{
-                    justifyContent: 'space-around'
-                }}>
-                    <MyTouchableOpacity
-                        style={{
-                            marginHorizontal: 7 * WIDTH_SCALE_RATIO
-                        }}
-                        onPress={() => addFavoriteMusic()}>
-                        <Icon
-                            name='heart'
-                            type='feather'
-                            color={ptColor.white}
-                        />
-                    </MyTouchableOpacity>
-                    <MyTouchableOpacity
-                        style={{
-                            marginHorizontal: 7 * WIDTH_SCALE_RATIO
-                        }}
-                        onPress={() => playerContext.isPlaying ? playerContext.pause() : RNTrackPlayer.play()}>
-                        <Icon
-                            name={playerContext.isPlaying ? 'pause' : 'play'}
-                            type='feather'
-                            color={ptColor.white}
-                        />
-                    </MyTouchableOpacity>
-                    <MyTouchableOpacity
-                        style={{
-                            marginHorizontal: 7 * WIDTH_SCALE_RATIO
-                        }}
-                        onPress={() => nextMusic()}>
-                        <Icon
-                            name='skip-forward'
-                            type='feather'
-                            color={ptColor.white}
-                        />
-                    </MyTouchableOpacity>
-                </PRow>
+                <MyTouchableOpacity
+                    style={{
+                        marginHorizontal: 7 * WIDTH_SCALE_RATIO
+                    }}
+                    onPress={() => playerContext.isPlaying ? playerContext.pause() : RNTrackPlayer.play()}>
+                    <Icon
+                        name={playerContext.isPlaying ? 'pause' : 'play'}
+                        type='feather'
+                        color={ptColor.white}
+                    />
+                </MyTouchableOpacity>
+            </PRow>
 
-            </LinearGradient>
-        )
-    } else {
-        return null
-    }
+        </LinearGradient>
+    )
+
 
 }
 
