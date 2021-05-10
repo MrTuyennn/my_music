@@ -58,7 +58,9 @@ const OderScreen = (props: Props) => {
     const playMusic = async (item) => {
         console.log(item)
         playerContext.play(item)
-        navigation.navigate(ROUTE_KEY.PlayMusic)
+        navigation.navigate(ROUTE_KEY.PlayMusic,{
+            checkFavorite :'check'
+        })
         dispatch(setDataMusic(listMusic))
 
     }
@@ -132,7 +134,7 @@ const OderScreen = (props: Props) => {
                     flex: 9
                 }}>
                     <Input
-                        placeholder="Bài hát, playlist, nghệ sĩ ..."
+                        placeholder="Tìm kiếm bài hát yêu thích ..."
                         placeholderTextColor={ptColor.textPlaceholderColor}
                         onChangeText={(text) => setsearch(text)}
                         inputContainerStyle={{

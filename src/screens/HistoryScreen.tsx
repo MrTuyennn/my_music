@@ -118,7 +118,7 @@ const HistoryScreen = (props: Props) => {
                     flex: 9
                 }}>
                     <Input
-                        placeholder="Bài hát, playlist, nghệ sĩ ..."
+                        placeholder="Tìm kiếm thể loại ..."
                         placeholderTextColor={ptColor.textPlaceholderColor}
                         onChangeText={(text) => setsearch(text)}
                         value={search}

@@ -64,7 +64,7 @@ const MiniPlayer = (props: Props) => {
         setTimeout(() => {
             MySpinner.hide()
             myAlert('Thông báo',
-                'Thêm bài hát vào danh sách yêu thích thành công',
+                'Thêm bài hát vào danh sách bài hát yêu thích thành công',
                 'Đóng'
             )
         }, 3000);

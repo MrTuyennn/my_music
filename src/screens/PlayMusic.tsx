@@ -24,6 +24,7 @@ import { useSelector } from 'react-redux'
 import MySpinner from '../components/MySpinner';
 interface Props {
     navigation?: any
+    route?: any
 }
 
 const PlayMusic = (props: Props) => {
@@ -188,7 +189,9 @@ const PlayMusic = (props: Props) => {
         setTimeout(() => {
             MySpinner.hide()
             myAlert('Thông báo',
-                'Thêm bài hát vào danh sách yêu thích thành công',
+                props.route?.params?.checkFavorite
+                    ? 'Bài hát này đã có trong danh sách yêu thích'
+                    : 'Thêm bài hát vào danh sách bài hát yêu thích thành công',
                 'Đóng'
             )
         }, 3000);
