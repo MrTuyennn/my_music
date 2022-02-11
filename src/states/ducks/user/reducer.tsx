@@ -34,7 +34,7 @@ export default (state = initialState, action) => {
         case types.LOGIN_USER_SUCESS:
             return {
                 ...state,
-                userInfo: action.payload
+                userInfo: {...action.payload,isSuccess:true}
             }
         case types.LOGIN_USER_FAIL:
             return {
