@@ -113,7 +113,7 @@ const HomeScreen = (props: Props,) => {
             <Text style={{
                 flex: 1,
                 color: ptColor.white,
-                fontFamily: 'bold',
+                // fontFamily: 'bold',
                 fontSize: FS(10)
             }}>{item?.title}</Text>
         </MyTouchableOpacity>

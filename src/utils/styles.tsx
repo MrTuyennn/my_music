@@ -69,7 +69,7 @@ export const ptColor = {
 };
 
 export const ptFont = {
-  REGULAR: 'Nunito-Regular',
+  // REGULAR: 'Nunito-Regular',
   MEDIUM: 'Nunito-SemiBold',
   BOLD: 'Nunito-Bold',
   BLACK: 'Nunito-Black',
@@ -98,15 +98,15 @@ export const ptText = {
   },
   BODY1: {
     fontSize: FS(fontSize) + 0,
-    fontFamily: ptFont.REGULAR,
+    // fontFamily: ptFont.REGULAR,
   },
   BODY2: {
     fontSize: FS(fontSize) - 2,
-    fontFamily: ptFont.REGULAR,
+    // fontFamily: ptFont.REGULAR,
   },
   SMALL1: {
     fontSize: FS(fontSize) - 3,
-    fontFamily: ptFont.REGULAR,
+    // fontFamily: ptFont.REGULAR,
   },
   SMALL2: {
     fontSize: FS(fontSize) - 5,
@@ -237,7 +237,7 @@ export const ptButton = {
 export const style = {
   textMaxSize: {
     fontSize: FS(fontSize) + 24,
-    fontFamily: ptFont.REGULAR,
+    // fontFamily: ptFont.REGULAR,
     color: ptColor.textColor,
   },
   text: {
@@ -308,7 +308,7 @@ export const style = {
     color: ptColor.white,
     textAlign: 'center',
     textTransform: 'uppercase',
-    fontFamily: ptFont.REGULAR,
+    // fontFamily: ptFont.REGULAR,
   },
   textButtonOutLine: {
     ...ptText.H4,
@@ -322,7 +322,7 @@ export const style = {
     color: ptColor.textColor,
     textAlign: 'center',
     textTransform: 'uppercase',
-    fontFamily: ptFont.REGULAR,
+    // fontFamily: ptFont.REGULAR,
   },
   textShadow: {
     textShadowColor: '#ffffff',

@@ -7,42 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00C3793BBD48411792042284 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60F7D62CFCE547BE9B0F31EC /* MaterialCommunityIcons.ttf */; };
 		00E356F31AD99517003FC87E /* my_musicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* my_musicTests.m */; };
 		07120ED12F1D05C664CAE88B /* libPods-my_music-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8C3292E1ABAB3830FB20AE /* libPods-my_music-tvOS.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		16A8C3367EE6407C876926B2 /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8F9A0A1909334BECAC8C77EC /* Nunito-Light.ttf */; };
-		1C09F627E2FD455DBF2AB93E /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD354A6C8DA7408B91ED7287 /* Ionicons.ttf */; };
-		205B759DFABD41D1B9C7EEA4 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58241DEE34614F3A86BB8FD4 /* FontAwesome5_Solid.ttf */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* my_musicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* my_musicTests.m */; };
-		4216E854D4494EDE913D04A6 /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C83E8670E694F439FAF642B /* FontAwesome5_Brands.ttf */; };
 		5CA70FC3804ECF7A483B51B8 /* libPods-my_music-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 541C05ECD1D37ADB484F23E1 /* libPods-my_music-tvOSTests.a */; };
-		5CDBD743D3354DAD8DB6D670 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4C6F4FF2FB84E6A926CA0DC /* Zocial.ttf */; };
 		5E72CAC8285D427D8763AEA8 /* Nunito-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADB3EC71CD0C4A06B6A3F72F /* Nunito-Italic.ttf */; };
-		6285AC13D76847EB9F1A1F48 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF738C939EA041FE8EB7E447 /* FontAwesome.ttf */; };
 		67E9604575324237A4300D74 /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91B9F4CF2391474F8EE96FD5 /* Nunito-SemiBold.ttf */; };
-		7BCD530D506AF680908CDC59 /* libPods-my_music.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B42057BA2CF2466A2D413B14 /* libPods-my_music.a */; };
 		7F27DE5E75234D06945A01B1 /* Nunito-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB6D2E5352854956B03EB4E9 /* Nunito-ExtraBold.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		88A152C64CB349778E46A021 /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4013FE59C7A7400D8262615F /* Nunito-Black.ttf */; };
 		8A4BBB875BC664DB53D0EF35 /* libPods-my_music-my_musicTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15C81B13EF6C6928E9E719F9 /* libPods-my_music-my_musicTests.a */; };
-		8C277382838F40DD9A0DD7F9 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6CB78F2148D4346BCE36316 /* Feather.ttf */; };
-		9A846AED83F54753BCC85FE1 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF18B05D975242048A757905 /* Entypo.ttf */; };
 		AE828A85D87A423D8A857458 /* Nunito-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E95FC4E9FBF4F10ABC3D484 /* Nunito-ExtraLight.ttf */; };
-		B1E429ACBEEC46EA958F56AF /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BAA68BF4AC947F1AE86F3AF /* Nunito-Bold.ttf */; };
-		B3021E64A9AD4EB1BADC1D16 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66A0C3EC311047B590DC3332 /* AntDesign.ttf */; };
-		B7289194AACE4D148A46EF83 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A108E5C6D354518B9A356B7 /* FontAwesome5_Regular.ttf */; };
-		D17E442B4AA34D2597A27187 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F600DB7A19BC41288ECF166B /* Fontisto.ttf */; };
-		D33946D808114961976E86C1 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4F767C5F8664182A2DC83D0 /* Octicons.ttf */; };
-		D85E949A6AA84036BAEC5680 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 961EBCF3F41B4530B8912877 /* SimpleLineIcons.ttf */; };
-		ECF4CF93789444E78F5F0740 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA1FBD201BB440BC9B498328 /* Foundation.ttf */; };
-		F7E8D70BB5C049F39002D732 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1076ECC632574A499DDE94B1 /* MaterialIcons.ttf */; };
-		FF82E3D29423442E8983E0E5 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2679785770446C1BEC52AB8 /* EvilIcons.ttf */; };
+		D9136BDA1CCF202DDB70B478 /* libPods-my_music.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B42057BA2CF2466A2D413B14 /* libPods-my_music.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +51,6 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* my_musicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = my_musicTests.m; sourceTree = "<group>"; };
 		0B9FF724AA320877F6B0C051 /* Pods-my_music.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-my_music.debug.xcconfig"; path = "Target Support Files/Pods-my_music/Pods-my_music.debug.xcconfig"; sourceTree = "<group>"; };
-		0BAA68BF4AC947F1AE86F3AF /* Nunito-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Bold.ttf"; path = "../src/assets/fonts/Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		0C83E8670E694F439FAF642B /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		1076ECC632574A499DDE94B1 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* my_music.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = my_music.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,7 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BCD530D506AF680908CDC59 /* libPods-my_music.a in Frameworks */,
+				D9136BDA1CCF202DDB70B478 /* libPods-my_music.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,7 +197,6 @@
 				961EBCF3F41B4530B8912877 /* SimpleLineIcons.ttf */,
 				C4C6F4FF2FB84E6A926CA0DC /* Zocial.ttf */,
 				4013FE59C7A7400D8262615F /* Nunito-Black.ttf */,
-				0BAA68BF4AC947F1AE86F3AF /* Nunito-Bold.ttf */,
 				FB6D2E5352854956B03EB4E9 /* Nunito-ExtraBold.ttf */,
 				4E95FC4E9FBF4F10ABC3D484 /* Nunito-ExtraLight.ttf */,
 				ADB3EC71CD0C4A06B6A3F72F /* Nunito-Italic.ttf */,
@@ -285,8 +266,8 @@
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				6234165198F6DF493E158101 /* [CP] Embed Pods Frameworks */,
 				32922043F395106E7044B820 /* [CP] Copy Pods Resources */,
+				BA7E02E15681F8E2CE68A1B2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -308,8 +289,8 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				2BFD21CE610A58AAB63C8489 /* [CP] Embed Pods Frameworks */,
 				CD93C5AD1D57DB1FECF20178 /* [CP] Copy Pods Resources */,
+				B8C7A5F54E6FF3A9588DD35A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -421,24 +402,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				B3021E64A9AD4EB1BADC1D16 /* AntDesign.ttf in Resources */,
-				9A846AED83F54753BCC85FE1 /* Entypo.ttf in Resources */,
-				FF82E3D29423442E8983E0E5 /* EvilIcons.ttf in Resources */,
-				8C277382838F40DD9A0DD7F9 /* Feather.ttf in Resources */,
-				6285AC13D76847EB9F1A1F48 /* FontAwesome.ttf in Resources */,
-				4216E854D4494EDE913D04A6 /* FontAwesome5_Brands.ttf in Resources */,
-				B7289194AACE4D148A46EF83 /* FontAwesome5_Regular.ttf in Resources */,
-				205B759DFABD41D1B9C7EEA4 /* FontAwesome5_Solid.ttf in Resources */,
-				D17E442B4AA34D2597A27187 /* Fontisto.ttf in Resources */,
-				ECF4CF93789444E78F5F0740 /* Foundation.ttf in Resources */,
-				1C09F627E2FD455DBF2AB93E /* Ionicons.ttf in Resources */,
-				00C3793BBD48411792042284 /* MaterialCommunityIcons.ttf in Resources */,
-				F7E8D70BB5C049F39002D732 /* MaterialIcons.ttf in Resources */,
-				D33946D808114961976E86C1 /* Octicons.ttf in Resources */,
-				D85E949A6AA84036BAEC5680 /* SimpleLineIcons.ttf in Resources */,
-				5CDBD743D3354DAD8DB6D670 /* Zocial.ttf in Resources */,
 				88A152C64CB349778E46A021 /* Nunito-Black.ttf in Resources */,
-				B1E429ACBEEC46EA958F56AF /* Nunito-Bold.ttf in Resources */,
 				7F27DE5E75234D06945A01B1 /* Nunito-ExtraBold.ttf in Resources */,
 				AE828A85D87A423D8A857458 /* Nunito-ExtraLight.ttf in Resources */,
 				5E72CAC8285D427D8763AEA8 /* Nunito-Italic.ttf in Resources */,
@@ -478,24 +442,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
-		};
-		2BFD21CE610A58AAB63C8489 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-my_music/Pods-my_music-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL-Universal/OpenSSL.framework/OpenSSL",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-my_music/Pods-my_music-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -583,24 +529,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6234165198F6DF493E158101 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-my_music-my_musicTests/Pods-my_music-my_musicTests-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL-Universal/OpenSSL.framework/OpenSSL",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-my_music-my_musicTests/Pods-my_music-my_musicTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		7A26798545DD7D47D5B5B673 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -665,6 +593,42 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8C7A5F54E6FF3A9588DD35A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-my_music/Pods-my_music-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL-Universal/OpenSSL.framework/OpenSSL",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-my_music/Pods-my_music-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA7E02E15681F8E2CE68A1B2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-my_music-my_musicTests/Pods-my_music-my_musicTests-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL-Universal/OpenSSL.framework/OpenSSL",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-my_music-my_musicTests/Pods-my_music-my_musicTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CD93C5AD1D57DB1FECF20178 /* [CP] Copy Pods Resources */ = {
@@ -821,6 +785,10 @@
 				INFOPLIST_FILE = my_musicTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib/swift",
+					"$(inherited)",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -842,6 +810,10 @@
 				INFOPLIST_FILE = my_musicTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib/swift",
+					"$(inherited)",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -864,6 +836,10 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = my_music/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib/swift",
+					"$(inherited)",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -887,6 +863,10 @@
 				DEVELOPMENT_TEAM = UMWAV3889L;
 				INFOPLIST_FILE = my_music/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib/swift",
+					"$(inherited)",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -914,6 +894,10 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "my_music-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib/swift",
+					"$(inherited)",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -942,6 +926,10 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "my_music-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib/swift",
+					"$(inherited)",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -969,6 +957,10 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "my_music-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib/swift",
+					"$(inherited)",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -996,6 +988,10 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "my_music-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib/swift",
+					"$(inherited)",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
