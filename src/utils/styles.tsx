@@ -71,7 +71,7 @@ export const ptColor = {
 export const ptFont = {
   // REGULAR: 'Nunito-Regular',
   MEDIUM: 'Nunito-SemiBold',
-  BOLD: 'Nunito-Bold',
+  // BOLD: 'Nunito-Bold',
   BLACK: 'Nunito-Black',
 };
 
@@ -250,19 +250,19 @@ export const style = {
   },
   textHeader: {
     ...ptText.H0,
-    fontFamily: ptFont.BOLD,
+    // fontFamily: ptFont.BOLD,
     color: ptColor.textColor,
     paddingBottom: 10
   },
   textTitle: {
     ...ptText.H3,
     color: ptColor.textColor,
-    fontFamily: ptFont.BOLD,
+    // fontFamily: ptFont.BOLD,
   },
   textTitle2: {
     ...ptText.H4,
     color: ptColor.textColor,
-    fontFamily: ptFont.BOLD,
+    // fontFamily: ptFont.BOLD,
   },
   textTitle3: {
     ...ptText.H3,
@@ -294,14 +294,14 @@ export const style = {
     color: ptColor.white,
     textAlign: 'center',
     textTransform: 'uppercase',
-    fontFamily: ptFont.BOLD,
+    // fontFamily: ptFont.BOLD,
   },
   textButtonWhite: {
     ...ptText.H4,
     color: ptColor.appColor,
     textAlign: 'center',
     textTransform: 'uppercase',
-    fontFamily: ptFont.BOLD,
+    // fontFamily: ptFont.BOLD,
   },
   textButton2: {
     ...ptText.H4,
